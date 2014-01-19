@@ -12,24 +12,46 @@
 		body {
 			color: #333;
 		}
-	</style>
-</head>
-<body>
-	<?php
-		$fp = fopen("music_list.kwl", "r") or die("Could not open the file!");
-		$read = fread($fp, filesize("music_list.kwl"));
-		fclose($fp);
 
-		echo "<pre>";
-		echo $read;
-		echo "</pre>";
-	?>
+		#content dl {
+			clear: both;
+			width: 100%;
+			padding: 10px 0;
+			border-bottom: 1px dashed #ccc;
+		}
+
+		#content dl:hover {
+			background-color: #ccc;
+		}
+		#content dt {
+			float: left;
+			font-weight: bold;
+		}
+		#content dl {
+			float: left;
+		}
+
+		#theFrame {
+			position: absolute;
+			z-index: -999;
+			width: 0;
+			height: 0;
+			border: none;
+		}
+	</style>
 	<script type="text/javascript">
 		window.onload = function () {
 
 			var oContent = document.getElementById("content");
 
-			var aSo = document.getElementsByTagName("so");
+			//var theFrame = document.frame.theFrame;
+			var theFrame = document.getElementById("theFrame").contentWindow.document;
+			/*var aa = theFrame.getElementsByTagName("so");
+			alert(typeof theFrame);
+			alert(aa.length);*/
+
+			// var aSo = document.getElementsByTagName("so");
+			var aSo = theFrame.getElementsByTagName("so");
 			var aRes;
 			var musicInfo = [];
 
@@ -55,16 +77,12 @@
 
 			for (var i = 0; i < musicInfo.length; i++) {
 
-				//console.log(musicInfo[0]);
-
-				//var tmp = musicInfo[0];
-				//alert(tmp.name);
-
-				console.log("歌曲名字："+musicInfo[i].name);
-				console.log("歌手："+musicInfo[i].artist);
+				// console.log("歌曲名字："+musicInfo[i].name);
+				// console.log("歌手："+musicInfo[i].artist);
 
 
 				dl = document.createElement("dl");
+
 				dt = document.createElement("dt");
 				title = document.createTextNode("歌曲名字：");
 				dd = document.createElement("dd");
@@ -78,7 +96,6 @@
 				oContent.appendChild(dl);
 
 
-				dl = document.createElement("dl");
 				dt = document.createElement("dt");
 				title = document.createTextNode("歌手：");
 				dd = document.createElement("dd");
@@ -91,48 +108,38 @@
 
 				oContent.appendChild(dl);
 
-				for (var key in musicInfo[i]) {
-					//console.log(musicInfo[i].name);
-					//alert(musicInfo[i].name);
-				}
+
+				dt = document.createElement("dt");
+				title = document.createTextNode("格式：");
+				dd = document.createElement("dd");
+				data = document.createTextNode(musicInfo[i].format);
+
+				dt.appendChild(title);
+				dl.appendChild(dt);
+				dd.appendChild(data);			
+				dl.appendChild(dd);
+
+				oContent.appendChild(dl);
+
+
+				dt = document.createElement("dt");
+				title = document.createTextNode("缓存路径：");
+				dd = document.createElement("dd");
+				data = document.createTextNode(musicInfo[i].p2pcachepath);
+
+				dt.appendChild(title);
+				dl.appendChild(dt);
+				dd.appendChild(data);			
+				dl.appendChild(dd);
+
+				oContent.appendChild(dl);
 
 			}
-
-/*			for (var key in musicInfo[0]) {
-				console.log(musicInfo[0][key]);
-			}*/
-
-/*			var json = [];
-			for (var key in musicInfo) {
-				json = musicInfo[key];
-			}
-
-			console.log(json);*/
-
-/*			var dl,
-				dt,
-				title,
-				dd,
-				data;
-
-			dl = document.createElement("dl");
-			dt = document.createElement("dt");
-			title = document.createTextNode("title");
-			dd = document.createElement("dd");
-			data = document.createTextNode("data");
-
-			dt.appendChild(title);
-			dl.appendChild(dt);
-			dd.appendChild(data);			
-			dl.appendChild(dd);
-
-
-			oContent.appendChild(dl);*/
-
-			//alert(arrName.length);
 		}
 	</script>
-
+</head>
+<body>
 	<div id="content"></div>
+	<iframe name="theFrameName" id="theFrame" src="iframe.php"></iframe>
 </body>
 </html>
