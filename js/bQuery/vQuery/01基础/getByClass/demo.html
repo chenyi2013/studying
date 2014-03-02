@@ -1,0 +1,48 @@
+<script>
+	
+	function getByClass (oParent, sClass) {
+
+		if (oParent.getElementsByClassName) {
+			//some browser not support this method such as IE6, IE7, IE8
+			console.log('support getElementsByClassName() method');
+			
+			return oParent.getElementsByClassName(sClass);
+		} else {
+
+			console.log('not support getElementsByClassName() method');
+
+			var aEle = document.getElementsByTagName('*');
+
+			//无法避免通过参数aaa取class="xxx aaa"的元素时，取到class="aaa-bbb xxx"的元素
+			// var re = new RegExp('\\b'+sClass+'\\b', 'i'); 
+			
+			var re = new RegExp('(^| )'+sClass+'( |$)', 'i');
+			var arr = [];
+
+			for (var i = 0, len = aEle.length; i < len; i++) {
+				if (re.test(aEle[i].className)) {
+					arr.push(aEle[i]);
+				}
+			}
+			return arr;
+		}
+	}
+
+	window.onload = function () {
+		console.log(getByClass(document, 'sidebar').length);
+		console.log(getByClass(document, 'sidebar-title').length);
+		console.log(getByClass(document, 'sidebar-title-saf').length);
+	}
+
+
+</script>
+
+
+<div class="sidebar">
+	<h3 class="sidebar-title"></h3>
+	<h3 class="sidebar-title"></h3>
+	<span class="sideba"></span>
+</div>
+
+<div class="cont-safjl sidebar-afla sidebar sidebar-title-saf alsdfj-sidebar"></div>
+<div class="lafj-adfj sidebar-title aldkfj-adfsj"></div>
