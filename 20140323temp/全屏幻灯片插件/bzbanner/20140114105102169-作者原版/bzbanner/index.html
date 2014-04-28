@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset='utf-8'/>
+		<title>全屏淡入淡出简洁banner，异步图片文字效果切换图片特效</title>
+		<meta name="keywords" content="淡化版banner,淡化版banner">
+		<meta name="description" content="淡入淡出简洁banner" />
+		<style type="text/css">
+			body,ul,li,ol{list-style:none;padding:0px;margin:0px;font-size:12px;}
+			img{border:0px;}
+			
+			.bzBanner{width:100%; min-width:980px; height:auto; overflow:hidden; position: relative; }
+			.bzBanner .content,.bzBanner .col,.bzBanner .col a{width:100%; height:100%; position: absolute; top:0px; left:0px; }
+			.bzBanner .btn{position: absolute; bottom:25px; right:50px; z-index:5; }
+			.bzBanner .btn i{display:block; float: left; width:15px; height:15px; padding:0 5px; border-radius:15px; margin-left:15px; background:white; overflow:hidden; opacity:0.4; filter:alpha(opacity=40); cursor:pointer; }
+			.bzBanner .btn i:hover{background:#9C0; }
+			.bzBanner .btn i.act{opacity:0.8; filter:alpha(opacity=80); background:#9C0; }
+			.bzBanner .pre,.bzBanner .next{display:inline-block; width:72px; height:72px; background:url(./bzbanner/btn.png) no-repeat; position:absolute; top:50%; margin-top:-50px; z-index:3; }
+			.bzBanner .pre{left:30px; }
+			.bzBanner .next{right:30px; background-position:0 -72px; }
+			.bzBanner .pre:hover{background-position:0 -144px; }
+			.bzBanner .next:hover{background-position:0 -216px; }
+			.bzBanner .col a{color:white; }
+			.bzBanner .col span{display:inline-block; width:550px; height:200px; background:rgba(0,0,0,.1); position:absolute; z-index:3; bottom:70px; left:130px; }
+			.bzBanner .col span h3{font-weight:normal; font-size:28px; font-weight:normal; font-family:微软雅黑; padding:0px; margin:0px; padding-left:20px; line-height:70px; text-shadow:1px 1px rgba(0,0,0,.3); }
+			.bzBanner .col span p{display:inline-block; width:90%; line-height:25px; font-size: 14px; font-family:微软雅黑; margin:0px; padding:0px; padding-left:20px; text-shadow:1px 1px rgba(0,0,0,.3); }
+
+		</style>
+	</head>
+	<body>
+		
+		<div class='bzBanner'>
+			<div class='content'>
+				<div class='col'>
+					<a href='javascript:;' >
+						<img src='./bzbanner/12.jpg' width=100% />
+						<span>
+							<h3>独家首播：范玮琪&曾静玟《千年》</h3>
+							<p>范玮琪&曾静玟《千年》MV首播！歌词特别力邀名词人葛大為操刀，延续“一日如千年”的概念，转换在爱情里就是可以把对方的思念拉得很长，每一秒的想念都可以像是一千年的蔓延。而一千年的等待，也因为一秒钟的珍爱相遇而有了意义爱情。</p>
+						</span>
+					</a>
+				</div>
+				<div class='col'>
+					<a href='javascript:;' >
+						<img src='./bzbanner/13.jpg' width=100% />
+						<span>
+							<h3>独家首播：It Began With A Fallen Leaf</h3>
+							<p>普莉西雅（Priscilla Ahn）和苏打绿全新单曲《It Began With A Fallen Leaf》MV首播！一袭白色雪纺洋装的普莉西雅置身于森林中，红发青峰似偶然闯入森林中活泼调皮的精灵，邂逅了森林中的仙女。歌曲由吴青峰作曲，普莉西雅和吴青峰共同作词，描述了对一位再也无法相见的好友的思念之情。</p>
+						</span>
+					</a>
+				</div>
+				<div class='col'>
+					<a href='javascript:;' >
+						<img src='./bzbanner/14.jpg' width=100% />
+						<span>
+							<h3>首播：真的假的</h3>
+							<p>暌违乐坛八年陶晶莹新专辑同名主打《真的假的》MV官方版首播!歌曲由周杰伦＋林夕两位乐坛大才子携手合作，唱出男女情爱中许多真真假假的现象和矛盾，MV由廖人帥执导，时而如梦幻童话时而如辉煌宫殿的场景布置亦真亦假似幻似真，逼真特技效果十足！</p>
+						</span>
+					</a>
+				</div>
+				<div class='col'>
+					<a href='javascript:;' >
+						<img src='./bzbanner/15.jpg' width=100% />
+						<span>
+							<h3>口袋·FAN 把你的偶像装进口袋里</h3>
+							<p>睡不着过后，梦游到这里。在亚纶生日的这一天迎来闪闪发亮的【口袋·炎亚纶】！这里有新鲜资讯影像 ，是勾搭交流平台。是炎亚纶专属，为每一个可爱的布丁纪念永恒，关于阿布有爱的一切都在这里，在这 里全世界只看见你，快把阿布装进口袋，祝炎亚纶1120生日快乐！Android版和IOS越狱版抢先上线…</p>
+						</span>
+					</a>
+				</div>
+			</div>
+			<div class='btn'><i></i><i></i><i></i><i></i></div>
+			<a class='pre' href='javascript:;' title='上一张' ></a>
+			<a class='next' href='javascript:;' title='下一张' ></a>
+		</div>
+
+		<script type="text/javascript" src="./jquery-1.10.2.min.js" ></script>
+		<script type="text/javascript" src="./bzBanner.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){ benzi.bzBanner(); });
+		</script>
+	</body>
+</html>

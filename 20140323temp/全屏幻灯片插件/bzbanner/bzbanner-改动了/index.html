@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset='utf-8'/>
+		<title>全屏淡入淡出简洁banner，异步图片文字效果切换图片特效</title>
+		<link rel="stylesheet" href="css/bzbanner.css">
+	</head>
+	<body>
+		
+		<div class="bzBanner">
+			<div class="bzBanner-content">
+				<div class="col">
+						<img src="images/temp/s1-slide03.jpg" width=100% />
+				</div>
+				<div class="col">
+						<img src="images/temp/s1-slide04.jpg" width=100% />
+				</div>
+				<div class="col">
+						<img src="images/temp/s1-slide05.jpg" width=100% />
+				</div>
+				<div class="col">
+						<img src="images/temp/s1-slide06.jpg" width=100% />
+				</div>
+			</div>
+			<a class="pre" href="javascript:void(0);" title="上一张" ></a>
+			<a class="next" href="javascript:void(0);" title="下一张" ></a>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+		<script type="text/javascript" src="js/bzBanner.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){ benzi.bzBanner(); });
+		</script>
+	</body>
+</html>
