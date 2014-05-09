@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>解决jq和其他库的冲突</title>
+	<!-- jquery库在其他库之后导入  -->
+	<script type="text/javascript" src="prototype.js"></script>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		//!!最理想的方法
+		//定义匿名函数并设置形参$
+		(function ($) {
+			$(function () {
+				$(".title-jq").css("color", "red");
+			});	
+		})(jQuery);//执行匿名函数并传递实参jQuery
+
+		//prototype的onload
+		window.onload = function () {
+			$("title-p").style.color = "#36f";	
+		}
+		
+		/*
+		//另外一种onload
+		document.observe("dom:loaded", function () {
+			//$("title-p").style.color = "#36f";
+			//alert($$("#title-p").length);
+			$$(".title-pro")[0].setStyle({'color':'#36f'});
+		});
+		*/
+	</script>
+</head>
+<body>
+	<h2 class="title-jq">这是jquery操作的</h2>
+	<h2 id="title-p" class="title-pro">这是prototype操作的</h2>
+</body>
+</html>
