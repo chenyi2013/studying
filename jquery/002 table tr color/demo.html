@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta chearset="utf-8" />
+	<title>jquery表格隔行变色</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	.table1 td,
+	.table1 th {
+		padding: 5px;
+		border: 1px solid #ccc;
+	}
+	</style>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		(function ($) {
+			$(function () {
+				$('.table1 tbody tr:even').css("backgroundColor", "#f80");
+				$('.table1 tbody tr:odd').css("backgroundColor", "#ccc");
+			});
+		})(jQuery);
+	</script>
+</head>
+<body>
+	<table class="table1">
+		<thead>
+			<tr>
+				<th>1</th>
+				<th>1</th>
+				<th>1</th>
+				<th>1</th>
+				<th>1</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+			</tr>
+			<tr>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+			</tr>
+			<tr>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+			</tr>
+			<tr>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+			</tr>
+			<tr>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+			</tr>
+			<tr>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+				<td>1111111111111</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
