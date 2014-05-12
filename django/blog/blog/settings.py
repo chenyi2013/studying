@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 Django settings for blog project.
 
@@ -36,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admindocs',
+    'sblog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,10 +60,14 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'mydata.db',  # 这里是我数据库文件存放的目录，你应该替换成你自己的.
+        'USER': '',                       # Not used with sqlite3.
+        'PASSWORD': '',                   # Not used with sqlite3.
+        'HOST': '',                       # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                       # Set to empty string for default. Not used with sqlite3.
     }
-}
+}   
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
