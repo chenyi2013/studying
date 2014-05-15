@@ -16,7 +16,6 @@
 			float: left;
 			height: 30px;
 			line-height: 30px;
-			padding: 0 20px;
 			background-color: #f80;
 			font-family: "Microsoft YaHei";
 			font-size: 14px;
@@ -28,6 +27,7 @@
 
 		ul li a {
 			display: block;
+			padding: 0 20px;
 			color: #fff;
 			text-decoration: none;
 		}
@@ -56,6 +56,11 @@
 			}).mouseout(function () {
 				this.title = this.myTitle;
 				$('#tooltip').remove();
+			}).mousemove(function (e) {
+				$('#tooltip').css({
+					'top': y + e.pageY + 'px',
+					'left': x + e.pageX + 'px'
+				});
 			});
 		});
 	</script>
