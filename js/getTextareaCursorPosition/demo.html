@@ -14,7 +14,7 @@
 				if ( myTextarea.selectionStart ) {
 					// for FF, Chrome...
 					cursorPosition = myTextarea.selectionStart;		
-				} else {
+				} else if ( document.selection ) {
 					// for IE
 					var range = document.selection.createRange();
 					range.moveStart("character", -myTextarea.value.length);
@@ -22,9 +22,27 @@
 				}
 				return cursorPosition;
 			}
-			myTextarea.onkeyup = function () {
+			myTextarea.onkeyup = function (event) {
+				var event = window.event || event;
 				console.log(getTextareaCursorPosition());
+				insertStr(event);
 			}
+			myTextarea.onclick = function (event) {
+				var event = window.event || event;
+				console.log(getTextareaCursorPosition());
+				insertStr(event);
+			}
+
+
+			function insertStr (event) {
+				//alert( myTextarea.value.substring(0, getTextareaCursorPosition()) );
+				var str1 = myTextarea.value.substring(0, getTextareaCursorPosition());
+				var str2 = myTextarea.value.substring(getTextareaCursorPosition());
+				if ( event.keyCode == 13 ) {
+					myTextarea.value = str1 + "[插入换行]" + str2;					
+				}
+			}
+
 		}
 	</script>
 </body>
