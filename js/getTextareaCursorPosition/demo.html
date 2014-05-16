@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>js获取文本域中光标当前的位置</title>
+</head>
+<body>
+	<textarea id="myTextarea"></textarea>
+	<script type="text/javascript">
+		window.onload = function () {
+			var myTextarea = document.getElementById("myTextarea");
+			function getTextareaCursorPosition () {
+				var cursorPosition = -1;
+				if ( myTextarea.selectionStart ) {
+					// for FF, Chrome...
+					cursorPosition = myTextarea.selectionStart;		
+				} else {
+					// for IE
+					var range = document.selection.createRange();
+					range.moveStart("character", -myTextarea.value.length);
+					cursorPosition = range.text.length;
+				}
+				return cursorPosition;
+			}
+			myTextarea.onkeyup = function () {
+				console.log(getTextareaCursorPosition());
+			}
+		}
+	</script>
+</body>
+</html>
