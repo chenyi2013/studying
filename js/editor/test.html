@@ -6,7 +6,7 @@
 	window.onload = function () {
 		document.getElementById("button").onclick = function () {
 			// alert(document.getElementById("myDiv").innerHTML.replace(/\n/g, "<br/>"));
-			alert(document.getElementById("myDiv").innerHTML.replace(//, "<p>"));
+			alert(document.getElementById("myDiv").innerHTML.replace(/^(<[d][i][v]>)|(<\/[d][i][v]>)$/, "<p>"));
 		}
 	}
 </script>
