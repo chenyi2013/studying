@@ -1,0 +1,26 @@
+<meta charset="utf-8" />
+<input type="checkbox" checked="true"/>checked="true"
+<br/>
+<input type="checkbox" checked/>checked
+<br/>
+<input type="checkbox" checked="任意值"/>checked="任意值"
+<br/>
+<input type="checkbox" checked="checked"/>checked="checked"
+<br/>
+<input type="checkbox" id="checkbox11" checked="xxx" />jq测试选中状态返回值
+<br/>
+<div style="color: #f00;">标准写法：checked="checked"</div>
+
+<script type="text/javascript" src="jquery-2.1.1.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#checkbox11").click(function () {
+/*			if ($(this).is(":checked")) {
+				alert($(this).attr("checked"));			
+			}*/
+			if ($(this).attr("checked") == "checked") {
+				alert($(this).attr("checked"));		
+			}
+		});
+	});
+</script>
