@@ -9,21 +9,35 @@
 <button class="check-all">全选</button>
 <button class="not-check-all">全不选</button>
 <button class="check-invert">反选</button>
-<label><input type="checkbox" class="checkbox_fruits" name="fruits"/>苹果</label>
-<label><input type="checkbox" class="checkbox_fruits" name="fruits"/>橘子</label>
-<label><input type="checkbox" class="checkbox_fruits" name="fruits"/>香蕉</label>
-<label><input type="checkbox" class="checkbox_fruits" name="fruits"/>葡萄</label>
-<label><input type="checkbox" class="checkbox_fruits" name="fruits"/>梨</label>
-<label><input type="checkbox" class="checkbox_fruits" name="fruits"/>黄瓜</label>
+<label><input type="checkbox" class="checkbox-fruits" name="fruits"/>苹果</label>
+<label><input type="checkbox" class="checkbox-fruits" name="fruits"/>橘子</label>
+<label><input type="checkbox" class="checkbox-fruits" name="fruits"/>香蕉</label>
+<label><input type="checkbox" class="checkbox-fruits" name="fruits"/>葡萄</label>
+<label><input type="checkbox" class="checkbox-fruits" name="fruits"/>梨</label>
+<label><input type="checkbox" class="checkbox-fruits" name="fruits"/>黄瓜</label>
 
-<script type="text/javascript" src="jquery-2.1.1.js"></script>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 	$(function () {
 		// $(".checkbox_fruits")
 		$(".check-all").click(function () {
-			// $(".checkbox_fruits").attr("checked", "checked");
-			$(".checkbox_fruits").each(function () {
-				this.checked = "true";
+			//方法一
+			$(".checkbox-fruits").attr("checked", true);
+			//方法二
+/*			$(".checkbox-fruits").each(function () {
+				this.checked = "checked";
+			});*/
+		});
+		$(".not-check-all").click(function () {
+			$(".checkbox-fruits").attr("checked", false);
+		});
+		$(".check-invert").click(function () {
+			$(".checkbox-fruits").each(function () {
+				if ( $(this).attr("checked") == "checked" ) {
+					$(this).attr("checked", false);
+				} else {
+					$(this).attr("checked", true);		
+				}
 			});
 		});
 	});
