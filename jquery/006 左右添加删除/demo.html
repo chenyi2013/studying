@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>jquery左右添加删除</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.container {
+
+	}
+
+	.container .cols {
+		float: left;
+		width: 180px;
+		padding: 10px;		
+	}
+
+	.container .cols .select {
+		width: 180px;
+		height: 80px;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="cols cols01">
+			<select class="select" multiple="multiple" size="2">
+				<option>苹果</option>
+				<option>橘子</option>
+				<option>香蕉</option>
+				<option>葡萄</option>
+			</select>
+			<div class="btns">
+				<button class="moveToR">添加到右边</button>
+				<button class="moveToRAll">全部添加到右边</button>
+			</div>
+		</div>
+		<div class="cols cols02">
+			<select class="select" multiple="multiple" size="2">
+			</select>
+			<div class="btns">
+				<button class="moveToL">删除到左边</button>
+				<button class="moveToLAll">全部删除到左边</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			
+		});
+	</script>
+</body>
+</html>
