@@ -40,6 +40,7 @@
 		</div>
 		<div class="cols cols02">
 			<select class="select" multiple="multiple" size="2">
+				<option>黄瓜</option>
 			</select>
 			<div class="btns">
 				<button class="moveToL">删除到左边</button>
@@ -50,7 +51,20 @@
 	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			
+			var cols01_select = $(".cols01 .select");
+			var cols02_select = $(".cols02 .select");
+			$(".moveToR").click(function () {
+				$(".cols01 .select option:selected").remove().appendTo(cols02_select);
+			});
+			$(".moveToRAll").click(function () {
+				$(".cols01 .select option").remove().appendTo(cols02_select);
+			});
+			$(".moveToL").click(function () {
+				$(".cols02 .select option:selected").remove().appendTo(cols01_select);
+			});
+			$(".moveToLAll").click(function () {
+				$(".cols02 .select option").remove().appendTo(cols01_select);
+			});
 		});
 	</script>
 </body>
