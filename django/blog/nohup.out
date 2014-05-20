@@ -44,3 +44,18 @@ Traceback (most recent call last):
     __import__(name)
   File "/home/wangchi/Git/studying/django/blog/blog/settings.py", line 61
 SyntaxError: Non-ASCII character '\xe8' in file /home/wangchi/Git/studying/django/blog/blog/settings.py on line 61, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+Validating models...
+
+0 errors found
+May 20, 2014 - 04:58:55
+Django version 1.6.4, using settings 'blog.settings'
+Starting development server at http://127.0.0.1:9000/
+Quit the server with CONTROL-C.
+[20/May/2014 04:59:06] "GET / HTTP/1.1" 404 2110
+[20/May/2014 04:59:07] "GET / HTTP/1.1" 404 2110
+[20/May/2014 04:59:07] "GET / HTTP/1.1" 404 2110
+[20/May/2014 04:59:07] "GET / HTTP/1.1" 404 2110
+[20/May/2014 04:59:07] "GET / HTTP/1.1" 404 2110
+[20/May/2014 04:59:07] "GET / HTTP/1.1" 404 2110
+[20/May/2014 04:59:10] "GET / HTTP/1.1" 404 2110
+[20/May/2014 04:59:10] "GET / HTTP/1.1" 404 2110
