@@ -1,0 +1,25 @@
+<script src="jquery-2.1.1.js"></script>
+<input type="button" class="btn1" value="click me"/>
+<div class="div1" style="width: 200px; height: 200px;background: #eee;">文本显示区域</div>
+<script>
+	$(function () {
+		function btnClick () {
+			$(".btn1").click(function () {
+				$(this).css("backgroundColor", "red").unbind("click");
+				clickDeal();
+			});
+		}
+
+		btnClick();
+
+		function clickDeal () {
+			alert("本次点击有效！");
+			$(".div1").css("backgroundColor","red").text("禁止点击时间");
+			setTimeout(function () {
+				$(".btn1").css("backgroundColor", "#ccc");
+				$(".div1").css("backgroundColor","#eee").text("文本显示区域");
+				btnClick();
+			}, 2000);
+		}
+	});
+</script>
