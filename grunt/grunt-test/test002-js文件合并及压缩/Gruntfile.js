@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 			},
 			build: {
 				src: 'page/main.js',
-				dest: 'page/main.min.js'
+				//dest: 'page/main.min.js'
+				dest: 'page/main<%= grunt.template.today("yyyymmddhhmmss") %>.js'
 			}
 		}
 	});

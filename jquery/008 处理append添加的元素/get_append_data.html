@@ -1,0 +1,88 @@
+<meta charset="utf-8" />
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.ulist li {
+		/*position: relative;*/
+		height: 60px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.ulist li p {
+		line-height: 60px;
+	}
+
+	.ulist li .btn {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding: 1px 5px;
+		background-color: #f00;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	.ulist li .btn:hover {
+		text-decoration: underline;
+	}
+	
+</style>
+<ul class="ulist">
+	<li>
+		<p>列表哦</p>
+	</li>
+	<li>
+		<p>列表哦</p>
+		<!--<span class="btn">删除</span>-->
+	</li>
+	<li>
+		<p>列表哦</p>
+	</li>
+	<li>
+		<p>啦啦啦</p>
+	</li>
+	<li>
+		<p>啦啦啦</p>
+	</li>
+	<li>
+		<p>lll</p>
+	</li>
+	<li>
+		<p>了啦啦啦</p>
+	</li>
+	<li>
+		<p>了了啦啦啦</p>
+	</li>
+</ul>
+<script src="jquery-2.1.1.js"></script>
+<script>
+	$(function () {
+		$('.ulist li').hover(function () {
+			$(this).css({
+				"position": "relative"	
+			}).append('<span class="btn">删除</span>');	
+			$('.ulist li .btn').click(function () {
+				$(this).parent().slideUp('400', function () {
+					$(this).remove();
+				});
+				//animate 执行测试
+				//1.分步执行
+				//$(this).parent().animate({'width': '10'}, 400).animate({'height': '0'}, 400);
+				//或
+				//$(this).parent().animate({'width': '10'}, 400);
+				//$(this).parent().animate({'height': '0'}, 400);
+			
+				
+				//2. 同时执行
+				//$(this).parent().animate({'width': '10', 'height': '0'}, 400);
+			});
+		}, function () {
+			$(this).css({
+				"position": ""
+			}).find('.btn').remove();
+		});
+
+	});	
+</script>
