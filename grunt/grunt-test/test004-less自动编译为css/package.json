@@ -1,0 +1,9 @@
+{
+	"name": "less zidong bianyi wei css",
+	"version": "0.1.0",
+	"devDependencies": {
+		"grunt": "*",
+		"grunt-contrib-less": "*",
+		"grunt-contrib-watch": "*"
+	}
+}
