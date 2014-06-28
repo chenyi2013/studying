@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>添加一个新的全局函数</title>
+</head>
+<body>
+
+
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+
+		$(function () {
+
+			function global01 () {
+				alert('this is a global function');
+			}
+
+			jQuery.global01 = function () {
+				alert('this is a global function in jquery');
+			}
+
+		});
+
+
+
+		$(function () {
+
+			// global01();
+
+			//jQuery.global01();
+			//或
+			$.global01();
+
+		});
+	</script>
+</body>
+</html>
