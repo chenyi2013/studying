@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.div1,
+		.div2,
+		.div3,
+		.div4 {
+			float: left;
+			margin: 10px 5px 0 5px;
+			width: 90px;
+			height: 90px;
+			border: 5px solid #ccc;
+			background-color: #e1e1e1;
+			border-radius: 10px;
+			box-shadow: 1px 1px 5px #999;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="jquery.metadata.js"></script>
+	<script type="text/javascript">
+	//alert($.metadata);
+	(function ($) {
+
+		//插件的定义
+		$.fn.highlight = function (options) {
+
+			debug(this);
+			
+			var opts = $.extend({}, $.fn.highlight.defaults, options);
+
+			return this.each(function () {
+				var $this = $(this);
+
+				console.log($this.metadata());
+				//判断是否引入了metadata插件，若引入则使用metadata
+				var o = $.metadata ? $.extend({}, opts, $this.metadata()) : opts;
+
+				$this.css({
+					color: o.foreground,
+					backgroundColor: o.background
+				});
+
+				var markup = $this.html();
+				markup = $.fn.highlight.format(markup);
+				$this.html(markup);
+			});
+		};
+
+		//私有函数debug
+		function debug ($obj) {
+			if (window.console && window.console.log) {
+				window.console.log('highlight selection count:' + $obj.size() );
+			}
+		}
+
+
+		//定义暴露format函数
+		$.fn.highlight.format = function (txt) {
+			return '<strong>' + txt + '</strong>';
+		};
+
+		//插件的defaults
+		$.fn.highlight.defaults = {
+			foreground: 'red',
+			background: 'yellow'
+		};
+
+
+	})(jQuery);
+
+
+
+	$(function () {
+
+		$('.div1').highlight();
+		$('.div3').highlight({
+			background: '#f80'
+		});
+
+		$('.highlight').highlight();
+
+	});
+	</script>	
+</head>
+<body>
+	<div class="div1">hehe</div>
+	<div class="div2 highlight {foreground: '#36f', background: '#000'}">hehe</div>
+	<div class="div2 highlight {background: '#f0f'}">hehe</div>
+	<div class="div2 highlight {foreground: '#36f'}">hehe</div>
+	<div class="div3">hehe</div>
+	<div class="div4">hehe</div>
+	<div class="div1">hehe</div>
+</body>
+</html>
