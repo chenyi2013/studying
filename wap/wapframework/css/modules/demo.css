@@ -1,0 +1,81 @@
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  min-width: 200px;
+  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}
+.header {
+  height: 50px;
+  background-color: #333;
+  text-align: center;
+}
+.header .logo {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  vertical-align: middle;
+}
+.mainNav {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.mainNav .menu {
+  overflow: hidden;
+}
+.mainNav .menu li {
+  float: left;
+  width: 50%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #e73736;
+  text-align: center;
+}
+.mainNav .menu li a {
+  display: block;
+  color: #fff;
+}
+.mainNav .menu .m1 {
+  background-color: #e73736;
+}
+.mainNav .menu .m2 {
+  background-color: #36f;
+}
+.mainNav .menu .m3 {
+  background-color: #f80;
+}
+.mainNav .menu .m4 {
+  background-color: #333;
+}
+.content {
+  min-height: 300px;
+}
+.content .item-lis li {
+  margin-top: 20px;
+  height: 100px;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+.content .item-lis .item-pic {
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+}
+.content .item-lis .item-tit {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #333;
+}
+.content .item-lis .item-des {
+  font-size: 12px;
+  color: #666;
+}
+.footer {
+  margin-top: 20px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
