@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>对象级别的插件开发</title>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+
+
+		//方式1
+		(function ($) {
+			$.fn.global01 = function () {
+				alert('对象级别的差件开发01');
+			}
+			$.fn.global02 = function () {
+				alert('对象级别的差件开发02');
+			}
+
+			//添加命名空间
+/*			$.fn.gallop = {
+				global01: function () {
+					alert('对象级别的差件开发01');
+				},
+				global02: function () {
+					alert('对象级别的差件开发02');
+				}				
+			}*/
+		})(jQuery);
+
+
+		//方式2
+/*		(function ($) {
+			$.fn.extend({
+				global01: function () {
+					alert('对象级别的差件开发01');
+				},
+				global02: function () {
+					alert('对象级别的差件开发02');
+				}
+			});
+		})(jQuery);*/
+
+
+
+		$(function () {
+
+			$('.div1').global01();
+			$('.div2').global02();			
+
+			// $('.div1').gallop.global01();
+			// $('.div2').gallop.global02();
+
+		});
+	</script>
+</body>
+</html>
