@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 body {
   background-color: #f1f1f1;
 }
+=======
+>>>>>>> a45c1d52fbbcecec1d3273e6da41566faf645f63
 .container {
   margin: 0 auto;
   max-width: 960px;
   min-width: 200px;
   font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+<<<<<<< HEAD
   background-color: #f1f1f1;
 }
 .header {
@@ -19,12 +23,21 @@ body {
   font-size: 22px;
   font-weight: bold;
 }
+=======
+}
+.header {
+  height: 50px;
+  background-color: #333;
+  text-align: center;
+}
+>>>>>>> a45c1d52fbbcecec1d3273e6da41566faf645f63
 .header .logo {
   margin-top: 10px;
   width: 100px;
   height: 30px;
   vertical-align: middle;
 }
+<<<<<<< HEAD
 .slide img {
   width: 100%;
   height: 150px;
@@ -47,6 +60,22 @@ body {
   background-color: #e73736;
   text-align: center;
   font-size: 14px;
+=======
+.mainNav {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.mainNav .menu {
+  overflow: hidden;
+}
+.mainNav .menu li {
+  float: left;
+  width: 50%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #e73736;
+  text-align: center;
+>>>>>>> a45c1d52fbbcecec1d3273e6da41566faf645f63
 }
 .mainNav .menu li a {
   display: block;
@@ -62,6 +91,7 @@ body {
   background-color: #f80;
 }
 .mainNav .menu .m4 {
+<<<<<<< HEAD
   background-color: #3c0;
 }
 .mainNav .menu:after {
@@ -93,11 +123,33 @@ body {
 .content .item-lis .item-tit {
   margin-top: 10px;
   line-height: 20px;
+=======
+  background-color: #333;
+}
+.content {
+  min-height: 300px;
+}
+.content .item-lis li {
+  margin-top: 20px;
+  height: 100px;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+.content .item-lis .item-pic {
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+}
+.content .item-lis .item-tit {
+  margin-top: 10px;
+>>>>>>> a45c1d52fbbcecec1d3273e6da41566faf645f63
   font-weight: normal;
   font-size: 16px;
   color: #333;
 }
 .content .item-lis .item-des {
+<<<<<<< HEAD
   display: none;
   max-height: 55px;
   padding-right: 10px;
@@ -124,11 +176,17 @@ body {
 .content .item-lis .item-like {
   display: block;
   margin-top: 3px;
+=======
+>>>>>>> a45c1d52fbbcecec1d3273e6da41566faf645f63
   font-size: 12px;
   color: #666;
 }
 .footer {
+<<<<<<< HEAD
   margin-top: 15px;
+=======
+  margin-top: 20px;
+>>>>>>> a45c1d52fbbcecec1d3273e6da41566faf645f63
   height: 30px;
   line-height: 30px;
   text-align: center;
