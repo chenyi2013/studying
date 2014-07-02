@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul li {
+		width: 200px;
+		/*background-color: #666;*/
+	}
+
+	ul li img {
+		width: 200px;
+		height: 200px;
+		vertical-align: middle;
+	}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/001.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/002.jpg" src="images/loading-lis.gif"></li>
+		<li><img class="lazy" data-src="images/003.jpg" src="images/loading-lis.gif"></li>
+	</ul>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+		$(function () {
+
+			var img_lazy = $('img.lazy');
+			var aLazy = [];
+
+			for (var i = 0, len = img_lazy.length; i < len; i++) {
+				aLazy.push(img_lazy[i]);
+			}
+
+			console.log(aLazy.length);
+
+			//填充图片
+			var temp_src = 'images/loading-lis.gif';
+			//高度调节值
+			var heigher = 0;
+
+
+			//console.log('浏览器窗口高度:'+$(window).height());
+/*			$(window).scroll(function () {
+				console.log('滚动高度:'+$(window).scrollTop());
+			});*/
+
+
+			$(window).scroll(function () {
+				lazyLoad();
+			});
+
+			function lazyLoad () {
+				for (var i = 0, len = aLazy.length; i < len; i++) {
+						//var _this = aLazy[i];
+						//console.log($(aLazy[i]).offset().top);
+						//$(_this).parent().append("本图片顶部到页面顶部的距离" + $(_this).offset().top );
+
+						if ( $(aLazy[i]).attr('src') == temp_src ) {
+							(function changeSrc(i) {
+									if ( ( $(aLazy[i]).offset().top - $(window).scrollTop() ) < ( $(window).height() + heigher) ) {
+										var data_src = $(aLazy[i]).attr('data-src');
+										$(aLazy[i]).css({'opacity':'0'}).attr('src', data_src).fadeTo('slow', 1);
+										console.log('显示第'+i+'个图片');
+									}
+							})(i);
+						} else {
+							continue;
+						}
+				}				
+			}
+			lazyLoad();
+
+
+		});
+
+	</script>
+</body>
+</html>
