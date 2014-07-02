@@ -59,3 +59,24 @@ Quit the server with CONTROL-C.
 [20/May/2014 04:59:07] "GET / HTTP/1.1" 404 2110
 [20/May/2014 04:59:10] "GET / HTTP/1.1" 404 2110
 [20/May/2014 04:59:10] "GET / HTTP/1.1" 404 2110
+Validating models...
+
+0 errors found
+July 02, 2014 - 09:57:09
+Django version 1.6.4, using settings 'blog.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Error: That IP address can't be assigned-to.
+[02/Jul/2014 10:00:11] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:12] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:12] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:12] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:13] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:13] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:13] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:14] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:14] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:15] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:15] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 10:00:15] "GET / HTTP/1.1" 404 2114
+[02/Jul/2014 11:04:04] "GET / HTTP/1.1" 404 2114
