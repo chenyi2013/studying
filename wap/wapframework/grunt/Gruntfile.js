@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 			compile: {
 				files: {
 					'../css/modules/base.css': '../less/modules/base.less',
+					'../css/modules/header.css': '../less/modules/header.less',
 					'../css/modules/demo.css': '../less/modules/demo.less'
 				}
 			}
