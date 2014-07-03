@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>基础</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		.tab .tabMenu {
+			margin-right: 10px;
+		}
+
+		.tab .tabMenu-active {
+			color: #f5422a;
+		}
+
+		.tab .conts {
+			overflow: hidden;
+		}
+
+		.tab .tabCont {
+			display: none;
+			width: 300px;
+			height: 200px;
+			border: 1px solid #e1e1e1;
+		}
+
+		.tab .tabCont-active {
+			display: block;
+		}
+
+	</style>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+
+		/*
+		* jQuery选项卡插件
+		* 参数说明：
+		* menuActive: 控制选项卡菜单高亮的类
+		* action: 选项卡切换触发的事件: click(默认), mouseover, mouseenter
+		* 
+		* css固定类：
+		* tabMenu: 选项卡菜单
+		* tabCont: 选项卡内容
+		* 详情请参考demo
+		*
+		*/
+
+		(function () {
+			$.fn.tab = function (options) {
+				var opts = $.extend({}, $.fn.tab.defaults, options),
+					tabMenu = $('.tabMenu', this),
+					tabCont = $('.tabCont', this),
+					menuActive = opts.menuActive;
+				if ( opts.action == 'mouseover' || opts.action == 'mouseenter' ) {
+					var timer = null;
+					tabMenu.hover(function () {
+						var $this = $(this);
+						timer = setTimeout(function () {
+							$this.addClass(menuActive).siblings().removeClass(menuActive);
+							tabCont.hide().eq($this.index()).show();
+						}, 200);
+					}, function () {
+						clearTimeout(timer);
+					});
+				} else {
+					tabMenu.on(opts.action, function () {
+						var $this = $(this);
+						$this.addClass(menuActive).siblings().removeClass(menuActive);
+						tabCont.hide().eq($this.index()).show();
+					});
+				}
+			};
+
+			$.fn.tab.defaults = {
+				action: 'click',
+				menuActive: 'active'
+			};
+		})(jQuery);
+
+		$(function () {
+			$('.tab1').tab({
+				menuActive: 'tabMenu-active', //控制选项卡菜单高亮的类
+				action: 'mouseover'//选项卡切换触发的事件: click(默认), mouseover, mouseenter
+			});
+			$('.tab2').tab({
+				menuActive: 'tabMenu-active'
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="tab tab1">
+		<p>
+			<a class="tabMenu tabMenu-active" href="javascript:;">选项卡1</a>
+			<a class="tabMenu" href="javascript:;">选项卡2</a>
+			<a class="tabMenu" href="javascript:;">选项卡3</a>
+		</p>
+		<div class="conts">
+			<div class="tabCont tabCont-active">11111111111</div>
+			<div class="tabCont">222222</div>
+			<div class="tabCont">3333333333333333333333333</div>
+		</div>
+	</div>
+
+	<div class="tab tab2">
+		<p>
+			<a class="tabMenu tabMenu-active" href="javascript:;">选项卡1</a>
+			<a class="tabMenu" href="javascript:;">选项卡2</a>
+			<a class="tabMenu" href="javascript:;">选项卡3</a>
+		</p>
+		<div class="conts">
+			<div class="tabCont tabCont-active">11111111111</div>
+			<div class="tabCont">222222</div>
+			<div class="tabCont">3333333333333333333333333</div>
+		</div>
+	</div>
+</body>
+</html>
