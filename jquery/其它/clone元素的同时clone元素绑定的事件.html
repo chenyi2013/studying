@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta chearset="utf-8" />
+	<title>jquery表格隔行变色</title>
+	<style type="text/css">
+	.toggleclasstest {
+		color: #f00;
+	}
+	</style>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		(function ($) {
+			$(function () {
+				$(".uList1 li").click(function () {
+					alert($(this).index());
+				});
+
+				//$(".uList1 li:last").clone().appendTo($(".uList1"));
+				$(".uList1 li:last").clone(true).appendTo($(".uList1"));//参数true
+				
+				$('.tc').click(function () {
+					$(this).toggleClass('toggleclasstest');					
+				});
+			});
+		})(jQuery);
+	</script>
+</head>
+<body>	
+	<ul class="uList1">
+		<li>1列表</li>
+		<li>2列表</li>
+		<li>3列表</li>
+	</ul>
+	<p class="tc toggleclasstest">ssafsafd</p>
+</body>
+</html>
