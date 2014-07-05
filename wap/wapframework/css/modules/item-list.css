@@ -1,0 +1,61 @@
+.item-lis {
+  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}
+.item-lis .a-li:hover li {
+  background-color: #f9f9f9;
+  box-shadow: 1px 1px 3px #999;
+}
+.item-lis li {
+  margin-top: 10px;
+  height: 120px;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px #ccc;
+  overflow: hidden;
+}
+.item-lis li .cont {
+  position: relative;
+  height: 120px;
+}
+.item-lis .item-pic {
+  float: left;
+  margin-right: 10px;
+  width: 120px;
+  height: 120px;
+}
+.item-lis .item-tit {
+  margin-top: 10px;
+  line-height: 20px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #333;
+}
+.item-lis .item-des {
+  display: none;
+  max-height: 55px;
+  padding-right: 10px;
+  overflow: hidden;
+  font-size: 12px;
+  color: #666;
+}
+.item-lis .item-meta {
+  position: absolute;
+  left: 130px;
+  bottom: 15px;
+  height: 45px;
+}
+.item-lis .item-price {
+  display: block;
+  font-size: 22px;
+  color: #e73736;
+}
+.item-lis .item-price .item-price-ori {
+  margin-left: 5px;
+  font-size: 12px;
+  color: #ccc;
+}
+.item-lis .item-like {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  color: #666;
+}

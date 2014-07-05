@@ -1,0 +1,57 @@
+
+@import "variables.less";
+
+//
+// colorlump mainNav
+// ========================
+//
+
+.mainNav {
+	margin-top: 15px;
+	font-size: 0;
+	font-family: @ft;
+	padding: 0 2%;
+
+	.menu {
+		text-align: justify;
+		li {
+			display: inline-block;
+			// margin: 0 1%;
+			width: 23%;
+			height: 40px;
+			line-height: 40px;
+			background-color: #e73736;
+			text-align: center;
+			font-size: 14px;
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			a {
+				display: block;
+				color: #fff;
+			}
+		}
+		.m1 {
+			background-color: #e73736;
+		}
+		.m2 {
+			background-color: #36f;
+		}
+		.m3 {
+			background-color: #f80;
+		}
+		.m4 {
+			background-color: #3c0;
+		}
+		overflow: hidden;
+	}
+
+	.menu:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}
+
+}

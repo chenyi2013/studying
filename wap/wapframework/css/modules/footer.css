@@ -1,0 +1,15 @@
+/*
+* footer.less
+* =========================
+*/
+.footer {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
+  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-size: 12px;
+}
+.footer a {
+  color: #36f;
+}
