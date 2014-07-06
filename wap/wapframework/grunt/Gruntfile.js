@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 				files: {
 					'../css/modules/base.css': '../less/modules/base.less',
 					'../css/modules/header.css': '../less/modules/header.less',
+					'../css/modules/menu.css': '../less/modules/menu.less',
 					'../css/modules/footer.css': '../less/modules/footer.less',
 					'../css/modules/colorlump.css': '../less/modules/colorlump.less',
 					'../css/modules/slide.css': '../less/modules/slide.less',

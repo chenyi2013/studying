@@ -27,16 +27,17 @@
 		</div>
 	</header>
 
-	<script> 
-	    window.onload=function(){ 
-	        if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) { 
-	            bodyTag = document.getElementsByTagName('body')[0]; 
-	            bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px'; 
-	        } 
-	        setTimeout(function() { 
-	            window.scrollTo(0, 1) 
-	        }, 0); 
-	    }; 
-	</script>
+<script> 
+/*	//取消浏览器的所有事件，使得active的样式在手机上正常生效
+	document.addEventListener("touchstart",function(){
+		return false;
+	},true);
+
+
+	// 禁止选择
+	document.oncontextmenu=function(){
+		return false;
+	};*/
+</script>
 </body>
 </html>
