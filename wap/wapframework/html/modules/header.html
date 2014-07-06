@@ -6,16 +6,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 
 	<link rel="stylesheet" type="text/css" href="../../css/modules/base.css">
 	<link rel="stylesheet" type="text/css" href="../../css/modules/header.css">
+
+	<style>
+		body {
+			height: 1000px;
+		}
+	</style>
 
 </head>
 <body>
 	<header class="header">
 		<a class="btn btn-menu" href="javascript:;">菜单</a>
-		<a class="logo" href="#"><!-- <img class="logo" src="http://www.jiae.com/static/images/common/logo.png" /> -->加意新品</a>
 		<a class="btn btn-cart" href="javascript:;">Cart</a>
+		<div class="logo">
+			<h1 class="tit"><a href="#"><!-- <img class="logo" src="http://www.jiae.com/static/images/common/logo.png" /> -->加意新品</a></h1>	
+		</div>
 	</header>
+
+	<script> 
+	    window.onload=function(){ 
+	        if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) { 
+	            bodyTag = document.getElementsByTagName('body')[0]; 
+	            bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px'; 
+	        } 
+	        setTimeout(function() { 
+	            window.scrollTo(0, 1) 
+	        }, 0); 
+	    }; 
+	</script>
 </body>
 </html>
