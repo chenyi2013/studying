@@ -26,7 +26,6 @@
 
 
 		.content {
-			/*display: none;*/
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -52,45 +51,15 @@
 			color: #f00;
 		}
 
-/*		.menuShow {
-			-webkit-transition: all 0.3s;
-			-webkit-transform: translate(150px, 0);
-			left: 150px;
-		}*/
-
-		/*// menu show*/
-/* 		html, body {
-	overflow: hidden;
-} */
-
 		.menuShow,
 		.menuShow body {
-			width: 100%;
-			height: 100%;
-			overflow-x: hidden;
-		}
-
-		.menuShow body {
-			position: relative;
-		}
-
-		.menuShow .menu {
-			display: block;
-			/*z-index: 1;*/
+			overflow: hidden;
 		}
 
 		.menuShow .content {
-			position: absolute;
-			z-index: 0;
-/* 			left: 100%;
-margin-left: -40%; */
-			margin-left: 60%;
+			/*z-index: 0;*/
+			margin-left: 70%;
 		}
-
-/*		.menuHide {
-			-webkit-transition: all 0.3s;
-			-webkit-transform: translate(0, 0);
-		}*/
 	</style>
 
 </head>
@@ -145,156 +114,49 @@ margin-left: -40%; */
 		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
 		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
 	</div>
+	<div class="menumask"></div>
 
 <script src="../../js/lib/zepto.min.js"></script>
-<script src="../../js/lib/touch.js"></script>
-<script src="../../js/lib/fx.js"></script>
+<!-- <script src="../../js/lib/touch.js"></script> -->
+<!-- <script src="../../js/lib/fx.js"></script> -->
 <script>
 	$(function () {
 
 		var content = $('.content');
 		var menu = $('.menu');
+		var menumask = $('.menumask');
+
+		//test
+		menu.on('click', function () {
+			console.log('menuclick');
+		});
+		menumask.on('click', function () {
+			console.log('menumaskclick');
+		})
+
+
 		// menu show
 		$('.btn-menu-toggle').on('touchstart', function (e) {
-/*			$('.menu').css({
-				'display': 'block'
-			});
-			$('.content').css({
-				'zIndex': 2
-			});*/
-/*			$('body').css({
-				'position':'relative'
-			});
-			content.css({
-				'position': 'absolute'
-			});
-			$('.content').animate({'left': '100%'}, 600, function () {
-				$('html').addClass('menuShow');	
-			});*/
 			$('html').addClass('menuShow');
 			setTimeout(function () {
-				menu.css({
-					'zIndex': '1'
+				menumask.show();
+				content.css({
+					'zIndex': 0
 				});
 			}, 500);
 			e.preventDefault();
 		});
 
 
-/*		$('.menu').swipeLeft(function () {
-			$('.menu').css({
-				'zIndex': 0
-			});
-			$('html').removeClass('menuShow');
-		});*/
-
-		$('.menu').on('touchstart', function (e) {
-			$('.menu').css({
-				'zIndex': 0,
-				'display': 'block'
-			});
-			$('html').removeClass('menuShow');
-			e.preventDefault();
-		});
-
-/*		var content = $('.content'),
-			menu = $('.menu11');
-
-		console.log($(window).height());
-
-		// menu show
-		$('.btn-menu-toggle').click(function () {
-			if (!menu.hasClass('menuShow')) {
-				menu.addClass('menuShow');
-				content.addClass('contentSlide');
-	
-				content.css({
-					'height': $(window).height()
-				});
-
-				$('html, body').css({
-					'overflow-x': 'auto',
-					'overflow-y': 'hidden'
-				});
-			}
-		});
-
 		// menu hide
-		menu.click(function () {
-			if (menu.hasClass('menuShow')) {
-				console.log('menu click');
-				menu.removeClass('menuShow');
-				content.removeClass('contentSlide');
-			}
-		});
-
-		menu.swipeLeft(function () {
-			if (menu.hasClass('menuShow')) {
-				console.log('menu click');
-				menu.removeClass('menuShow');
-				content.removeClass('contentSlide');
-			}			
-		});
-
-		menu.swipeUp(function (e) {
-			e.preventDefault();
-			e.stopPropagation();
-		});
-
-		menu.swipeDown(function (e) {
-			e.preventDefault();	
-			e.stopPropagation();	
-		});*/
-
-/*		function preventScroll (e) {
-			var e = e||window.event;
-			if (e.preventDefault) {
-				e.preventDefault();
-			} else {
-				e.returnValue = false;
-			}
-		}*/
-
-
-/*		window.onscroll = function (e) {
-			e.preventDefault();
-			e.stopPropagation();
-		};*/
-
-/*		$('.content').swipe(function () {
-			console.log('触摸了content');
-		});
-
-		$('.menu').swipe(function () {
-			console.log('触摸了menu');
-			$('.content').off('swipe');
-		});*/
-
-
-/*		$(window).scroll(function (e) {
-			//console.log('滚动啦');
-			//console.log($.fn.animate());
-			// $('.content').animate({left: 0}, 200);
-			// $('html, body').css({'left': 0, 'top': 0});
-			// $('html, body').scrollTop(0).scrollLeft(0);
-			//$('body').scrollLeft(0);
-		});*/
-
-
-/*
-		content.swipeRight(function () {
-
-			$('.content-test').addClass('menuShow').removeClass('menuHide');
-
-			content.click(function () {
-				$('.content-test').addClass('menuHide').removeClass('menuShow');
+		$('.menumask').on('touchstart', function (e) {
+			content.css({
+				'zIndex': 2,
 			});
-
+			menumask.hide();
+			$('html').removeClass('menuShow');
+			e.preventDefault();
 		});
-
-		content.swipeLeft(function () {
-			$('.content-test').addClass('menuHide').removeClass('menuShow');
-		});*/
 	});
 </script>
 </body>
