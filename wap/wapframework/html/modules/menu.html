@@ -14,14 +14,29 @@
 
 	<style>
 
+		html, body {
+			width: 100%;
+			height: 100%;
+			/*overflow-x: hidden;*/
+		}
+
+		body {
+			position: relative;
+		}
+
 
 		.content {
 			/*display: none;*/
+			position: absolute;
+			top: 0;
+			left: 0;
 			z-index: 2;
 			width: 100%;
 			min-height: 100%;
-			background-color: #fff;
+			background-color: #ccc;
 			color: #000;
+			/*-webkit-transition: all 0.5s;*/
+			-webkit-transition: left 0.5s ease, right 0.5s ease, margin 0.5s ease;
 		}
 
 		.content .info {
@@ -44,11 +59,15 @@
 		}*/
 
 		/*// menu show*/
+/* 		html, body {
+	overflow: hidden;
+} */
+
 		.menuShow,
 		.menuShow body {
 			width: 100%;
 			height: 100%;
-			overflow: hidden;
+			overflow-x: hidden;
 		}
 
 		.menuShow body {
@@ -57,14 +76,15 @@
 
 		.menuShow .menu {
 			display: block;
-			z-index: 1;
+			/*z-index: 1;*/
 		}
 
 		.menuShow .content {
 			position: absolute;
 			z-index: 0;
-			left: 100%;
-			margin-left: -40%;
+/* 			left: 100%;
+margin-left: -40%; */
+			margin-left: 60%;
 		}
 
 /*		.menuHide {
@@ -132,39 +152,49 @@
 <script>
 	$(function () {
 
+		var content = $('.content');
+		var menu = $('.menu');
 		// menu show
-		$('.btn-menu-toggle').click(function () {
+		$('.btn-menu-toggle').on('touchstart', function (e) {
 /*			$('.menu').css({
 				'display': 'block'
 			});
 			$('.content').css({
 				'zIndex': 2
+			});*/
+/*			$('body').css({
+				'position':'relative'
 			});
-			$('.content').animate({'left': '100%', 'margin-left': '-40%'}, 200, function () {
+			content.css({
+				'position': 'absolute'
+			});
+			$('.content').animate({'left': '100%'}, 600, function () {
 				$('html').addClass('menuShow');	
 			});*/
-			$('html').addClass('menuShow');	
+			$('html').addClass('menuShow');
+			setTimeout(function () {
+				menu.css({
+					'zIndex': '1'
+				});
+			}, 500);
+			e.preventDefault();
 		});
 
-		$('.menu').click(function () {
-/*			$('.menu').css({
+
+/*		$('.menu').swipeLeft(function () {
+			$('.menu').css({
 				'zIndex': 0
 			});
-			$('.content').animate({'left': 0, 'margin-left': 0}, 200, function () {
-				$('html').removeClass('menuShow');	
-			});*/
-
-			$('html').removeClass('menuShow');			
-		});
-
-		$('.menu').swipeLeft(function () {
-/*			$('.menu').css({
-				'zIndex': 0
-			});
-			$('.content').animate({'left': 0, 'margin-left': 0}, 200, function () {
-				$('html').removeClass('menuShow');			
-			});*/
 			$('html').removeClass('menuShow');
+		});*/
+
+		$('.menu').on('touchstart', function (e) {
+			$('.menu').css({
+				'zIndex': 0,
+				'display': 'block'
+			});
+			$('html').removeClass('menuShow');
+			e.preventDefault();
 		});
 
 /*		var content = $('.content'),
