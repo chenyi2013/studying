@@ -12,42 +12,64 @@
 	<link rel="stylesheet" type="text/css" href="../../css/modules/menu.css">
 
 	<style>
-		body {
-			height: 1000px;
+		html, body {
+			/*height: 1000px;*/
 			overflow-x: hidden;
 		}
 
-		.content-test {
+		.content {
 			position: relative;
 			z-index: 2;
-			/*left: 150px;*/
 			width: 100%;
-			height: 1000px;
-			background-color: #ccc;
+			min-height: 100%;
+			background-color: #fff;
 			color: #000;
+
+			/*white-space: nowrap;*/
+
+			overflow: hidden;
+
 		}
 
-		.menuShow {
-			-webkit-transition: all 0.3s;
-			-webkit-transform: translate(150px, 0);
+		.content .info {
+			width: 100%;
+			background-color: #f80;
+
+			/*white-space: default;*/
 		}
 
-		.menuHide {
-			-webkit-transition: all 0.3s;
-			-webkit-transform: translate(0, 0);
-		}
-
-		.content-test a {
+		.content a {
 			color: #36f;
 		}
+
+		.content a:hover {
+			color: #f00;
+		}
+
+/*		.menuShow {
+			-webkit-transition: all 0.3s;
+			-webkit-transform: translate(150px, 0);
+			left: 150px;
+		}*/
+
+		.contentSlide {
+			left: 100%;
+			margin-left: -40%;
+		}
+
+/*		.menuHide {
+			-webkit-transition: all 0.3s;
+			-webkit-transform: translate(0, 0);
+		}*/
 	</style>
 
 </head>
 <body>
+<!--  menuShow -->
 	<nav class="menu">
 		<ul class="menu-list">
-			<li class="active"><a href="#">今日特卖</a></li>
-			<li><a href="#">最新发布</a></li>
+			<li class="tit"><a href="#">加意新品</a></li>
+			<li class="active"><a href="#">最新发布</a></li>
 			<li><a href="#">新品抢购</a></li>
 			<li><a href="#">新品预热</a></li>
 			<li><a href="#">礼品指南</a></li>
@@ -55,31 +77,135 @@
 			<li><a href="#">关于加意</a></li>
 			<li><a href="#">关于加意</a></li>
 			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
-			<li><a href="#">关于加意</a></li>
 		</ul>
 	</nav>
-	<div class="content-test" id="content-test"><a class="btn-menu-toggle" href="javascript:;">菜单</a>这里是内容</div>
+	<!--  contentSlide -->
+	<div class="content">
+		<h1><a class="btn-menu-toggle" href="javascript:;">显示菜单</a>这里是内容</h1>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+		<div class="info">了开始的积分垃圾法律卡是的积分， 看到撒了附近</div>
+	</div>
 
 <script src="../../js/lib/zepto.min.js"></script>
 <script src="../../js/lib/touch.js"></script>
+<script src="../../js/lib/fx.js"></script>
 <script>
 	$(function () {
-		var content = $('.content-test');
+		var content = $('.content'),
+			menu = $('.menu');
+
+		console.log($(window).height());
+
+		// menu show
 		$('.btn-menu-toggle').click(function () {
-			if (!content.hasClass('menuShow')) {
-				$('.content-test').addClass('menuShow').removeClass('menuHide');
-			} else {
-				$('.content-test').addClass('menuHide').removeClass('menuShow');
+			if (!menu.hasClass('menuShow')) {
+				menu.addClass('menuShow');
+				content.addClass('contentSlide');
+	
+				content.css({
+					'height': $(window).height()
+				});
+
+				$('html, body').css({
+					'overflow-x': 'auto',
+					'overflow-y': 'hidden'
+				});
 			}
 		});
 
+		// menu hide
+		menu.click(function () {
+			if (menu.hasClass('menuShow')) {
+				console.log('menu click');
+				menu.removeClass('menuShow');
+				content.removeClass('contentSlide');
+			}
+		});
+
+		menu.swipeLeft(function () {
+			if (menu.hasClass('menuShow')) {
+				console.log('menu click');
+				menu.removeClass('menuShow');
+				content.removeClass('contentSlide');
+			}			
+		});
+
+		menu.swipeUp(function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+		});
+
+		menu.swipeDown(function (e) {
+			e.preventDefault();	
+			e.stopPropagation();	
+		});
+
+/*		function preventScroll (e) {
+			var e = e||window.event;
+			if (e.preventDefault) {
+				e.preventDefault();
+			} else {
+				e.returnValue = false;
+			}
+		}*/
+
+
+/*		window.onscroll = function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+		};*/
+
+/*		$('.content').swipe(function () {
+			console.log('触摸了content');
+		});
+
+		$('.menu').swipe(function () {
+			console.log('触摸了menu');
+			$('.content').off('swipe');
+		});*/
+
+
+/*		$(window).scroll(function (e) {
+			//console.log('滚动啦');
+			//console.log($.fn.animate());
+			// $('.content').animate({left: 0}, 200);
+			// $('html, body').css({'left': 0, 'top': 0});
+			// $('html, body').scrollTop(0).scrollLeft(0);
+			//$('body').scrollLeft(0);
+		});*/
+
+
+/*
 		content.swipeRight(function () {
 
 			$('.content-test').addClass('menuShow').removeClass('menuHide');
@@ -90,11 +216,9 @@
 
 		});
 
-
-
 		content.swipeLeft(function () {
 			$('.content-test').addClass('menuHide').removeClass('menuShow');
-		});
+		});*/
 	});
 </script>
 </body>

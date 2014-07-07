@@ -3,8 +3,12 @@
   z-index: 0;
   width: 100%;
   height: 100%;
-  background-color: #333;
   font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}
+.menu .menu-list {
+  width: 60%;
+  height: 100%;
+  background-color: #333;
 }
 .menu .menu-list li {
   height: 50px;
@@ -18,6 +22,22 @@
   display: block;
   color: #fff;
 }
+.menu .menu-list .tit {
+  text-indent: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+.menu .menu-list .tit a {
+  color: #f5422a;
+}
+.menu .menu-list li:hover,
 .menu .menu-list .active {
   background-color: #666;
+}
+.menu .menu-list .tit:hover {
+  background-color: #333;
+}
+.menuShow {
+  z-index: 9999;
 }
