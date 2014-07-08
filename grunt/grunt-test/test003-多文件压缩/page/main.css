@@ -1,0 +1,16 @@
+/*@import 'style2.css';*/
+.header {
+	margin: 0 auto;
+	width: 200px;
+	height: 100px;
+}
+
+/*#test {
+	width: auto;
+}*/
+.footer {
+	margin: 0 auto;
+	width: 1200px;
+	height: 300px;
+	background-color: #999;
+}

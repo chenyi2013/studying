@@ -4,7 +4,10 @@
 	"devDependencies": {
 		"grunt": "*",
 		"grunt-contrib-less": "*",
-		"grunt-css": ">0.0.0",
+		"grunt-contrib-concat": "*",
+		"grunt-css": "*",
+		"grunt-contrib-jshint": "*",
+		"grunt-contrib-uglify": "*",
 		"grunt-contrib-watch": "*"
 	}
 }
