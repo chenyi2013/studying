@@ -1,6 +1,22 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		less: {
+			compile: {
+				options: {
+					paths: ['test/css'],
+					// cleancss 是否把编译后的css压缩
+					// cleancss: true,
+					modifyVars: {
+						imgPath: '"http://beyondweb.cn/images"',
+						bgColor: 'red'
+					}
+				},
+				files: {
+					'module/style1.css': ['module/sidebar.less', 'module/mod-title.less']
+				}
+			}
+		},
 		concat: {
 			cssfiles: {
 				src: ['module/style1.css', 'module/style2.css'],
@@ -56,14 +72,26 @@ module.exports = function (grunt) {
 				src: '*.js',
 				dest: 'dest'
 			}
+		},
+		watch: {
+			scripts: {
+				files: ['module/*.less', 'module/*.js'],
+				tasks: ['default'],
+				options: {
+					//event: ['added', 'deleted']
+				}
+			}
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-css');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['concat', 'csslint', 'cssmin', 'uglify', 'jshint']);
+	// grunt.registerTask('test', ['jshint']);
+	grunt.registerTask('default', ['less', 'concat', 'csslint', 'cssmin', 'uglify', 'jshint', 'watch']);
 
 };

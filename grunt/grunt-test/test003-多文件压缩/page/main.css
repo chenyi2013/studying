@@ -1,13 +1,18 @@
-/*@import 'style2.css';*/
-.header {
-	margin: 0 auto;
-	width: 200px;
-	height: 100px;
+.sidebar {
+  width: 200px;
+}
+.sidebar dt {
+  font-weight: bold;
 }
 
-/*#test {
-	width: auto;
-}*/
+.mod-title {
+  height: 100px;
+  line-height: 100px;
+}
+.mod-title a {
+  color: #333;
+}
+
 .footer {
 	margin: 0 auto;
 	width: 1200px;
