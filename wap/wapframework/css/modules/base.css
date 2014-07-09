@@ -54,6 +54,8 @@ input[type="password"],
 textarea {
   outline-style: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 textarea {
   resize: none;
@@ -85,13 +87,13 @@ a {
   visibility: hidden;
   display: block;
   font-size: 0;
-  content: " ";
+  content: '';
   clear: both;
   height: 0;
 }
-.clearfix {
-  *zoom: 1;
-}
+/*.clearfix {
+	*zoom: 1;
+}*/
 .fl {
   float: left;
 }
