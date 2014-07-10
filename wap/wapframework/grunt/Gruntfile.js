@@ -12,6 +12,7 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
+					//modules
 					'../css/modules/base.css': '../less/modules/base.less',
 					'../css/modules/header.css': '../less/modules/header.less',
 					'../css/modules/menu.css': '../less/modules/menu.less',
@@ -19,14 +20,25 @@ module.exports = function (grunt) {
 					'../css/modules/colorlump.css': '../less/modules/colorlump.less',
 					'../css/modules/slide.css': '../less/modules/slide.less',
 					'../css/modules/item-list.css': '../less/modules/item-list.less',
-					'../css/modules/demo.css': '../less/modules/demo.less'
+
+					//layout common
+					'../css/pages/layout-common.css': '../less/pages/layout-common.less',
+
+					//home
+					'../css/pages/layout-home.css': '../less/pages/layout-home.less'
+
+					//list page						
 				}
 			}
 		},
 		concat: {
-			cssfiles: {
-				src: '../css/modules/*.css',
-				dest: '../css/common/concattest.css'
+			css_global: {
+				src: ['../css/modules/base.css', '../css/modules/header.css', '../css/modules/menu.css', '../css/modules/slide.css', '../css/modules/item-list.css', '../css/modules/footer.css', '../css/pages/layout-common.css'],
+				dest: '../css/common/global.css'
+			},
+			css_home: {
+				src: ['../css/modules/colorlump.css', '../css/pages/layout-home.css'],
+				dest: '../css/pages/home.css'
 			},
 			jsfiles: {
 				src: '../js/*.js',
@@ -48,9 +60,13 @@ module.exports = function (grunt) {
 			options: {
 				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */'
 			},
-			files: {
-				src: '../css/modules/demo.css',
-				dest: '../css/modules/demo.min.css'
+			global: {
+				src: '../css/common/global.css',
+				dest: '../css/common/global.min.css'
+			},
+			home: {
+				src: '../css/pages/home.css',
+				dest: '../css/pages/home.min.css'
 			}
 		},
 		jshint: {
@@ -76,8 +92,9 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['../less/modules/*.less', '../css/modules/*.css'],
-				tasks: ['less', 'cssmin'],
+				files: ['../less/modules/*.less', '../less/pages/*.less'],
+				// tasks: ['less', 'cssmin'],
+				tasks: ['default'],
 				options: {
 					//event: ['added', 'deleted']
 				}
@@ -92,5 +109,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['less', 'concat', 'csslint', 'cssmin', 'jshint', 'uglify', 'watch']);
-}
+//	grunt.registerTask('default', ['less', 'concat', 'csslint', 'cssmin', 'jshint', 'uglify', 'watch']);
+	grunt.registerTask('default', ['less', 'concat', 'cssmin', 'jshint', 'uglify', 'watch']);
+};

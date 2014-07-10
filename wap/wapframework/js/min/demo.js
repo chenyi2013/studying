@@ -1,0 +1,1 @@
+/*!wapFramework 2014-07-10*/$(function(){console.log($(".item-lis li"))});
