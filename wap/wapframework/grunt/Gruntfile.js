@@ -41,8 +41,8 @@ module.exports = function (grunt) {
 				dest: '../css/pages/home.css'
 			},
 			jsfiles: {
-				src: '../js/*.js',
-				dest: '../js/concattest.js'
+				//src: '../js/*.js',
+				//dest: '../js/concattest.js'
 			}
 		},
 		csslint: {
@@ -70,7 +70,7 @@ module.exports = function (grunt) {
 			}
 		},
 		jshint: {
-			files: ['Gruntfile.js', '../js/*.js'],
+			//files: ['Gruntfile.js', '../js/*.js'],
 			options: {
 				globals: {
 					jQuery: true,
@@ -84,10 +84,10 @@ module.exports = function (grunt) {
 				banner: '/*!<%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %>*/'
 			},
 			build: {
-				expand: true,
-				cwd: '../js/',
-				src: '*.js',
-				dest: '../js/min/'
+				//expand: true,
+				//cwd: '../js/',
+				src: '../js/common.js',
+				dest: '../js/common.min.js'
 			}
 		},
 		watch: {

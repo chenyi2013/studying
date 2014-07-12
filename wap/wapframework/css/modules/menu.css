@@ -25,6 +25,9 @@
   display: block;
   color: #fff;
 }
+.menu .menu-list li:hover {
+  opacity: 0.8;
+}
 .menu .menu-list .tit {
   text-indent: 0;
   text-align: center;
@@ -32,7 +35,7 @@
   font-size: 20px;
 }
 .menu .menu-list .tit a {
-  color: #f5422a;
+  color: #f80;
 }
 .menu .menu-list .active {
   background-color: #666;

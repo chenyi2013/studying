@@ -3,14 +3,13 @@
 * =========================
 */
 .header {
-  position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background-color: #333;
+  background-color: #e73736;
   /* 	text-align: justify;
 font-size: 0; */
   /*	.logo {
@@ -50,10 +49,10 @@ font-size: 0; */
   text-align: center;
 }
 .header .logo a {
-  color: #e73736;
+  color: #fff;
 }
-.header:after {
-  display: inline-block;
-  width: 100%;
-  content: '';
-}
+/* .header:after {
+	display: inline-block;
+	width: 100%;
+	content: '';
+} */

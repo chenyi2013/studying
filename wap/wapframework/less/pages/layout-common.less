@@ -19,9 +19,38 @@ body {
 	z-index: 2;
 	width: 100%;
 	background-color: #f1f1f1;
+	-webkit-transition: left 0.5s ease, right 0.5s ease, margin 0.5s ease;
+}
+
+.header {
+	-webkit-transition: left 0.5s ease, right 0.5s ease, margin 0.5s ease;
 }
 
 .content {
 	margin: 0 auto;
+	padding: 0 2%;
 	max-width: 1000px;
+}
+
+.menuShow {
+
+	overflow: hidden;
+
+	body {
+		overflow: hidden;
+	}
+
+	.container {
+		z-index: 1px;
+		left: 70%;
+
+		.header {
+			left: 70%;
+		}
+	}
+
+	.menumask {
+		display: block;
+		z-index: 2;
+	}
 }
