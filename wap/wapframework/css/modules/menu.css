@@ -51,6 +51,5 @@
   right: 0;
   width: 30%;
   height: 100%;
-  background-color: #fff;
-  opacity: 0;
+  background: rgba(255, 255, 255, 0);
 }
