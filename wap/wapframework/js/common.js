@@ -13,6 +13,14 @@ $(function () {
 
 	$('.menumask').on('click', function () {
 		$('html').removeClass('menuShow');
+		$('body').css({
+			'overflow-x': 'hidden'
+		});
+		setTimeout(function () {
+			$('body').css({
+				'overflow-x': 'none'
+			});
+		}, 300);
 	// $('.container').animate({'opacity': '1'}, '100');
 
 	})
