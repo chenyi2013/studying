@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>jq cookie插件</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="jquery-2.1.1.js"></script>
+<script type="text/javascript">
+	
+	(function ($) {
+		$.extend({
+			setCookie: function (name, value, expire) {
+				var oDate = new Date();
+				oDate.setDate(oDate.getDate() + expire);
+				document.cookie = name + '=' + value + '; expires=' + oDate;
+			},
+			getCookie: function (name) {
+				var aCookie = document.cookie.split('; ');
+				for (var i = 0, len = aCookie.length; i < len; i++) {
+					var _cookie = aCookie[i].split('=');
+					if ( _cookie[0] == name ) {
+						return _cookie[1];
+					}
+				}
+				return '';
+			},
+			removeCookie: function (name) {
+				$.setCookie(name, '1', -1);
+			}
+		});
+	})(jQuery);
+
+	// test
+	$(function () {
+		$.setCookie('username', 'wangchi', 1);
+
+/*		alert( $.getCookie('username') );
+		$.removeCookie('username');
+		alert( $.getCookie('username') );	*/	
+	});
+
+</script>
+</body>
+</html>
