@@ -25,9 +25,11 @@ module.exports = function (grunt) {
 					'../css/pages/layout-common.css': '../less/pages/layout-common.less',
 
 					//home
-					'../css/pages/layout-home.css': '../less/pages/layout-home.less'
+					'../css/pages/layout-home.css': '../less/pages/layout-home.less',
 
-					//list page						
+					//list page	
+					'../css/modules/item-list-s2.css': '../less/modules/item-list-s2.less',
+					'../css/pages/layout-listpage.css': '../less/pages/layout-listpage.less'
 				}
 			}
 		},
@@ -39,6 +41,10 @@ module.exports = function (grunt) {
 			css_home: {
 				src: ['../css/modules/colorlump.css', '../css/pages/layout-home.css'],
 				dest: '../css/pages/home.css'
+			},
+			css_listpage: {
+				src: ['../css/modules/colorlump.css', '../css/modules/item-list-s2.css', '../css/pages/layout-listpage.css'],
+				dest: '../css/pages/listpage.css'
 			},
 			jsfiles: {
 				//src: '../js/*.js',
@@ -67,6 +73,10 @@ module.exports = function (grunt) {
 			home: {
 				src: '../css/pages/home.css',
 				dest: '../css/pages/home.min.css'
+			},
+			listpage: {
+				src: '../css/pages/listpage.css',
+				dest: '../css/pages/listpage.min.css'
 			}
 		},
 		jshint: {

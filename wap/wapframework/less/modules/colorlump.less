@@ -7,13 +7,20 @@
 //
 
 .mainNav {
-	margin-top: 15px;
+	margin-top: 10px;
 	font-size: 0;
 	font-family: @ft;
-	padding: 0 2%;
+	// padding: 0 2%;
 
 	.colorlump {
 		text-align: justify;
+
+		&:after {
+			content: '';
+			display: inline-block;
+			width: 100%;
+		}
+
 		li {
 			display: inline-block;
 			// margin: 0 1%;
@@ -46,12 +53,6 @@
 			background-color: #3c0;
 		}
 		overflow: hidden;
-	}
-
-	.colorlump:after {
-		content: '';
-		display: inline-block;
-		width: 100%;
 	}
 
 }

@@ -1,12 +1,16 @@
 .mainNav {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 0;
   font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
-  padding: 0 2%;
 }
 .mainNav .colorlump {
   text-align: justify;
   overflow: hidden;
+}
+.mainNav .colorlump:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
 }
 .mainNav .colorlump li {
   display: inline-block;
@@ -35,9 +39,4 @@
 }
 .mainNav .colorlump .m4 {
   background-color: #3c0;
-}
-.mainNav .colorlump:after {
-  content: '';
-  display: inline-block;
-  width: 100%;
 }
