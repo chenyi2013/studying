@@ -20,6 +20,7 @@ module.exports = function (grunt) {
 					'../css/modules/colorlump.css': '../less/modules/colorlump.less',
 					'../css/modules/slide.css': '../less/modules/slide.less',
 					'../css/modules/item-list.css': '../less/modules/item-list.less',
+					'../css/modules/item-detail-s1.css': '../less/modules/item-detail-s1.less',
 
 					//layout common
 					'../css/pages/layout-common.css': '../less/pages/layout-common.less',
