@@ -1,1 +1,1 @@
-/*!gruntTest 2014-07-15*/function $(a){return document.getElementById(a)}function plus(a,b){return a+b}console.log("test");
+/*!gruntTest 2014-07-17*/function $(a){return document.getElementById(a)}function plus(a,b){return a+b}console.log("test");
