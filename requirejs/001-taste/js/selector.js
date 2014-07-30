@@ -3,5 +3,5 @@ define(function () {
 		return document.getElementById(id);
 	}
 
-	return getById();
+	return getById;
 });

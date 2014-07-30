@@ -5,6 +5,18 @@ require.config({
 	}
 });
 
+
+//demo
 require(['jquery'], function ($) {
-	alert( $().jquery );
+	//alert( $().jquery );
+	$('#div01').click(function () {
+		alert('click!');
+	});
+});
+
+
+//demo2
+require(['selector'], function (getById) {
+	var els = getById('div01');
+	console.log(els);
 });
