@@ -1,9 +1,8 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+# coding: utf-8
 
 from django.contrib import admin
+# Register your models here.
 from sblog.models import Author, Blog, Tag
-
 
 class AuthorAdmin(admin.ModelAdmin):
     """docstring for AuthorAdmin"""
