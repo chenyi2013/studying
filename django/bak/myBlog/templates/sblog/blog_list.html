@@ -5,9 +5,12 @@
 
 {% block content %}
 <div class="content">
+hehe
+	{% comment %}
     {% for blog in blogs %}
         <h3>{{ blog.caption }}</h3>
         <div>{{ blog.content}} </div> 
-    {% endfor %}     
+    {% endfor %}
+    {% endcomment %}     
 </div>    
 {% endblock %}

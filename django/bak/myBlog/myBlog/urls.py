@@ -16,6 +16,7 @@ urlpatterns = patterns( (''),
 )
 
 
-urlpatterns += patterns( (''),
-	url(r'^sblog/', include('sblog.urls')),
-)
+
+# urlpatterns += patterns( (''),
+# 	url(r'^sblog/', include('sblog.urls')),
+# )

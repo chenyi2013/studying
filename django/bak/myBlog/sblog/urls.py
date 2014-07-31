@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from django.conf.urls import *
+from django.conf.urls import patterns, url
 
 urlptterns = patterns ( ('sblog.views'),
 	url(r'^bloglist/$', 'blog_list', name='bloglist'),
