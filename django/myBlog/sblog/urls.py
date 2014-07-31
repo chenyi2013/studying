@@ -3,6 +3,6 @@
 
 from django.conf.urls import patterns, url
 
-urlptterns = patterns ( ('sblog.views'),
+urlpatterns = patterns ( ('sblog.views'),
 	url(r'^bloglist/$', 'blog_list', name='bloglist'),
 )

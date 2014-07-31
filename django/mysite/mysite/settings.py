@@ -1,5 +1,5 @@
 """
-Django settings for myBlog project.
+Django settings for mysite project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'evke+in!)))@-@*up-fdks#=9(5@h@pqci*4q$cinz%2sms4l_'
+SECRET_KEY = 'p!7_*+cpszhpkhk+dj*vtha)w)4(ows*-86($)+q--xf58vuoa'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,8 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.admindocs',
-    'sblog'
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'myBlog.urls'
+ROOT_URLCONF = 'mysite.urls'
 
-WSGI_APPLICATION = 'myBlog.wsgi.application'
+WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # Database
@@ -60,11 +59,7 @@ WSGI_APPLICATION = 'myBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/wangchi/Git/studying/django/myBlog/mydata.db',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': ''
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -86,8 +81,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
-TEMPLATE_DIRS = (
-    '/home/wangchi/Git/studying/django/myBlog/templates',
-    '/home/wangchi/Git/studying/django/myBlog/templates/sblog',
-)

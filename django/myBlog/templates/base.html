@@ -8,12 +8,19 @@
 </head>
 
 <body>
-    <h1>a simple blog</h1>
+    
+    {% block header %}
+    HEADER
+    {% endblock %}
+
+    <h1>hello</h1>
+
+
     {% block content %}
     {% endblock %}
+
     {% block footer %}
-    {# 任何每个页面都可能修改的文本区域的页脚 #}
-        <p>Thanks for visiting my site! </p>
+    FOOTER
     {% endblock %}
 </body>
 </html>
