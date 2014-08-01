@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block title %} blog list {% endblock %}
 
@@ -7,8 +8,9 @@
 <div class="content">
     {% for blog in blogs %}
     <article>
-        <h2>{{ blog.caption }}</h2>
-        <div>{{ blog.content}} </div> 
+        <h2><a href="{% url 'detail' blog.id %}">{{ blog.caption }}</a></h2>
+        <div><img src="../{{ blog.banner }}" />{{ blog.content|slice:'100' }}</div>
+        <p>作者:{{ blog.author }}  日期: {{ blog.publish_time }}</p>
     </article>
     {% endfor %}
 </div>    

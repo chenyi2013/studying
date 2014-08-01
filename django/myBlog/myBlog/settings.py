@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
-    'sblog'
+    'apps',
+    'south'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,7 +61,7 @@ WSGI_APPLICATION = 'myBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/wangchi/Git/studying/django/myBlog/mydata.db',
+        'NAME': '/home/wangchi/Git/studying/django/myBlog/myBlog.db',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -86,6 +87,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# staticfiles = (
+#     )
 
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]

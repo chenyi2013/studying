@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<article>
+	<h1>{{ blog.caption }}</h1>
+	<p>作者: {{ blog.author }} 日期: {{ blog.publish_time }}</p>
+	<div>
+		{{ blog.content }}
+	</div>
+	</article>
+{% endblock %}

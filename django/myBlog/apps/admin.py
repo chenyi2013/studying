@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 # Register your models here.
-from sblog.models import Author, Blog, Tag
+from apps.models import Author, Blog, Tag
 
 class AuthorAdmin(admin.ModelAdmin):
     """docstring for AuthorAdmin"""
@@ -12,7 +12,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 class BlogAdmin(admin.ModelAdmin):
     """docstring for BlogAdmin"""
-    list_display = ('caption', 'id', 'author', 'publish_time')
+    list_display = ('caption', 'id', 'author', 'publish_time', 'banner')
     list_filter = ('publish_time',)
     date_hierarchy = 'publish_time'
     ordering = ('-publish_time',)
