@@ -3,6 +3,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 from django.db import models
 
+# UPLOAD_DIRS = os.path.join(os.path.dirname(__file__), 'uploads')
+
 
 class Tag(models.Model):
     """docstring for Tags"""
@@ -31,7 +33,7 @@ class Blog(models.Model):
     content = models.TextField()
     publish_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
-    banner = models.ImageField(upload_to='static/uploads/', blank=True)
+    banner = models.ImageField(upload_to='uploads', blank=True)
 
     def __unicode__(self):
         return u'%s %s %s %s' % (self.caption, self.author, self.tags, self.publish_time)

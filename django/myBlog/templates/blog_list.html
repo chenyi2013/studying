@@ -5,11 +5,13 @@
 
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 <div class="content">
     {% for blog in blogs %}
     <article>
         <h2><a href="{% url 'detail' blog.id %}">{{ blog.caption }}</a></h2>
-        <div><img src="../{{ blog.banner }}" />{{ blog.content|slice:'100' }}</div>
+        <div><img src="{{ blog.banner }}" />{{ blog.content|slice:'100' }}</div>
         <p>作者:{{ blog.author }}  日期: {{ blog.publish_time }}</p>
     </article>
     {% endfor %}

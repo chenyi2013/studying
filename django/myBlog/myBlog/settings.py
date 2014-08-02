@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -25,6 +26,8 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
+
+TIME_ZONE = 'Asia/Shanghai'
 
 
 # Application definition
@@ -86,10 +89,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+STATIC_URL = 'static/'
+
+MEDIA_URL = 'uploads/'
+
+# STATICFILES_DIRS = (os.path.join(STATIC_ROOT, 'static/'))
 
 # staticfiles = (
 #     )
 
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+TEMPLATE_DIRS = os.path.join(BASE_DIR, 'templates/')

@@ -17,3 +17,21 @@ urlpatterns = patterns( (''),
     url(r'^', include('apps.urls')),
     url(r'^detail/(?P<id>\d+)/', views.blog_detail, name='detail'),
 )
+
+
+# if settings.DEBUG :
+# 	urlpatterns += patterns( (''),
+# 	    url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+# 	            {'document_root': os.path.dirname( os.path.dirname(__file__) )+'/static'}
+# 	    ),
+# 	)
+
+# urlpatterns += patterns((''),
+#     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve',
+#             {'document_root': os.path.dirname( os.path.dirname(__file__) )+'/uploads'}
+#     ),
+# )
+
+# urlpatterns += patterns((''),
+#     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve', os.path.dirname( os.path.dirname(__file__) )+'/uploads'),
+# )
