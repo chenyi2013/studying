@@ -14,9 +14,12 @@
 <body>
 	<p>require.js上手</p>
 	<div id="div01">hello</div>
-	<script type="text/javascript" src="js/require.js"></script>
-	<script type="text/javascript">require(['modules/cookie'], function (cookie) {
-		cookie.removeCookie('wangchi');
-	});</script>
+	<script src="js/require.js"></script>
+	<script type="text/javascript">
+		require(['modules/cookie'], function (cookie) {
+			console.log(cookie.getCookie('wangchi'));
+			// cookie.removeCookie('wangchi');
+		});
+	</script>
 </body>
 </html>

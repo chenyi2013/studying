@@ -27,5 +27,5 @@ require(['cookie'], function ( cookie ) {
 	cookie.removeCookie('require11');
 	cookie.removeCookie('require22');
 	cookie.setCookie('require', 'test', 1);
-	alert( cookie.getCookie('csrftoken') );
+	console.log( cookie.getCookie('require') );
 });
