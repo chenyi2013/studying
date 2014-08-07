@@ -3,11 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<title></title>
+	<title>触摸表现样式</title>
 	<style type="text/css">
 	* {
 		margin: 0;
 		padding: 0;
+	}
+
+	a:focus {
+		outline: none;
 	}
 
 	.btn-buy {
@@ -25,12 +29,59 @@
 		font-size: 20px;
 	}
 
+	/*不管用, 触摸时并没有发生变化*/
+	.btn-buy:hover,
 	.btn-buy:active {
-		background-color: #e73736;
+		background-color: #303030;
 	}
+
 	</style>
+
+	<!-- 
+		最后通过js解决了, 结合touchstart与touchend改变元素的呈现样式即可.
+	 -->
+	<script type="text/javascript">
+		window.onload = function () {
+			var btn_buy = document.getElementsByClassName('btn-buy');
+
+			console.log( btn_buy.length );
+
+			for ( var i = 0, len = btn_buy.length; i < len; i++ ) {
+				btn_buy[i].addEventListener('touchstart', function () {
+					console.log('mole');
+					this.style.backgroundColor = '#303030';
+				}, false);
+
+				btn_buy[i].addEventListener('touchend', function () {
+					console.log('mole');
+					this.style.backgroundColor = '#f5422a';
+				}, false);
+			}
+		}
+	</script>
 </head>
 <body>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
+	<a class="btn btn-buy" href="#">立即购买</a>
 	<a class="btn btn-buy" href="#">立即购买</a>
 </body>
 </html>
