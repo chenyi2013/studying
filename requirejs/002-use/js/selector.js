@@ -1,12 +1,6 @@
 define(function () {
-	function getById (id) {
-		return document.getElementById(id);
-	}
-
-	return getById;
-
 	return {
-		getById ( id ) {
+		getById: function ( id ) {
 			return document.getElementById( id );
 		}
 	};

@@ -17,15 +17,15 @@ require(['jquery'], function ($) {
 
 
 //selector test
-require(['selector'], function (getById) {
-	var els = getById('div01');
-	console.log(els);
+require(['selector'], function ( select ) {
+	console.log( select.getById('div01') );
 });
 
 //cookie test
-require(['cookie'], function ( cookie ) {
+require(['modules/cookie'], function ( cookie ) {
 	cookie.removeCookie('require11');
 	cookie.removeCookie('require22');
 	cookie.setCookie('require', 'test', 1);
+	cookie.setCookie('wangchi', '前端', 2);
 	console.log( cookie.getCookie('require') );
 });
