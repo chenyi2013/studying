@@ -4,4 +4,10 @@ define(function () {
 	}
 
 	return getById;
+
+	return {
+		getById ( id ) {
+			return document.getElementById( id );
+		}
+	};
 });
