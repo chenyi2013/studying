@@ -7,7 +7,7 @@ var Selector = function ( selector ) {
 
 		//取得第一个字符
 		//var firstLetter = selector.substring(0, 1);
-
+		
 		var matchExpr = {
 			'id': new RegExp('^#.+'),
 			'class': new RegExp('^\\..+'),
