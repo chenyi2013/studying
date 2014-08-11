@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>selector</title>
+	<script type="text/javascript" src="selector.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			//console.log('getById:' + $.getById('home') );
+
+			console.log( Selector('ul') );
+
+
+			//console.log( document.querySelectorAll('.menu li').length );
+
+			//console.log('getByClass( document , "menu")' + $.getByClass( document, 'menu') );
+		}
+	</script>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="content" id="home">
+		<ul class="menu">
+			<li class="item">111</li>
+			<li class="item active">222</li>
+			<li class="item">333</li>
+			<li class="item">444</li>
+		</ul>
+	</div>
+	<div class="footer"></div>
+</body>
+</html>
