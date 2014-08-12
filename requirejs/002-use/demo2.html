@@ -20,6 +20,17 @@
 			console.log('demo2: '+cookie.getCookie('wangchi'));
 			cookie.removeCookie('wangchi');
 		});
+
+		require(['modules/jsontools'], function ( jsontools ) {
+
+			var json01 = {
+				name: 'wangchi',
+				"sex": 'man',
+				'age': 18
+			};
+
+			console.log( jsontools.jsonToStr( json01 ) );
+		});
 	</script>
 </body>
 </html>
