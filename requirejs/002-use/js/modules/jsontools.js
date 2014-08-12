@@ -6,7 +6,7 @@ define(function () {
 		jsonToStr: function ( json ) {
 			var result = '{';
 			for ( var i in json ) {
-				result += "'" + i + "'" + ": '" + json[i] + "', ";
+				result += '"' + i + '"' + ': "' + json[i] + '", ';
 			}
 			return (result + '}').replace(', }', '}');
 		}
