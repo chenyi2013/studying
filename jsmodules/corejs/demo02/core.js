@@ -23,6 +23,23 @@ window.dome = (function () {
 		return this;
 	}
 
+	Dome.prototype.mapOne = function ( callback ) {
+		var m = this.map( callback );
+		return m.length > 1 ? m : m[0];
+	}
+
+	Dome.prototype.text = function ( text ) {
+		if ( typeof text !== 'undefined' ) {
+			return this.forEach(function ( el ) {
+				el.innerText = text;
+			});
+		} else {
+			return this.mapOne(function ( el ) {
+				return el.innerText;
+			});
+		}
+	}
+
 	var dome = {
 		get: function ( selector ) {
 			var els;

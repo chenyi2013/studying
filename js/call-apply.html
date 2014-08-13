@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>call and apply</title>
+	<script type="text/javascript">
+
+
+		function sayHi ( name ) {
+			alert(this+'| Hi, ' + name);
+		}
+
+		// sayHi('wangchi');
+		
+		var people = [
+			'zhangsan',
+			'lisi',
+			'wangwu',
+			'zhaoliu'
+		];
+
+
+		for ( var i = 0, len = people.length; i < len; i++) {
+			sayHi.call(people, people[i], i);
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
