@@ -2,17 +2,58 @@
 <html>
 <head>
 	<title>corejs</title>
+	<style type="text/css">
+		.red {
+			color: #f00;
+		}
+
+		.bgBlack {
+			background-color: #000;
+		}
+	</style>
 	<script type="text/javascript" src="core.js"></script>
 	<script type="text/javascript">
 		window.onload = function () {
 			console.log( dome.get('.menu li') );
 
 			console.log( dome.get('.menu li').text() );
+
+			console.log( dome.get('.menu').html() );
+			// console.log( dome.get('.menu').html('<a href="#">lianjie</a>') );
+		
+
+
+
+			dome.get('.header').addClass(['red', 'bgBlack']);
+
+			dome.get('.header').removeClass('red');
+
+			//创建节点并append
+			var ele_tab = dome.create('tab', {'className': 'tab11', 'id': 'homeTab'});
+			console.log( ele_tab );
+			// dome.get('.menu li').append( ele_tab );
+			dome.get('.menu li').prepend( ele_tab );
+
+
+			// 删除节点
+			// dome.get('.header').remove();
+			// dome.get('.menu li').remove();
+
+
+			// 这里不能传入匿名函数
+			dome.get('.header').on('click', onofftest);
+			dome.get('.header').off('click', onofftest);
+
+			function onofftest () {
+				alert('点了');
+			}
+
+
 		}
 	</script>		
 </head>
 <body>
-	<div class="header"></div>
+	<div class="header">header</div>
 	<div class="content" id="home">
 		<ul class="menu">
 			<li class="item">111</li>
@@ -21,6 +62,6 @@
 			<li class="item">444</li>
 		</ul>
 	</div>
-	<div class="footer"></div>
+	<div class="footer">footer</div>
 </body>
 </html>

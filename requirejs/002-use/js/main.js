@@ -12,7 +12,9 @@ require(['jquery'], function ($) {
 	//alert( $().jquery );
 	$('#div01').click(function () {
 		alert('click!');
+		$('#div01').off('click');
 	});
+
 });
 
 
