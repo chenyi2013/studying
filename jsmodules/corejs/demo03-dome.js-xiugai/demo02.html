@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>corejs</title>
+	<style type="text/css">
+		.red {
+			color: #f00;
+		}
+
+		.bgBlack {
+			background-color: #000;
+		}
+	</style>	
+</head>
+<body>
+	<div class="header bgBlack">header</div>
+	<div class="content" id="home">
+		<ul class="menu">
+			<li class="item">111</li>
+			<li class="item active">222</li>
+			<li class="item">333</li>
+			<li class="item">444</li>
+		</ul>
+	</div>
+	<div class="footer">footer</div>
+
+
+	<script type="text/javascript" src="core.js"></script>
+
+	<script>
+		(function () {
+			function core ( elements ) {
+				var _elements;
+				if ( typeof elements === 'string' ) {
+					_elements = document.querySelectorAll( elements );
+				}
+
+				for (var i = 0, len = _elements.length; i < len; i++) {
+					this[i] = _elements[i];
+				}
+
+				this.length = _elements.length;
+			}
+
+			// window.core = core;
+			core.fn = core.prototype = {
+				text: function ( text ) {
+					if ( typeof text !== 'undefined' ) {
+						for (var i = 0; i < this.length; i++) {
+							this[i].innerText = text;
+						}
+					} else {
+						return this[0].innerText;
+					}
+				},
+
+				html: function ( html ) {
+					if ( typeof html !== 'undefined' ) {
+						for (var i = 0; i < this.length; i++) {
+							this[i].innerHTML = html;
+						}
+					} else {
+						return this[0].innerHTML;
+					}
+				},
+
+				css: function ( styles ) {
+					if ( typeof styles === 'string' ) {
+						console.log( arguments.length );
+						if (this[0].currentStyle) {
+							// IE
+							return this[0].currentStyle[styles];
+						} else {
+							// DOM
+							return getComputedStyle(this[0], false)[styles];
+						}
+					}
+				}
+			};
+
+			var Core = function ( els ) {
+				return new core( els );
+			};
+
+			window.Core = Core;
+
+
+			return Core;
+
+		})();
+
+		// console.log( Core('.menu').text('嘎嘎') );
+		// console.log( Core('.menu li').text('嘎嘎') );
+		// console.log( Core('.menu li').text() );
+		// console.log( Core('.menu').html('<a href="#">link</a>') );
+		// console.log( Core('.menu').html() );
+		console.log( Core('.header').css('backgroundColor', 'ss') );
+	</script>
+
+</body>
+</html>
