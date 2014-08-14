@@ -10,6 +10,10 @@
 		.bgBlack {
 			background-color: #000;
 		}
+
+		.menu li {
+			margin-top: 5px;
+		}
 	</style>	
 </head>
 <body>
@@ -64,26 +68,44 @@
 					}
 				},
 
+				/*
+					一个参数 string 获取css样式
+					两个参数 string string 设置元素样式
+					json键值对 {key: value, ...} 设置元素的多种样式
+				*/
 				css: function ( styles ) {
 					if ( typeof styles === 'string' ) {
-						console.log( arguments.length );
-						if (this[0].currentStyle) {
-							// IE
-							return this[0].currentStyle[styles];
-						} else {
-							// DOM
-							return getComputedStyle(this[0], false)[styles];
+						if ( arguments.length === 1 ) {
+							if (this[0].currentStyle) {
+								// IE
+								return this[0].currentStyle[styles];
+							} else {
+								// DOM
+								return getComputedStyle(this[0], false)[styles];
+							}
+						} else if ( arguments.length === 2 ) {
+							for (var i = 0; i < this.length; i++) {
+								this[i].style[arguments[0]] = arguments[1];
+							}
+						}
+					} else if ( typeof styles === 'object' ) {
+						for (var i = 0; i < this.length; i++) {
+							for ( var value in styles ) {
+								this[i].style[value] = styles[value];
+							}
 						}
 					}
 				}
 			};
 
-			var Core = function ( els ) {
+			var $,
+
+			Core = function ( els ) {
 				return new core( els );
 			};
-
+			$ = Core;
 			window.Core = Core;
-
+			window.$ = $;
 
 			return Core;
 
@@ -94,7 +116,15 @@
 		// console.log( Core('.menu li').text() );
 		// console.log( Core('.menu').html('<a href="#">link</a>') );
 		// console.log( Core('.menu').html() );
-		console.log( Core('.header').css('backgroundColor', 'ss') );
+		console.log( Core('.header').css('backgroundColor') );
+		Core('.menu li').css('backgroundColor', '#f00');
+
+		// Core('.header').css({'backgroundColor': '#ff0', 'fontWeight': 'bold', 'height': '40px'});
+		// Core('.menu li').css({'backgroundColor': '#ff0', 'fontWeight': 'bold', 'height': '40px'});
+
+		console.log($('li').css('height'));
+		$('li:first-child').css('height', '100px');
+		$('li:first-child').html('<a href="#">Home</a>');
 	</script>
 
 </body>
