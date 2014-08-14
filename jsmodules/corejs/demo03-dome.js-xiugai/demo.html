@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>corejs</title>
+	<style type="text/css">
+		.red {
+			color: #f00;
+		}
+
+		.bgBlack {
+			background-color: #000;
+		}
+	</style>	
+</head>
+<body>
+	<div class="header">header</div>
+	<div class="content" id="home">
+		<ul class="menu">
+			<li class="item">111</li>
+			<li class="item active">222</li>
+			<li class="item">333</li>
+			<li class="item">444</li>
+		</ul>
+	</div>
+	<div class="footer">footer</div>
+
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+
+	<script type="text/javascript" src="core.js"></script>
+	<script type="text/javascript">
+
+		// console.log($('.menu li'));
+
+		(function () {
+
+			var $;
+
+/*			function core ( els ) {
+				this.push( els );
+			}*/
+
+/*			function Core ( els ) {
+				for ( var i = 0; i < els.length; i++) {
+					this[i] = els[i];
+				}
+			}*/
+
+/*			Core = {
+				get: function ( els ) {
+					els = document.querySelectorAll( els );
+					return new Core.fn.init( els );
+				},
+
+				cookie: function () {
+					return 'cookie方法';
+				}
+			};*/
+
+/*			var Core = function ( els ) {
+				for ( var i = 0; i < els.length; i++) {
+					this[i] = els[i];
+				}
+			};*/
+
+
+
+/*			Core.get = function ( els ) {
+				els = document.querySelectorAll( els );
+				return new Core( els );				
+			};*/
+
+
+/*			Core.prototype.sayHi = function ( els ) {
+				console.log('Hi');
+			}*/
+
+/*			Core.cookie = function () {
+				return 'cookie';
+			};
+
+
+			Core.fn = Core.prototype = {
+				sayHi: function () {
+					return 'Hi';
+				},
+
+
+				get: function ( els ) {
+					els = document.querySelectorAll( els );
+					return new Core(els);
+				}
+			};*/
+
+/*			Core.fn.sayHi = function ( els ) {
+				console.log('Hi' + els );
+			};*/
+
+
+
+			function core ( els ) {
+				var _els;
+
+				if ( typeof els === 'string' ) {
+					_els = document.querySelectorAll( els );
+				} else if ( els.length ) {
+					_els = els;
+				} else {
+					_els = [els];
+				}
+
+				return new Core( _els );			
+			}
+
+
+			Core.fn = Core.prototype = {
+				
+				map: function ( callback ) {
+					var result = [];
+					for (var i = 0; i < this.length; i++) {
+						result.push( callback(this, this[i], i) );
+					}
+					return result;
+				},
+
+				mapOne: function ( callback ) {
+					var m = this.map( callback );
+					return m.length > 1 ? m : m[0];
+				},
+
+				forEach: function ( callback ) {
+					this.map( callback );
+					return this;
+				},
+
+				text: function ( text ) {
+					if ( typeof text !== 'undefined' ) {
+						return this.forEach(function ( el ) {
+							el.innerText = text;
+						});
+					}
+				},
+
+				sayHi: function ( els ) {
+					return this.forEach(function ( el ) {
+						return ': Speak Hi!';
+					});
+				}
+			};
+
+			function Core ( els ) {
+				for ( var i = 0; i < els.length; i++) {
+					this[i] = els[i];
+				}
+				this.length = els.length;
+				// return ;
+			};
+
+			// Core.init.prototype = Core.fn;
+
+
+			$ = window.core = window.$ = core;
+
+			// core.get = Core;
+
+			return core;
+
+		})();
+
+
+
+
+		console.log( core('.menu') );
+		// console.log( Core.cookie() );
+		// console.log( Core );
+		// console.log( Core.fn );
+		// console.log( Core.cookie() );
+		// console.log( $.cookie() );
+
+		window.onload = function () {
+/*
+
+			console.log( dome.get('.menu li') );
+
+			console.log( dome.get('.menu li').text() );
+
+			console.log( dome.get('.menu').html() );
+			// console.log( dome.get('.menu').html('<a href="#">lianjie</a>') );
+		
+
+
+
+			dome.get('.header').addClass(['red', 'bgBlack']);
+
+			dome.get('.header').removeClass('red');
+
+			//创建节点并append
+			var ele_tab = dome.create('tab', {'className': 'tab11', 'id': 'homeTab'});
+			console.log( ele_tab );
+			// dome.get('.menu li').append( ele_tab );
+			dome.get('.menu li').prepend( ele_tab );
+
+
+			// 删除节点
+			// dome.get('.header').remove();
+			// dome.get('.menu li').remove();
+
+
+			// 这里不能传入匿名函数
+			dome.get('.header').on('click', onofftest);
+			dome.get('.header').off('click', onofftest);
+
+			function onofftest () {
+				alert('点了');
+			}
+
+*/
+		}
+	</script>	
+
+</body>
+</html>
