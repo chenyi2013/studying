@@ -28,8 +28,11 @@
 	</div>
 	<div class="footer">footer</div>
 
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
 
 	<script type="text/javascript" src="core.js"></script>
+
+
 
 	<script>
 		(function () {
@@ -57,6 +60,7 @@
 					}
 					// console.log('arr' + arr );
 					// return arr;
+					return this;
 				},
 
 /*				forEach: function ( callback ) {
@@ -70,14 +74,14 @@
 							this[i].innerText = text;
 						}*/
 
-						this.forEach(function ( el ) {
+/*						this.forEach(function ( el ) {
 							console.log( el );
-						});
+						});*/
 
-						this.map(function ( el, i ) {
-							console.log( 'hehe' + i );
-							console.log( el[i].innerText );
-							// el.innerText = text;
+						return this.map(function ( el, i ) {
+							// console.log( 'hehe' + i );
+							// console.log( el[i].innerText );
+							el[i].innerText = text;
 						});
 
 
@@ -88,9 +92,13 @@
 
 				html: function ( html ) {
 					if ( typeof html !== 'undefined' ) {
-						for (var i = 0; i < this.length; i++) {
+/*						for (var i = 0; i < this.length; i++) {
 							this[i].innerHTML = html;
-						}
+						}*/
+
+						return this.map(function ( el, i ) {
+							el[i].innerHTML = html;
+						});
 					} else {
 						return this[0].innerHTML;
 					}
@@ -112,16 +120,30 @@
 								return getComputedStyle(this[0], false)[styles];
 							}
 						} else if ( arguments.length === 2 ) {
-							for (var i = 0; i < this.length; i++) {
+
+/*							for (var i = 0; i < this.length; i++) {
 								this[i].style[arguments[0]] = arguments[1];
-							}
+							}*/
+							var _arg_0 = arguments[0],
+								_arg_1 = arguments[1];
+
+							return this.map(function ( el, i ) {
+								el[i].style[_arg_0] = _arg_1;
+							});
+
 						}
 					} else if ( typeof styles === 'object' ) {
-						for (var i = 0; i < this.length; i++) {
+/*						for (var i = 0; i < this.length; i++) {
 							for ( var value in styles ) {
 								this[i].style[value] = styles[value];
 							}
-						}
+						}*/
+
+						return this.map(function ( el, i ) {
+							for ( var value in styles ) {
+								el[i].style[value] = styles[value];
+							}
+						});
 					}
 				}
 			};
@@ -152,11 +174,26 @@
 
 		console.log($('li').css('height'));
 		$('li:first-child').css('height', '100px');
-		$('li:first-child').html('<a href="#">Home</a>');
+		// console.log( $('li:first-child').html('<a href="#">Home</a>').css('height') );
+		console.log( $('li:first-child').css({'height': '200px', 'backgroundColor': '#333'}).html('<a href="#">Home</a>') );
 
 
-		console.log( Core('.menu li').text('hehe') );
+		// console.log( Core('.menu li').text('hehe').css('color', '#ccc') );
+		console.log( Core('.menu li').text() );
 	</script>
 
+
+
+
+
+
+
+	<script type="text/javascript">
+
+	(function ($) {
+		// console.log( $('.menu li:last-child').css('height') );
+	})(jQuery);
+
+	</script>
 </body>
 </html>
