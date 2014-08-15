@@ -7,8 +7,16 @@
 			color: #f00;
 		}
 
+		.colorf80 {
+			color: #f80;
+		}
+
 		.bgBlack {
 			background-color: #000;
+		}
+
+		.bold {
+			font-weight: bold;
 		}
 
 		.menu li {
@@ -25,12 +33,32 @@
 			<li class="item">333</li>
 			<li class="item">444</li>
 		</ul>
+		<ol class="oList">
+			<li data-id="01"></li>
+			<li data-id="02"></li>
+			<li data-id="03"></li>
+		</ol>
+
+
+		<ol class="oList2">
+			<li class="red" data-id="01"></li>
+			<li class="red bold" data-id="02"></li>
+			<li class="ss red bold  ss" data-id="03"></li>
+		</ol>
 	</div>
+
+
+	<button class="btn btn-a">a</button>
+	<button class="btn btn-b">b</button>
+	<button class="btn btn-c">c</button>
+	<button class="btn btn-d">d</button>
+
+
 	<div class="footer">footer</div>
 
 	<script type="text/javascript" src="jquery-2.1.1.js"></script>
 
-	<script type="text/javascript" src="core.js"></script>
+
 
 
 
@@ -40,6 +68,11 @@
 				var _elements;
 				if ( typeof elements === 'string' ) {
 					_elements = document.querySelectorAll( elements );
+				} else if ( typeof elements === 'object' ) {
+					_elements = [elements];
+				} else if ( typeof elements === 'function' ) {
+					_elements = elements;
+					$(window).on('load', _elements);
 				}
 
 				for (var i = 0, len = _elements.length; i < len; i++) {
@@ -67,6 +100,72 @@
 					this.map( callback );
 				},*/
 
+
+
+				/*
+				* 添加class
+				*/
+				addClass: function ( className ) {
+					return this.map(function ( el, i ) {
+						el[i].className = ' ' + className;
+					});
+				},
+
+
+				/*
+				* 删除class	
+				*/
+				removeClass: function ( className ) {
+					return this.map(function ( el, i ) {
+						el[i].className = el[i].className.replace(new RegExp('(^| )' + className + '( |$)'), '');
+					});
+				},
+
+
+
+				/*
+				* 事件绑定
+				*/
+				on: function ( event, fn ) {
+					if ( document.addEventListener ) {
+						return this.map(function ( el, i ) {
+							el[i].addEventListener(event, fn , false);
+						});
+					} else if ( document.attachEvent ) {
+						return this.map(function ( el, i ) {
+							el[i].attachEvent('on' + event, fn);
+						});
+					} else {
+						return this.map(function ( el, i ) {
+							el[i]['on'+event] = fn;
+						});
+					}
+				},
+
+
+				/*
+				* 取消事件绑定
+				*/
+				off: function ( event, fn ) {
+					if ( document.addEventListener ) {
+						return this.map(function ( el, i ) {
+							el[i].removeEventListener(event, fn, false);
+						});
+					} else if ( document.detachEvent ) {
+						return this.map(function ( el, i ) {
+							el[i].detachEvent('on' + event, fn);
+						});
+					} else {
+						return this.map(function ( el, i ) {
+							el[i]['on' + event] = null;
+						});
+					}
+				},
+
+
+				/*
+				* 获取或设置元素的文本
+				*/
 				text: function ( text ) {
 					if ( typeof text !== 'undefined' ) {
 
@@ -90,6 +189,10 @@
 					}
 				},
 
+
+				/*
+				* 获取或设置元素的html
+				*/
 				html: function ( html ) {
 					if ( typeof html !== 'undefined' ) {
 /*						for (var i = 0; i < this.length; i++) {
@@ -102,6 +205,51 @@
 					} else {
 						return this[0].innerHTML;
 					}
+				},
+
+
+
+				/*
+				* 一个参数 获取属性
+				* 两个参数 设置属性
+				* json键值对 设置多个属性
+				*/
+				attr: function ( attrs ) {
+					if ( typeof attrs === 'string' ) {
+						if ( arguments.length === 1 ) {
+							return this[0].getAttribute(attrs);
+						} else if ( arguments.length === 2 ) {
+							var _arg_0 = arguments[0];
+								_arg_1 = arguments[1];
+							return this.map(function ( el, i ) {
+								el[i].setAttribute(_arg_0, _arg_1);
+							});
+						}
+					} else if ( typeof attrs === 'object' ) {
+						return this.map(function ( el, i ) {
+							for (var val in attrs) {
+								el[i].setAttribute(val, attrs[val]);
+							}
+						});
+					}
+/*
+					if ( typeof val !== 'undefined' ) {
+						return this.map(function ( el, i ) {
+							el[i].setAttribute(attr, val);
+						});
+					} else {
+						return this[0].getAttribute(attr);						
+					}*/
+				},
+
+
+				/*
+					一个参数 移除属性
+				*/
+				removeAttr: function ( attrName ) {
+					return this.map(function ( el, i ) {
+						el[i].removeAttribute(attrName);
+					});			
 				},
 
 				/*
@@ -172,14 +320,47 @@
 		// Core('.header').css({'backgroundColor': '#ff0', 'fontWeight': 'bold', 'height': '40px'});
 		// Core('.menu li').css({'backgroundColor': '#ff0', 'fontWeight': 'bold', 'height': '40px'});
 
-		console.log($('li').css('height'));
-		$('li:first-child').css('height', '100px');
+		console.log($('.menu li').css('height'));
+		$('.menu li:first-child').css('height', '100px');
 		// console.log( $('li:first-child').html('<a href="#">Home</a>').css('height') );
-		console.log( $('li:first-child').css({'height': '200px', 'backgroundColor': '#333'}).html('<a href="#">Home</a>') );
+		console.log( $('.menu li:first-child').css({'height': '200px', 'backgroundColor': '#333'}).html('<a href="#">Home</a>') );
 
 
 		// console.log( Core('.menu li').text('hehe').css('color', '#ccc') );
 		console.log( Core('.menu li').text() );
+
+		console.log( $('.header').attr('class') );
+		// $('.header').attr('class', 'red');
+
+		$('.header').attr({'class': 'colorf80', 'data-id':'66'});
+
+		console.log( $('.oList li').removeAttr('data-id') );
+
+		(function ($) {
+			// $('.oList li').addClass('red');
+			// $('.oList li').addClass('red bold');
+
+			// $('.oList2 li').removeClass('red');
+			// $('.oList2 li').removeClass('bold');
+			$('.oList2 li').removeClass('red bold');
+
+			$('.btn').on('click', function () {
+				alert($(this).text());
+				lightBtn($(this));
+
+				$(this).off('click');
+			});
+
+
+
+			function lightBtn ( obj ) {
+				obj.css({
+					'backgroundColor': '#f00'
+				});
+			}
+
+
+		})(Core);
 	</script>
 
 
@@ -192,8 +373,44 @@
 
 	(function ($) {
 		// console.log( $('.menu li:last-child').css('height') );
+
+/*			$('.btn').on('click', function () {
+				alert($(this).text());
+				
+				lightBtn($(this));
+
+				$(this).off('click');				
+			} );
+
+			function lightTheBtn ( obj ) {
+				alert(obj.text());
+				
+				lightBtn(obj);				
+			}
+
+
+			function lightBtn ( obj ) {
+				obj.css({
+					'backgroundColor': '#f00'
+				});
+			}*/
+
 	})(jQuery);
 
 	</script>
+
+
+	<script type="text/javascript">
+		alert(Core('.loadtest').length); //0
+
+		Core(function () {
+			alert( Core('.loadtest').length );
+		});
+	</script>
+
+
+	<div class="loadtest">load test succ</div>
+
+
 </body>
 </html>
