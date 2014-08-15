@@ -48,11 +48,39 @@
 
 			// window.core = core;
 			core.fn = core.prototype = {
+
+				map: function ( callback ) {
+					// var arr = [];
+					for (var i = 0, len = this.length; i < len; i++) {
+						// arr.push( callback(this, i) );
+						callback(this, i);
+					}
+					// console.log('arr' + arr );
+					// return arr;
+				},
+
+/*				forEach: function ( callback ) {
+					this.map( callback );
+				},*/
+
 				text: function ( text ) {
 					if ( typeof text !== 'undefined' ) {
-						for (var i = 0; i < this.length; i++) {
+
+/*						for (var i = 0; i < this.length; i++) {
 							this[i].innerText = text;
-						}
+						}*/
+
+						this.forEach(function ( el ) {
+							console.log( el );
+						});
+
+						this.map(function ( el, i ) {
+							console.log( 'hehe' + i );
+							console.log( el[i].innerText );
+							// el.innerText = text;
+						});
+
+
 					} else {
 						return this[0].innerText;
 					}
@@ -125,6 +153,9 @@
 		console.log($('li').css('height'));
 		$('li:first-child').css('height', '100px');
 		$('li:first-child').html('<a href="#">Home</a>');
+
+
+		console.log( Core('.menu li').text('hehe') );
 	</script>
 
 </body>
