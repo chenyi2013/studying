@@ -13,7 +13,9 @@ module.exports = function ( grunt ) {
 				},
 				files: {
 					'../css/modules/reset.css': '../less/modules/reset.less',
-					'../css/modules/header.css': '../less/modules/header.less'
+					'../css/modules/header.css': '../less/modules/header.less',
+					'../css/modules/footer.css': '../less/modules/footer.less',
+					'../css/modules/entry-list.css': '../less/modules/entry-list.less'
 				}				
 			}		
 		},
@@ -72,7 +74,7 @@ module.exports = function ( grunt ) {
 					'../less/modules/*.less',
 					'../less/pages/*.less'
 				],
-				task: ['default'],
+				tasks: ['default']
 			}
 		}
 	});
