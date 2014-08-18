@@ -10,18 +10,17 @@ module.exports = function ( grunt ) {
 						imgPath: '"http://www.qdcoder.com/images/"',
 						bgColor: '#f1f1f1'
 					}
-				}
-			},
-			files: {
-				'../css/modules/base.css': '../less/modules/base.less'
-			}
+				},
+				files: {
+					'../css/modules/reset.css': '../less/modules/reset.less',
+					'../css/modules/header.css': '../less/modules/header.less'
+				}				
+			}		
 		},
 		concat: {
 			css_global: {
-				src: [
-					'../css/modules/base.css'
-				],
-				dest: '../css/common/global.css' 
+				src: '../css/modules/reset.css',
+				dest: '../css/common/global.css'
 			}
 		},
 		csslint: {
@@ -39,7 +38,7 @@ module.exports = function ( grunt ) {
 		},
 		cssmin: {
 			options: {
-				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>*/'
+				banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd hh:mm:ss") %> */'
 			},
 			global: {
 				src: '../css/common/global.css',
@@ -60,7 +59,7 @@ module.exports = function ( grunt ) {
 		},
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>*/'
+				banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd hh:mm:ss") %> */'
 			},
 			build: {
 				src: '../js/main.js',
@@ -86,6 +85,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-	grunt.registerTask('default', ['less', 'concat', 'csslint', 'cssmin', 'jshint', 'uglify', 'watch']);
+	// grunt.registerTask('default', ['less', 'concat', 'csslint', 'cssmin', 'jshint', 'uglify', 'watch']);
+	grunt.registerTask('default', ['less', 'concat', 'cssmin', 'jshint', 'uglify', 'watch']);
 
 };

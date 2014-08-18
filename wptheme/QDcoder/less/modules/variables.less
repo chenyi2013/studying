@@ -1,0 +1,62 @@
+//
+// variables.less
+//
+
+
+//	font family
+// ==============================
+
+@font-default: arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+
+
+// font face
+// =====================
+
+
+
+
+
+
+
+// some common styles
+// ===============================
+
+
+// 取消浏览器默认的点击表现样式
+.f-reset-a-active {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+// 页面弹层
+// 对应html代码<div class="f-page-layer"></div>
+.f-page-layer {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.f-cb:after {
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	content: '';
+}
+
+.f-cb {
+	*zoom: 1;
+}
+
+.f-fl {
+	float: left;
+}
+
+.f-fr {
+	float: right;
+}
