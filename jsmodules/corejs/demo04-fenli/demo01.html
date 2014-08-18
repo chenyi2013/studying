@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>corejs</title>
+	<style type="text/css">
+		.red {
+			color: #f00;
+		}
+
+		.colorf80 {
+			color: #f80;
+		}
+
+		.bgBlack {
+			background-color: #000;
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+
+		.menu li {
+			margin-top: 5px;
+		}
+	</style>	
+</head>
+<body>
+	<div class="header bgBlack">header</div>
+	<div class="content" id="home">
+		<ul class="menu">
+			<li class="item">111</li>
+			<li class="item active">222</li>
+			<li class="item">333</li>
+			<li class="item">444</li>
+		</ul>
+		<ol class="oList">
+			<li data-id="01"></li>
+			<li data-id="02"></li>
+			<li data-id="03"></li>
+		</ol>
+
+
+		<ol class="oList2">
+			<li class="red" data-id="01"></li>
+			<li class="red bold" data-id="02"></li>
+			<li class="ss red bold  ss" data-id="03"></li>
+		</ol>
+	</div>
+
+
+	<button class="btn btn-a">a</button>
+	<button class="btn btn-b">b</button>
+	<button class="btn btn-c">c</button>
+	<button class="btn btn-d">d</button>
+
+
+	<div class="footer">footer</div>
+
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+
+	<script type="text/javascript" src="core.js"></script>
+
+
+
+	<script>
+
+
+		// console.log( Core('.menu').text('嘎嘎') );
+		// console.log( Core('.menu li').text('嘎嘎') );
+		// console.log( Core('.menu li').text() );
+		// console.log( Core('.menu').html('<a href="#">link</a>') );
+		// console.log( Core('.menu').html() );
+		console.log( Core('.header').css('backgroundColor') );
+		Core('.menu li').css('backgroundColor', '#f00');
+
+		// Core('.header').css({'backgroundColor': '#ff0', 'fontWeight': 'bold', 'height': '40px'});
+		// Core('.menu li').css({'backgroundColor': '#ff0', 'fontWeight': 'bold', 'height': '40px'});
+
+		console.log($('.menu li').css('height'));
+		$('.menu li:first-child').css('height', '100px');
+		// console.log( $('li:first-child').html('<a href="#">Home</a>').css('height') );
+		console.log( $('.menu li:first-child').css({'height': '200px', 'backgroundColor': '#333'}).html('<a href="#">Home</a>') );
+
+
+		// console.log( Core('.menu li').text('hehe').css('color', '#ccc') );
+		console.log( Core('.menu li').text() );
+
+		console.log( $('.header').attr('class') );
+		// $('.header').attr('class', 'red');
+
+		$('.header').attr({'class': 'colorf80', 'data-id':'66'});
+
+		console.log( $('.oList li').removeAttr('data-id') );
+
+		(function ($) {
+			// $('.oList li').addClass('red');
+			// $('.oList li').addClass('red bold');
+
+			// $('.oList2 li').removeClass('red');
+			// $('.oList2 li').removeClass('bold');
+			$('.oList2 li').removeClass('red bold');
+
+			$('.btn').on('click', function () {
+				alert($(this).text());
+				lightBtn($(this));
+
+				$(this).off('click');
+			});
+
+
+
+			function lightBtn ( obj ) {
+				obj.css({
+					'backgroundColor': '#f00'
+				});
+			}
+
+
+		})(Core);
+	</script>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+
+	(function ($) {
+		// console.log( $('.menu li:last-child').css('height') );
+
+/*			$('.btn').on('click', function () {
+				alert($(this).text());
+				
+				lightBtn($(this));
+
+				$(this).off('click');				
+			} );
+
+			function lightTheBtn ( obj ) {
+				alert(obj.text());
+				
+				lightBtn(obj);				
+			}
+
+
+			function lightBtn ( obj ) {
+				obj.css({
+					'backgroundColor': '#f00'
+				});
+			}*/
+
+	})(jQuery);
+
+	</script>
+
+
+	<script type="text/javascript">
+		alert(Core('.loadtest').length); //0
+
+		Core(function () {
+			alert( Core('.loadtest').length );
+		});
+	</script>
+
+
+	<div class="loadtest">load test succ</div>
+
+
+</body>
+</html>

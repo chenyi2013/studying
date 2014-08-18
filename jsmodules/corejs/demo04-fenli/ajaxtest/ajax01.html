@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax01</title>
+	<script type="text/javascript" src="../core.js"></script>
+
+	<script type="text/javascript">
+		(function ($) {
+			$(function () {
+				// alert($('.btn').attr('class'));
+
+
+				// alert()
+
+				function ajax () {
+					var XHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+					XHR.onreadystatechange = function () {
+						if ( XHR.readyState === 4 ) {
+							if ( XHR.status === 200 ) {
+								alert( XHR.responseText );
+							}
+						}
+					};
+
+					XHR.open('GET', 'response.html', true);
+
+					XHR.send();
+				}
+
+
+				$('.btn').on('click', function () {
+					ajax();
+				});
+
+			});
+		})(Core);
+	</script>
+</head>
+<body>
+	<button class="btn">按钮01</button>
+</body>
+</html>
