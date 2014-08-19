@@ -13,15 +13,25 @@
 		float: left;
 		margin: 20px;
 		width: 360px;
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 		background-color: #fff;
 
-		.pic,
-		.pic img {
-			width: 100%;
-		}
+/* 		.pic,
+.pic img {
+	width: 100%;
+} */
 
 		.pic {
-
+			width: 360px;
+			height: 216px;
+			overflow: hidden;
+			img {
+				width: 100%;
+				-webkit-transition: all 0.3s;
+				&:hover {
+					-webkit-transform: scale(1.1);
+				}
+			}
 		}
 
 		header,
@@ -51,7 +61,7 @@
 			height: 40px;
 			line-height: 40px;
 			padding: 0 20px;
-			border-top: 1px solid #f1f1f1;
+			border-top: 1px solid #eee;
 			font-size: 12px;
 			color: #999;
 

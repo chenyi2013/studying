@@ -37,12 +37,20 @@
   font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
 .header .logo {
-  margin-top: 50px;
-  width: 100px;
-  height: 100px;
+  margin-top: 26px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
   vertical-align: middle;
 }
 .header .title {
   margin-top: 20px;
+  font-size: 30px;
+  font-weight: normal;
+  color: #333;
+}
+.header .sub-title {
+  margin-top: 20px;
   font-size: 16px;
+  color: #666;
 }

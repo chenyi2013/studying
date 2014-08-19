@@ -37,11 +37,24 @@
   float: left;
   margin: 20px;
   width: 360px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   background-color: #fff;
+  /* 		.pic,
+.pic img {
+	width: 100%;
+} */
 }
-.entry-list article .pic,
+.entry-list article .pic {
+  width: 360px;
+  height: 216px;
+  overflow: hidden;
+}
 .entry-list article .pic img {
   width: 100%;
+  -webkit-transition: all 0.3s;
+}
+.entry-list article .pic img:hover {
+  -webkit-transform: scale(1.1);
 }
 .entry-list article header,
 .entry-list article .excerpt {
@@ -66,7 +79,7 @@
   height: 40px;
   line-height: 40px;
   padding: 0 20px;
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid #eee;
   font-size: 12px;
   color: #999;
 }

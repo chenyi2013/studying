@@ -21,7 +21,12 @@ module.exports = function ( grunt ) {
 		},
 		concat: {
 			css_global: {
-				src: '../css/modules/reset.css',
+				src: [
+					'../css/modules/reset.css',
+					'../css/modules/header.css',
+					'../css/modules/entry-list.css',
+					'../css/modules/footer.css'
+				],
 				dest: '../css/common/global.css'
 			}
 		},
