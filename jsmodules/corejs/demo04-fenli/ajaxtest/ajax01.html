@@ -16,17 +16,44 @@
 				function ajax () {
 					var XHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 
+
+					/*
+					readyState的5个状态
+					0: 请求未初始化
+					1: 服务器连接已建立
+					2: 请求已接收
+					3: 请求处理中
+					4: 请求已完成，且响应已就绪
+					*/
 					XHR.onreadystatechange = function () {
 						if ( XHR.readyState === 4 ) {
 							if ( XHR.status === 200 ) {
+								//success:
 								alert( XHR.responseText );
+							} else {
+								//error
+								alert( 'XHR.responseText:' + XHR.status );
 							}
 						}
 					};
 
-					XHR.open('GET', 'response.html', true);
 
-					XHR.send();
+
+					// method: GET or POST
+					// url: 文件在服务器上的位置
+					// async: 是否异步  true(异步), false(同步)
+					// open(method, url, async)
+					XHR.open('GET', 'response.html', true);
+					//type  url  asyn
+
+					//beforeSend:
+					// 添加http头
+					XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+
+					// data
+					XHR.send('sss');
+					// XHR.send(string) 发送的字符串, 仅用于POST请求
 				}
 
 
