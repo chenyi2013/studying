@@ -260,6 +260,20 @@
 		/*
 		* 常用事件封装
 		*/
+		hover: function ( fnOver, fnLeave ) {
+			return this.map(function ( el, i ) {
+				$(el[i]).on('mouseover', function () {
+					fnOver.call(this);
+				});
+
+				if ( typeof fnLeave !== 'undefined' ) {
+					$(el[i]).on('mouseout', function () {
+						fnLeave.call(this);
+					});
+				}
+			});
+		},
+
 		click: function ( fn ) {
 			return this.map(function ( el, i ) {
 				$(el[i]).on('click', function () {
@@ -267,6 +281,7 @@
 				});
 			});
 		}
+
 
 
 
