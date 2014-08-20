@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax03</title>
+	<script type="text/javascript" src="../core.js"></script>
+	<script type="text/javascript" src="ajax.js"></script>
+
+	<script type="text/javascript">
+		(function ($) {
+
+			$(function () {
+
+
+				$('.btn').on('click', function () {
+					// sss('55');
+					ajax({
+						beforeSend: function ( xhr ) {
+							xhr.setRequestHeader('X-CSRFToken', 'jklfjaf=asfdsa');
+						},
+						type: 'post',
+						url: 'response.php',
+						data: {'name': 'wangchi', 'sex': 'man'},
+						// data: 'name=wangchi&sex=man',
+						success: function ( msg ) {
+							console.log( msg );
+						},
+						error: function ( error ) {
+							console.log( error );
+						}
+					});
+				});
+
+				$('.btn2').on('click', function () {
+					ajax({
+						type: 'get',
+						url: 'response_get.php',
+						data: 'name=wangchi&sex=man',
+						success: function ( msg ) {
+							console.log( msg );
+						},
+						error: function ( error ) {
+							console.log( error );
+						}
+					});
+				});
+
+
+				console.log( $('.btn2').hasClass('mbixugua') );
+
+				$('.btn3').click(function () {
+					$(this).css('backgroundColor', '#f00');
+				});
+
+			});
+
+		})(Core);
+	</script>
+</head>
+<body>
+	<button class="btn">按钮01</button>
+	<button class="btn2 mmm sheep">按钮02</button>
+	<hr>
+
+	<button class="btn3">按钮3</button>
+	<button class="btn4">按钮4</button>
+	<button class="btn5">按钮5</button>
+</body>
+</html>

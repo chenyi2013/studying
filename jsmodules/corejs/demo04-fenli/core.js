@@ -21,6 +21,16 @@
 		this.length = _elements.length;
 	}
 
+
+
+	var $,
+
+	Core = function ( els ) {
+		return new core( els );
+	};
+
+
+
 	// window.core = core;
 	core.fn = core.prototype = {
 
@@ -60,6 +70,18 @@
 			});
 		},
 
+
+		/*
+		* 判断是否有某个class
+		*/
+		hasClass: function ( className ) {
+			//return 'dd';
+
+			//this.map(function ( el, i ) {
+			return this[0].className.indexOf(className) !== -1;
+			//return 'dd';
+			//});
+		},
 
 
 		/*
@@ -232,14 +254,34 @@
 					}
 				});
 			}
+		},
+
+
+		/*
+		* 常用事件封装
+		*/
+		click: function ( fn ) {
+			return this.map(function ( el, i ) {
+				$(el[i]).on('click', function () {
+					fn.call(this);
+				});
+			});
 		}
+
+
+
 	};
 
-	var $,
 
-	Core = function ( els ) {
-		return new core( els );
-	};
+
+/*	core.extend = core.fn.extend = function () {
+		// var arg = arguments;
+		console.log( arguments.length );
+	};*/
+
+
+
+
 	$ = Core;
 	window.Core = Core;
 	window.$ = $;
@@ -247,3 +289,11 @@
 	return Core;
 
 })();
+
+/*
+$.fn.extend({
+	click: function () {
+		concole.log(this);
+	}
+});
+*/
