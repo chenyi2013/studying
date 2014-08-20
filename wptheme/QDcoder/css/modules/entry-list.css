@@ -1,3 +1,38 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../fonts/icomoon.eot?-un3ecz');
+  src: url('../../fonts/icomoon.eot?#iefix-un3ecz') format('embedded-opentype'), url('../../fonts/icomoon.woff?-un3ecz') format('woff'), url('../../fonts/icomoon.ttf?-un3ecz') format('truetype'), url('../../fonts/icomoon.svg?-un3ecz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icomoon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-user:before {
+  content: "\e600";
+}
+.icon-comment:before {
+  content: "\e601";
+}
+.icon-tag:before {
+  content: "\e602";
+}
+.icon-eye:before {
+  content: "\e603";
+}
+.icon-clock:before {
+  content: "\e604";
+}
+.icon-user2:before {
+  content: "\e605";
+}
 .f-reset-a-active {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
@@ -85,4 +120,28 @@
 }
 .entry-list article .meta-b a {
   color: #999;
+}
+.entry-list article .meta-b a:hover {
+  color: #36f;
+}
+.entry-list article .meta-b .icomoon {
+  float: left;
+  margin-right: 3px;
+  font-size: 14px;
+  color: #bbb;
+}
+.entry-list article .meta-b .read {
+  float: left;
+  margin-right: 10px;
+}
+.entry-list article .meta-b .cmt {
+  float: left;
+  margin-right: 10px;
+}
+.entry-list article .meta-b .tags {
+  float: left;
+  display: none;
+}
+.entry-list article .meta-b .date {
+  float: right;
 }
