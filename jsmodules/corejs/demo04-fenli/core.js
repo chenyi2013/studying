@@ -341,6 +341,8 @@
 
 	};
 
+
+
 	Core.extend = function ( args ) {
 		if (typeof args === 'string' && arguments.length === 2) {
 			core.fn[ arguments[0] ] = arguments[1];
@@ -352,10 +354,6 @@
 	};
 
 
-
-
-
-
 	$ = Core;
 	window.Core = Core;
 	window.$ = $;
@@ -364,29 +362,59 @@
 
 })();
 
-
-/*
-
-//插件编写规则
-// ==============
-
-//单个函数
 (function ($) {
-	$.extend('fontColor', function ( color ) {
-		this.css('color', color);
-	});
+	$.ajax = function ( args ) {
+		// 参数声明
+		var ajax = {
+			type: 'GET',
+			url: '',
+			data: null,
+			async: true,
+			success: null,
+			error: null,
+			beforeSend: null
+		};					
+
+		// 参数赋值
+		for ( var i in ajax ) {
+			for ( var j in args ) {
+				if ( i === j ) {
+					ajax[i] = args[j];
+				}
+			}
+		}
+
+		// 根据传递参数类型的不同, 选择不同的传参方式
+		if ( typeof ajax.data === 'string' ) {
+			// 缓存问题 待测
+			ajax.url += '?'+ajax.data;
+		} else if ( typeof ajax.data === 'object' ) {
+			var _str = '';
+			for ( var i in ajax.data ) {
+				_str += '&' + i + '=' + ajax.data[i];
+			}
+			ajax.data = _str.substring(1);
+		}
+
+		// 创建XHR对象
+		var XHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+		XHR.onreadystatechange = function () {
+			if ( XHR.readyState === 4 ) {
+				XHR.status === 200 ? ajax.success( XHR.response ) : ajax.error( XHR.status );
+			}
+		};
+
+		
+		XHR.open( ajax.type, ajax.url, ajax.async );
+
+
+		if ( ajax.type === 'GET' || ajax.type === 'get' ) {
+			XHR.send();
+		} else if ( ajax.type === 'POST' || ajax.type === 'post' ) {
+			ajax.beforeSend ? ajax.beforeSend( XHR ) : null;
+			XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=utf-8');
+			XHR.send( ajax.data );
+		}
+	};
 })(Core);
-
-
-//多个函数
-$.extend({
-	fontBlod: function ( boldtest ) {
-		this.css('fontWeight', boldtest);
-		console.log('fontBold');
-	},
-	sayHi: function () {
-		console.log('hi');
-	}
-});
-
-*/

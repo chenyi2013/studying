@@ -1,1 +1,31 @@
-<script type="text/javascript" src=""></script>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>corejs扩展测试2</title>
+	<style type="text/css">
+		.div1 {
+			width: 100px;
+			height: 100px;
+			background-color: #36f;
+		}
+	</style>
+	<script type="text/javascript" src="core.js"></script>
+	<script type="text/javascript" src="plugintest.js"></script>
+
+
+	<script type="text/javascript">
+		$(function () {
+			$('.div1').click(function () {
+				$(this).bgColor('#f80');
+				$(this).sayHi();
+				alert($.title());
+				$.title('修改后的标题');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="div1">click!</div>
+</body>
+</html>
