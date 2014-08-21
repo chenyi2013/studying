@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax03</title>
+
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.div3, .div4 {
+			margin-top: 10px;
+			width: 200px;
+			height: 200px;
+			background-color: #666;
+		}
+	</style>
+
+
+	<script type="text/javascript" src="core.js"></script>
+	<script type="text/javascript" src="plugintest.js"></script>
+
+	<script type="text/javascript">
+		(function ($) {
+
+			$(function () {
+
+				$('.btn').click(function () {
+					console.log($(this));
+				});
+
+
+
+
+				$('.btn5').click(function () {
+					// console.log(this);
+					//$(this).extend();
+					$(this).bgColor('#f00');
+
+					$(this).fontColor('#f80');
+				});
+
+				$('.btn4').click(function () {
+					$(this).fontBlod('bold');
+					$(this).sayHi();
+				});
+
+
+
+
+
+/*
+			//移动到 plugintest.js中
+				$.extend('bgColor', function ( color ) {
+					// console.log(this);
+					this.css('backgroundColor', color)
+				});
+
+
+				$.extend({
+					fontBlod: function ( boldtest ) {
+						this.css('fontWeight', boldtest);
+						console.log('fontBold');
+					},
+					sayHi: function () {
+						console.log('hi');
+					}
+				});*/
+
+			});
+
+
+		})(Core);
+	</script>
+</head>
+<body>
+	<button class="btn">按钮01</button>
+	<button class="btn4">plugin test1</button>
+	<button class="btn5">plugin test2</button>
+
+	<hr>
+
+	<div class="div3">
+		Core<br>
+		凯撒积分的考虑撒卡拉是的积分了空间撒发
+		<a href="#">链接链接</a>
+		<span>span里的内容</span>
+	</div>
+
+
+	<div class="div4">
+		jQuery<br>
+		凯撒积分的考虑撒卡拉是的积分了空间撒发
+		<a href="#">链接链接</a>
+		<span>span里的内容</span>
+	</div>
+
+
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+		(function ($) {
+/*			$('.div4').hover(function () {
+				console.log('jq-over');
+			}, function () {
+				console.log('jq-out');
+			});*/
+
+
+			$('.div4').mouseover(function () {
+				console.log('jq-mouseover');
+				return false;
+			});
+
+			$('.div4').mouseenter(function () {
+				console.log('jq-mouseenter');
+				return false;
+			});
+		})(jQuery);
+	</script>
+
+</body>
+</html>

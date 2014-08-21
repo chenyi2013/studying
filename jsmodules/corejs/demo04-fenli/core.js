@@ -341,12 +341,17 @@
 
 	};
 
+	Core.extend = function ( args ) {
+		if (typeof args === 'string' && arguments.length === 2) {
+			core.fn[ arguments[0] ] = arguments[1];
+		} else if (typeof args === 'object' && arguments.length === 1) {
+			for (var i in args) {
+				core.fn[i] = args[i];
+			}
+		}			
+	};
 
 
-/*	core.extend = core.fn.extend = function () {
-		// var arg = arguments;
-		console.log( arguments.length );
-	};*/
 
 
 
@@ -359,9 +364,29 @@
 
 })();
 
+
 /*
-$.fn.extend({
-	click: function () {
-		concole.log(this);
+
+//插件编写规则
+// ==============
+
+//单个函数
+(function ($) {
+	$.extend('fontColor', function ( color ) {
+		this.css('color', color);
+	});
+})(Core);
+
+
+//多个函数
+$.extend({
+	fontBlod: function ( boldtest ) {
+		this.css('fontWeight', boldtest);
+		console.log('fontBold');
+	},
+	sayHi: function () {
+		console.log('hi');
 	}
-});*/
+});
+
+*/
