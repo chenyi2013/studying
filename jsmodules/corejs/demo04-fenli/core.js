@@ -88,6 +88,7 @@
 		* 事件绑定
 		*/
 		on: function ( event, fn ) {
+			// var 
 			if ( document.addEventListener ) {
 				return this.map(function ( el, i ) {
 					el[i].addEventListener(event, fn , false);
@@ -259,31 +260,84 @@
 
 		/*
 		* 常用事件封装
+		* mouseover  与 mouseenter的区别!!
 		*/
 		hover: function ( fnOver, fnLeave ) {
-			return this.map(function ( el, i ) {
-				$(el[i]).on('mouseover', function () {
+/*			return this.map(function ( el, i ) {
+				$(el[i]).on('mouseenter', function () {
 					fnOver.call(this);
 				});
 
 				if ( typeof fnLeave !== 'undefined' ) {
-					$(el[i]).on('mouseout', function () {
+					$(el[i]).on('mouseleave', function () {
 						fnLeave.call(this);
 					});
 				}
+			});*/
+	
+			
+			// 1.改进
+			this.on('mouseenter', function () {
+				fnOver.call(this);
 			});
+
+			if ( typeof fnLeave !== 'undefined' ) {
+				this.on('mouseleave', function () {
+					fnLeave.call(this);
+				})
+			}
+
+
+			/*
+			// 2.再次改进 (是不是没有"1.改进"的性能高?)
+			this.mouseenter(function () {
+				fnOver.call(this);
+			});
+
+			if ( typeof fnLeave !== 'undefined' ) {
+				this.mouseleave(function () {
+					fnLeave.call(this);
+				});
+			}
+			*/
 		},
 
 		click: function ( fn ) {
-			return this.map(function ( el, i ) {
+/*			return this.map(function ( el, i ) {
 				$(el[i]).on('click', function () {
 					fn.call(this);
 				});
+			});*/
+
+			this.on('click', function () {
+				fn.call(this);
+			});
+		},
+
+		mouseover: function ( fn ) {
+			// return this.map();
+			this.on('mouseover', function () {
+				fn.call(this);
+			});
+		},
+
+		mouseout: function ( fn ) {
+			this.on('mouseout', function () {
+				fn.call(this);
+			});
+		},
+
+		mouseenter: function ( fn ) {
+			this.on('mouseenter', function () {
+				fn.call(this);
+			});
+		},
+
+		mouseleave: function ( fn ) {
+			this.on('mouseleave', function () {
+				fn.call(this);
 			});
 		}
-
-
-
 
 	};
 
@@ -310,5 +364,4 @@ $.fn.extend({
 	click: function () {
 		concole.log(this);
 	}
-});
-*/
+});*/
