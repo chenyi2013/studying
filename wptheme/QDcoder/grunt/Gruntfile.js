@@ -14,8 +14,10 @@ module.exports = function ( grunt ) {
 				files: {
 					'../css/modules/reset.css': '../less/modules/reset.less',
 					'../css/modules/header.css': '../less/modules/header.less',
-					'../css/modules/footer.css': '../less/modules/footer.less',
-					'../css/modules/entry-list.css': '../less/modules/entry-list.less'
+					'../css/modules/header-fixed.css': '../less/modules/header-fixed.less',
+					'../css/modules/entry-list.css': '../less/modules/entry-list.less',
+					'../css/modules/pagination.css': '../less/modules/pagination.less',
+					'../css/modules/footer.css': '../less/modules/footer.less'
 				}				
 			}		
 		},
@@ -24,7 +26,9 @@ module.exports = function ( grunt ) {
 				src: [
 					'../css/modules/reset.css',
 					'../css/modules/header.css',
+					'../css/modules/header-fixed.css',
 					'../css/modules/entry-list.css',
+					'../css/modules/pagination.css',
 					'../css/modules/footer.css'
 				],
 				dest: '../css/common/global.css'

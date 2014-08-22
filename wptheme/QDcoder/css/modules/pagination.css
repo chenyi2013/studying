@@ -72,29 +72,19 @@
 .f-fr {
   float: right;
 }
-.header {
-  width: 100%;
-  height: 260px;
-  border-bottom: 1px solid #ddd;
-  background-color: #fff;
-  text-align: center;
+.pagination {
   font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  text-align: center;
+  font-size: 0;
 }
-.header .logo {
-  margin-top: 26px;
-  width: 110px;
-  height: 110px;
+.pagination a {
+  display: inline-block;
+  margin: 0 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   border-radius: 50%;
-  vertical-align: middle;
-}
-.header .title {
-  margin-top: 20px;
-  font-size: 30px;
-  font-weight: normal;
-  color: #333;
-}
-.header .sub-title {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #666;
+  background-color: #fff;
+  color: #999;
+  font-size: 26px;
 }

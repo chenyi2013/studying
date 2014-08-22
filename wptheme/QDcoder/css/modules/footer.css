@@ -33,6 +33,15 @@
 .icon-user2:before {
   content: "\e605";
 }
+.icon-list:before {
+  content: "\e606";
+}
+.icon-arrow-left:before {
+  content: "\e607";
+}
+.icon-arrow-right:before {
+  content: "\e608";
+}
 .f-reset-a-active {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
