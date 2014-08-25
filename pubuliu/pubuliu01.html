@@ -120,33 +120,40 @@
 
 					console.log( Math.min.apply(Math, height) );
 
+					//算出所有列的最小高度
 					var height_min = Math.min.apply(Math, height);
+					console.log('height_min---'+ height_min);
+
+					//下一个元素的top值
+					top = height_min;
 
 				
-
+					
 					for ( var i = 0; i < height.length; i++) {
 						if ( height_min === height[i] ) {
 							console.log(i);
 							switch(i) {
 								case 0:
 									left = 0;
-									top = height[0];
+									// top = height[0];
 									break;
 								case 1:
 									left = 220;
-									top = height[1];
+									// top = height[1];
 									break;
 								case 2:
 									left = 440;
-									top = height[2];
+									// top = height[2];
 									break;
 								case 3:
 									left = 660;
-									top = height[3];
+									// top = height[3];
 									break;
 							}
 						}
 					}
+					
+					console.log('top---'+ top);
 
 					console.log('left:' + left);
 					console.log('top:' + top);
