@@ -17,7 +17,11 @@ module.exports = function ( grunt ) {
 					'../css/modules/header-fixed.css': '../less/modules/header-fixed.less',
 					'../css/modules/entry-list.css': '../less/modules/entry-list.less',
 					'../css/modules/pagination.css': '../less/modules/pagination.less',
-					'../css/modules/footer.css': '../less/modules/footer.less'
+					'../css/modules/footer.css': '../less/modules/footer.less',
+
+
+					//layout-common
+					'../css/pages/layout-common.css': '../less/pages/layout-common.less'
 				}				
 			}		
 		},
@@ -29,7 +33,10 @@ module.exports = function ( grunt ) {
 					'../css/modules/header-fixed.css',
 					'../css/modules/entry-list.css',
 					'../css/modules/pagination.css',
-					'../css/modules/footer.css'
+					'../css/modules/footer.css',
+
+					//layout-common
+					'../css/pages/layout-common.css'
 				],
 				dest: '../css/common/global.css'
 			}
