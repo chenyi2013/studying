@@ -21,7 +21,10 @@ module.exports = function ( grunt ) {
 
 
 					//layout-common
-					'../css/pages/layout-common.css': '../less/pages/layout-common.less'
+					'../css/pages/layout-common.css': '../less/pages/layout-common.less',
+
+
+					'../css/modules/entry-detail.css': '../less/modules/entry-detail.less'
 				}				
 			}		
 		},
