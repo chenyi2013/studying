@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>demo01</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.div01 {
+			width: 100px;
+			height: 100px;
+			background-color: #f80;
+		}
+	</style>
+	<script type="text/javascript" src="../jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="../angular.js"></script>
+
+</head>
+<body>
+	<div ng-controller="BoxCtrl">
+		<div class="div01" ng-click="click()"></div>
+		<p>{{ w }} x {{ h }}</p>
+		<p>W: <input type="text" ng-model="w"></p>
+		<p>H: <input type="text" ng-model="h"></p>
+	</div>
+</body>
+</html>
