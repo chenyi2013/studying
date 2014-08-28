@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+	<script type="text/javascript" src="../angular.js"></script>
+</head>
+<body>
+	<div ng-style="{width: 100 + 'px', height: 100 + 'px', backgroundColor: 'red'}"></div>
+<hr>
+	<ul ng-init="l=[1,2,3,4]">
+    	<li ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="m in l">{{ m }}</li>
+  	</ul>
+
+<hr>
+	<div ng-show="true">1</div>
+	<div ng-show="false">2</div>
+	<div ng-hide="true">3</div>
+	<div ng-hide="false">4</div>
+<hr>
+	<div ng-init="a=3">
+		<ul ng-switch on="a">
+			<li ng-switch-when="1">1</li>
+			<li ng-switch-when="2">2</li>
+			<li ng-switch-when="3">3</li>
+			<li ng-switch-default>other</li>
+		</ul>
+	</div>
+</body>
+</html>

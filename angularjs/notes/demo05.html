@@ -13,13 +13,10 @@
 	<script type="text/javascript" src="../angular.js"></script>
 </head>
 <body>
-	<div ng-controller="TestCtrl" ng-init="a=[1,2,3,4];">
+	<div ng-init="a=[120,240,360,888];">
 		<ul ng-repeat="member in a">
-			<li>{{ member }}</li>
+			<li>{{ $index }} -- {{ member }}</li>
 		</ul>
 	</div>
-	<script type="text/javascript">
-		angular.bootstrap(document.documentElement);
-	</script>
 </body>
 </html>
