@@ -32,16 +32,29 @@ module.exports = function ( grunt ) {
 			css_global: {
 				src: [
 					'../css/modules/reset.css',
-					'../css/modules/header.css',
 					'../css/modules/header-fixed.css',
-					'../css/modules/entry-list.css',
-					'../css/modules/pagination.css',
 					'../css/modules/footer.css',
 
 					//layout-common
 					'../css/pages/layout-common.css'
 				],
 				dest: '../css/common/global.css'
+			},
+
+			css_home: {
+				src: [
+					'../css/modules/header.css',
+					'../css/modules/entry-list.css',
+					'../css/modules/pagination.css'
+				],
+				dest: '../css/pages/home.css'
+			},
+
+			css_article_detail: {
+				src: [
+					'../css/modules/entry-detail.css'
+				],
+				dest: '../css/pages/article-detail.css'
 			}
 		},
 		csslint: {
@@ -64,6 +77,14 @@ module.exports = function ( grunt ) {
 			global: {
 				src: '../css/common/global.css',
 				dest: '../css/common/global.min.css'
+			},
+			home: {
+				src: '../css/pages/home.css',
+				dest: '../css/pages/home.min.css'
+			},
+			article_detail: {
+				src: '../css/pages/article-detail.css',
+				dest: '../css/pages/article-detail.min.css'
 			}
 		},
 		jshint: {
