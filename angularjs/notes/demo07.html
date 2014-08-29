@@ -17,6 +17,20 @@
     <input type="text" name="uname" required ng-model="uname"  />
     <span ng-click="see()">{{ form_signin.$valid }}</span>
   </form>
+
+  <hr>
+
+  <form name="form_radiotest" ng-controller="radiotest">
+  	<input type="radio" name="a" ng-model="a" value="AA">AA
+  	<input type="radio" name="a" ng-model="a" value="BB">BB
+  	<p>{{ a }}</p>
+  </form>
+
+  <hr>
+
+  <form name="form_select" ng-controller="selectTest" ng-init="o=[0, 1, 2, 3]; a=o[1];">
+  	<select></select>
+  </form>
   
   <script type="text/javascript">
 
@@ -27,7 +41,11 @@
 	      console.log($scope.form_signin.uname);
 	    }
 	  
-	  }
+	  };
+
+	  var radiotest = function () {
+
+	  };
 
   </script>
 </body>
