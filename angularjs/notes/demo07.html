@@ -29,23 +29,88 @@
   <hr>
 
   <form name="form_select" ng-controller="selectTest" ng-init="o=[0, 1, 2, 3]; a=o[1];">
-  	<select></select>
+  	<select ng-model="a" ng-options="x for x in o" ng-change="show()">
+  		<option vlaue="">可以加这个空值</option>
+  	</select>
   </form>
-  
+
+  <br>
+  <br>
+
+  <form name="form_select2" ng-controller="selectTest2" ng-init="o=[{name:'AA'}, {name: 'BB'}];a=o[1]">
+  <select ng-model="a" ng-options="x.name for x in o" ng-change="show()"></select>
+  	
+  </form>
+
+
+  <br>
+  <br>
+
+
+  <form name="form_select3" ng-controller="selectTest3" ng-init="o=[{name:'AA',v:'00'}, {name:'BB', v:'11'}]; a=o[1].v;">
+  	<select ng-model="a" ng-options="x.v as x.name for x in o" ng-change="show()"></select>
+  </form>
+
+
+  <br>
+  <br>
+
+
+  <form name="form_select4" ng-controller="selectTest4" ng-init="o=[{name:'AA',g:'00'}, {name:'BB',g:'11'}, {name:'CC',g:'00'}]; a=o[1];">
+	<select ng-model="a" ng-options="x.name group by x.g for x in o" ng-change="show()"></select>  	
+  </form>
+
+
+  <br>
+  <br>
+
+
+  <form name="form_select5" ng-controller="selectTest5" ng-init="o=[{name:'AA', g:'00', v:'='}, {name:'BB',g:}]">
+  	
+  </form>
+
+
   <script type="text/javascript">
 
-	  var form_signin = function( $scope ) {
-	  
-	    $scope.see = function(){
-	      console.log($scope.form_signin);
-	      console.log($scope.form_signin.uname);
-	    }
-	  
-	  };
+	var form_signin = function( $scope ) {
 
-	  var radiotest = function () {
+		$scope.see = function(){
+		  console.log($scope.form_signin);
+		  console.log($scope.form_signin.uname);
+		}
 
-	  };
+	};
+
+	var radiotest = function () {
+
+	};
+
+	var selectTest = function ($scope) {
+		$scope.show = function () {
+			console.log( $scope.a );
+		};
+	};
+
+
+	var selectTest2 = function ($scope) {
+		$scope.show = function () {
+			console.log( $scope.a.name );
+		};
+	};
+
+
+	var selectTest3 = function ($scope) {
+		$scope.show = function () {
+			console.log( $scope.a );
+		};
+	};
+
+	var selectTest4 = function ($scope) {
+		$scope.show = function () {
+			console.log($scope.a);
+		};
+	};
+
 
   </script>
 </body>
