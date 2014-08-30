@@ -75,34 +75,34 @@
 .entry-detail {
   font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
-.entry-detail .header .title {
+.entry-detail .ed-hd .title {
   font-weight: normal;
   font-size: 32px;
   color: #333;
 }
-.entry-detail .header .des {
+.entry-detail .ed-hd .des {
   margin-top: 20px;
   line-height: 23px;
   text-indent: 30px;
   font-size: 16px;
   color: #999;
 }
-.entry-detail .header .meta-hd {
+.entry-detail .ed-hd .meta-hd {
   margin-top: 20px;
   font-size: 14px;
   color: #333;
 }
-.entry-detail .header .meta-hd .photo {
+.entry-detail .ed-hd .meta-hd .photo {
   margin-right: 5px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   vertical-align: middle;
 }
-.entry-detail .header .meta-hd a {
+.entry-detail .ed-hd .meta-hd a {
   color: #36f;
 }
-.entry-detail .header .meta-hd a:hover {
+.entry-detail .ed-hd .meta-hd a:hover {
   text-decoration: underline;
 }
 .entry-detail .cont {
