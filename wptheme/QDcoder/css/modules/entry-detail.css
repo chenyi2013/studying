@@ -118,4 +118,68 @@
 .entry-detail .cont p {
   margin-top: 20px;
   text-indent: 30px;
+  font-size: 16px;
+}
+.entry-detail .cont pre {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.entry-detail .cont pre code {
+  display: block;
+  background-color: #1b2426;
+  color: #b9bdb6;
+  overflow-x: scroll;
+}
+.entry-detail .ed-fd {
+  margin-top: 30px;
+}
+.entry-detail .ed-fd .meta-fd1 {
+  height: 26px;
+  line-height: 26px;
+  color: #333;
+  font-size: 14px;
+}
+.entry-detail .ed-fd .meta-fd1 .info {
+  float: left;
+}
+.entry-detail .ed-fd .meta-fd1 .share {
+  float: right;
+}
+.entry-detail .ed-fd .meta-fd2 {
+  margin-top: 10px;
+  height: 26px;
+}
+.entry-detail .ed-fd .meta-fd2 a {
+  display: block;
+  float: left;
+  margin-right: 2px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 10px;
+  background-color: #ddd;
+  color: #333;
+  font-size: 14px;
+}
+.prevNextEntry {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+  overflow: hidden;
+  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+.prevNextEntry a {
+  color: #333;
+}
+.prevNextEntry small {
+  display: block;
+  color: #999;
+}
+.prevNextEntry .prev {
+  float: left;
+}
+.prevNextEntry .next {
+  float: right;
+  text-align: right;
 }

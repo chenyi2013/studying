@@ -59,6 +59,80 @@
 		p {
 			margin-top: 20px;
 			text-indent: 30px;
+			font-size: 16px;
 		}
+
+		pre {
+			margin-top: 20px;
+			font-size: 14px;
+		}
+		pre code {
+			display: block;
+			background-color: #1b2426;
+			color: #b9bdb6;
+			overflow-x: scroll;
+		}
+	}
+
+	.ed-fd {
+		margin-top: 30px;
+
+		.meta-fd1 {
+			height: 26px;
+			line-height: 26px;
+			color: #333;
+			font-size: 14px;
+			.info {
+				float: left;
+			}
+
+			.share {
+				float: right;
+			}
+		}
+
+		.meta-fd2 {
+			margin-top: 10px;
+			height: 26px;
+			a {
+				display: block;
+				float: left;
+				margin-right: 2px;
+				height: 26px;
+				line-height: 26px;
+				padding: 0 10px;
+				background-color: #ddd;
+				color: #333;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.prevNextEntry {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 2px solid #ddd;
+	overflow: hidden;
+	font-family: @font-default;
+	font-size: 16px;
+	color: #333;
+
+	a {
+		color: #333;
+	}
+
+	small {
+		display: block;
+		color: #999;
+	}
+
+	.prev {
+		float: left;
+	}
+
+	.next {
+		float: right;
+		text-align: right;
 	}
 }
