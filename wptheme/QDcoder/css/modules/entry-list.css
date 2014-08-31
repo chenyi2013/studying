@@ -111,6 +111,10 @@
 }
 .entry-list article .tit a {
   color: #333;
+  -webkit-transition: all 0.3s;
+}
+.entry-list article .tit a:hover {
+  color: #36f;
 }
 .entry-list article .excerpt {
   margin-top: 20px;
