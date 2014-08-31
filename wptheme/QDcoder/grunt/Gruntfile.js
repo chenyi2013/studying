@@ -24,7 +24,12 @@ module.exports = function ( grunt ) {
 					'../css/pages/layout-common.css': '../less/pages/layout-common.less',
 
 
-					'../css/modules/entry-detail.css': '../less/modules/entry-detail.less'
+					'../css/modules/entry-detail.css': '../less/modules/entry-detail.less',
+
+
+					//responsive
+					'../css/modules/responsive.css': '../less/modules/responsive.less'
+
 				}				
 			}		
 		},
@@ -36,7 +41,10 @@ module.exports = function ( grunt ) {
 					'../css/modules/footer.css',
 
 					//layout-common
-					'../css/pages/layout-common.css'
+					'../css/pages/layout-common.css',
+
+					//responsive
+					'../css/modules/responsive.css'					
 				],
 				dest: '../css/common/global.css'
 			},
@@ -128,6 +136,6 @@ module.exports = function ( grunt ) {
 
 
 	// grunt.registerTask('default', ['less', 'concat', 'csslint', 'cssmin', 'jshint', 'uglify', 'watch']);
-	grunt.registerTask('default', ['less', 'concat', 'cssmin', 'jshint', 'uglify', 'watch']);
+	grunt.registerTask('default', ['less', 'concat', 'cssmin', 'uglify', 'watch']);
 
 };

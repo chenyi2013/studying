@@ -1,5 +1,19 @@
 // responsive.less
 
-@media screen {
-	
+@media screen and (min-width: 1200px) {
+	.content-home {
+		width: 1200px;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+	.content-home {
+		width: 800px !important;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.content-home {
+		max-width: 400px !important;
+	}
 }

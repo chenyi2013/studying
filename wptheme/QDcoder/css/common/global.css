@@ -180,6 +180,9 @@ a {
   float: right;
 }
 .header-fixed {
+  position: fixed;
+  left: 0;
+  top: -51px;
   width: 100%;
   height: 50px;
   line-height: 50px;
@@ -310,6 +313,31 @@ a {
   color: #36f;
 }
 
+.content {
+  margin: 0 auto;
+}
+.content-home {
+  width: 1200px;
+}
+.content-ed {
+  margin-top: 51px;
+}
 .footer {
   margin-top: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  .content-home {
+    width: 1200px;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .content-home {
+    width: 800px !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content-home {
+    max-width: 400px !important;
+  }
 }

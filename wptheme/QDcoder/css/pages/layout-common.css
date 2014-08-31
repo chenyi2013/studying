@@ -1,3 +1,12 @@
+.content {
+  margin: 0 auto;
+}
+.content-home {
+  width: 1200px;
+}
+.content-ed {
+  margin-top: 51px;
+}
 .footer {
   margin-top: 20px;
 }
