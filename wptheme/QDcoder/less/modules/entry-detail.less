@@ -17,6 +17,7 @@
 		}
 
 		.des {
+			display: none;
 			margin-top: 20px;
 			line-height: 23px;
 			text-indent: 30px;
@@ -26,14 +27,14 @@
 
 		.meta-hd {
 			margin-top: 20px;
-			font-size: 14px;
-			color: #333;
-			.photo {
-				margin-right: 5px;
-				width: 40px;
-				height: 40px;
-				border-radius: 50%;
-				vertical-align: middle;
+			height: 32px;
+			line-height: 32px;
+			font-size: 12px;
+			color: #666;
+	
+			.ico {
+				margin-right: 3px;
+				color: #999;
 			}
 
 			a {
@@ -42,11 +43,39 @@
 					text-decoration: underline;
 				}
 			}
+
+			.photo {
+				display: none;
+				float: left;
+				margin-right: 5px;
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				vertical-align: middle;
+			}
+
+			.author {
+				float: left;
+				margin-left: 10px;
+			}
+
+			.date {
+				float: left;
+			}
+
+			.views,
+			.cmt {
+				float: right;
+			}
+
+			.views {
+				margin-right: 10px;
+			}
 		}
 	}
 	
 	.cont {
-		margin-top: 40px;
+		margin-top: 30px;
 		color: #333;
 		line-height: 23px;
 
@@ -74,10 +103,10 @@
 		}
 	}
 
-	.ed-fd {
+	.ed-ft {
 		margin-top: 30px;
 
-		.meta-fd1 {
+		.meta-ft1 {
 			height: 26px;
 			line-height: 26px;
 			color: #333;
@@ -91,7 +120,7 @@
 			}
 		}
 
-		.meta-fd2 {
+		.meta-ft2 {
 			margin-top: 10px;
 			height: 26px;
 			a {
@@ -135,4 +164,12 @@
 		float: right;
 		text-align: right;
 	}
+}
+
+.comment {
+	margin-top: 30px;
+	width: 100%;
+	min-height: 300px;
+	border-top: 1px solid #ddd;
+	background-color: #f1f1f1;
 }

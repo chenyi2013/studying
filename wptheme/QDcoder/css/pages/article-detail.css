@@ -81,6 +81,7 @@
   color: #333;
 }
 .entry-detail .ed-hd .des {
+  display: none;
   margin-top: 20px;
   line-height: 23px;
   text-indent: 30px;
@@ -89,15 +90,14 @@
 }
 .entry-detail .ed-hd .meta-hd {
   margin-top: 20px;
-  font-size: 14px;
-  color: #333;
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+  color: #666;
 }
-.entry-detail .ed-hd .meta-hd .photo {
-  margin-right: 5px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  vertical-align: middle;
+.entry-detail .ed-hd .meta-hd .ico {
+  margin-right: 3px;
+  color: #999;
 }
 .entry-detail .ed-hd .meta-hd a {
   color: #36f;
@@ -105,8 +105,31 @@
 .entry-detail .ed-hd .meta-hd a:hover {
   text-decoration: underline;
 }
+.entry-detail .ed-hd .meta-hd .photo {
+  display: none;
+  float: left;
+  margin-right: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.entry-detail .ed-hd .meta-hd .author {
+  float: left;
+  margin-left: 10px;
+}
+.entry-detail .ed-hd .meta-hd .date {
+  float: left;
+}
+.entry-detail .ed-hd .meta-hd .views,
+.entry-detail .ed-hd .meta-hd .cmt {
+  float: right;
+}
+.entry-detail .ed-hd .meta-hd .views {
+  margin-right: 10px;
+}
 .entry-detail .cont {
-  margin-top: 40px;
+  margin-top: 30px;
   color: #333;
   line-height: 23px;
 }
@@ -130,26 +153,26 @@
   color: #b9bdb6;
   overflow-x: scroll;
 }
-.entry-detail .ed-fd {
+.entry-detail .ed-ft {
   margin-top: 30px;
 }
-.entry-detail .ed-fd .meta-fd1 {
+.entry-detail .ed-ft .meta-ft1 {
   height: 26px;
   line-height: 26px;
   color: #333;
   font-size: 14px;
 }
-.entry-detail .ed-fd .meta-fd1 .info {
+.entry-detail .ed-ft .meta-ft1 .info {
   float: left;
 }
-.entry-detail .ed-fd .meta-fd1 .share {
+.entry-detail .ed-ft .meta-ft1 .share {
   float: right;
 }
-.entry-detail .ed-fd .meta-fd2 {
+.entry-detail .ed-ft .meta-ft2 {
   margin-top: 10px;
   height: 26px;
 }
-.entry-detail .ed-fd .meta-fd2 a {
+.entry-detail .ed-ft .meta-ft2 a {
   display: block;
   float: left;
   margin-right: 2px;
@@ -182,4 +205,11 @@
 .prevNextEntry .next {
   float: right;
   text-align: right;
+}
+.comment {
+  margin-top: 30px;
+  width: 100%;
+  min-height: 300px;
+  border-top: 1px solid #ddd;
+  background-color: #f1f1f1;
 }
