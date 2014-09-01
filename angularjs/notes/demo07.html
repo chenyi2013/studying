@@ -65,8 +65,8 @@
   <br>
 
 
-  <form name="form_select5" ng-controller="selectTest5" ng-init="o=[{name:'AA', g:'00', v:'='}, {name:'BB',g:}]">
-  	
+  <form name="form_select5" ng-controller="selectTest5" ng-init="o=[{name:'AA', g:'00', v:'='}, {name:'BB',g:'11', v:'+'}, {name:'CC', g:'00', v:'!'}]; a=o[1].v;">
+  	<select ng-model="a" ng-options="x.v as x.name group by x.g for x in o" ng-change="show()"></select>
   </form>
 
 
@@ -106,6 +106,12 @@
 	};
 
 	var selectTest4 = function ($scope) {
+		$scope.show = function () {
+			console.log($scope.a);
+		};
+	};
+
+	var selectTest5 = function ($scope) {
 		$scope.show = function () {
 			console.log($scope.a);
 		};
