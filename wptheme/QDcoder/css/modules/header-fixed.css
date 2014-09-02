@@ -74,6 +74,7 @@
 }
 .header-fixed {
   position: fixed;
+  z-index: 1000;
   left: 0;
   top: -51px;
   width: 100%;
