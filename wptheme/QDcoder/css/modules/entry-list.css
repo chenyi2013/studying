@@ -93,21 +93,27 @@
   width: 360px;
   height: 216px;
   overflow: hidden;
+  /* 			.pic-mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 0.3s;
+} */
+}
+.entry-list article .pic:hover {
+  /* 				.pic-mask {
+	background-color: rgba(0, 0, 0, 0)
+} */
+}
+.entry-list article .pic:hover img {
+  opacity: 0.8;
 }
 .entry-list article .pic img {
   width: 100%;
-  -webkit-transition: all 0.3s;
-}
-.entry-list article .pic img:hover {
-  -webkit-transform: scale(1.1);
-}
-.entry-list article .pic .pic-mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: -20px -20px 50px #000000 inset;
+  -webkit-transition: all 0.2s;
 }
 .entry-list article header,
 .entry-list article .excerpt {
