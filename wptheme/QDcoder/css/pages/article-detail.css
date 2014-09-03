@@ -143,6 +143,12 @@
   text-indent: 30px;
   font-size: 16px;
 }
+.entry-detail .cont p a {
+  color: #36f;
+}
+.entry-detail .cont p a:hover {
+  text-decoration: underline;
+}
 .entry-detail .cont pre {
   margin-top: 20px;
   font-size: 14px;
@@ -179,9 +185,12 @@
   height: 26px;
   line-height: 26px;
   padding: 0 10px;
-  background-color: #ddd;
-  color: #333;
+  background-color: #36f;
+  color: #fff;
   font-size: 14px;
+}
+.entry-detail .ed-ft .meta-ft2 a:hover {
+  opacity: 0.8;
 }
 .prevNextEntry {
   margin-top: 30px;
@@ -194,6 +203,9 @@
 }
 .prevNextEntry a {
   color: #333;
+}
+.prevNextEntry a:hover {
+  color: #36f;
 }
 .prevNextEntry small {
   display: block;
