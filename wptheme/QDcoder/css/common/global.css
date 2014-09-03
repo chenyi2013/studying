@@ -321,7 +321,13 @@ a {
   width: 1200px;
 }
 .content-ed {
-  margin-top: 51px;
+  margin: 0 auto;
+  margin-top: 81px;
+  width: 800px;
+}
+#disqus_thread {
+  margin: 0 auto;
+  width: 800px;
 }
 .footer {
   margin-top: 20px;
