@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function test1 () {
+		alert('我是test1');
+	}
+
+	function test2 () {
+		alert('test2');
+	}
+
+
+	function test3 () {
+		alert('test3');
+	}
+
+	// test1();
+//  1, 还没定义
+	// window.onload
+
+
+	window.onload = function () {
+		test2();
+	}
+
+
+	function addLoadEvent( fn ) {
+		var oldOnload = window.onload;
+		if ( typeof window.onload != 'function' ) {
+			// alert('window.onload还没有定义');
+			window.onload = fn;
+		} else {
+			window.onload = function () {
+				//其他的window.onload
+				// test2();
+				oldOnload();
+
+				//新的需要用到window.onload的地方
+				fn();
+			}
+		}
+	}
+
+	addLoadEvent( test1 );
+	addLoadEvent( test3 );
+
+
+	// window.onload = test1();
+
+
+
+
+	// window.onload
+	// var div1 = document.getElementById('div1');
+	// alert('div1');
+	</script>
+</head>
+<body>
+	<div id="div1">11</div>
+</body>
+</html>
