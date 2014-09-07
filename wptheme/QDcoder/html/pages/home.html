@@ -29,16 +29,40 @@
 		window.jQuery || document.write('<script type="text/javascript" src="../../js/lib/jquery-2.1.1.js"><\/script>');
 	</script>
 	<script type="text/javascript" src="../../js/main.js"></script>
+	<script>
+	(function ($) {
+		$(function () {
+			var mainMenu = $('nav .menu');
+			mainMenu.li = mainMenu.find('li');
 
+			mainMenu.Width = 0;
+
+			mainMenu.li.each(function (i) {
+				mainMenu.Width +=  mainMenu.li.eq(i).width();
+			});
+
+			mainMenu.width( mainMenu.Width );
+		});
+	})(jQuery);
+	</script>
 </head>
 <body>
 
 	<header class="header">
-		<a href="#"><img class="logo" src="../../images/temp/logo.png"></a>
+		<div class="logo"><a href="#"><img src="../../images/temp/logo.png"></a></div>
 		<h1 class="title"><a href="#">前端码农</a></h1>
-		<p class="sub-title">前端开发博客，记录与分享前端技术</p>
+		<p class="sub-title">发现问题，解决问题，创造价值</p>
 		<a class="btn-menu" href="#"><i class="ico icomoon icon-list"></i></a>
 	</header>
+	<nav class="nav nav-s2">
+		<ul class="menu f-cb">
+			<li class="active"><a href="#">首页</a></li>
+			<li><a href="#">HTML5/CSS3</a></li>
+			<li><a href="#">Javascript</a></li>
+			<li><a href="#">Nodejs</a></li>
+			<li><a href="#">前端资源</a></li>
+		</ul>
+	</nav>
 
 	<header class="header-fixed" style="display: none;">
 		<a href="#"><img class="logo" src="../../images/temp/logo.png"></a>

@@ -11,29 +11,37 @@
 	width: 100%;
 	height: 260px;
 	border-bottom: 1px solid #ddd;
-	background-color: #fff;
-	text-align: center;
+	background: url(../../images/temp/7.jpg) no-repeat center bottom;
 	font-family: @font-default;
 
 	.logo {
-		margin-top: 26px;
-		width: 110px;
+		padding-top: 26px;
 		height: 110px;
-		border-radius: 50%;
-		vertical-align: middle;
+		text-align: center;
+
+		img {
+			width: 110px;
+			height: 110px;
+			border-radius: 50%;
+			vertical-align: middle;			
+		}
 	}
 
 	.title {
 		margin-top: 20px;
 		font-size: 30px;
 		font-weight: normal;
-		color: #333;
+		text-align: center;		
+		a {
+			color: #fff;
+		}
 	}
 
 	.sub-title {
 		margin-top: 20px;
 		font-size: 16px;
-		color: #666;
+		color: #fff;
+		text-align: center;
 	}
 
 	.btn-menu {
@@ -42,6 +50,39 @@
 		right: 10px;
 		line-height: 50px;
 		font-size: 26px;
-		color: #333;
+		color: #fff;
+	}
+}
+
+.nav-s2 {
+	// display: none;
+	width: 100%;
+	height: 46px;
+	background-color: #fff;
+	box-shadow: 1px 1px 3px #ccc;
+	font-family: @font-default;
+	.menu {
+		margin: 0 auto;
+		// width: 800px;
+		height: 44px;
+		line-height: 44px;
+
+		li {
+			float: left;
+			border-bottom: 2px solid #fff;
+			a {
+				display: block;
+				padding: 0 20px;
+				color: #333;
+			}
+		}
+
+		li:hover,
+		.active {
+			border-bottom-color: #36f;
+			a {
+				color: #36f;
+			}
+		}
 	}
 }
