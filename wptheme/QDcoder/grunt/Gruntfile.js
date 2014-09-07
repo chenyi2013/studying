@@ -40,6 +40,7 @@ module.exports = function ( grunt ) {
 				src: [
 					'../css/modules/reset.css',
 					'../css/modules/header-fixed.css',
+					'../css/modules/nav-s2.css',
 					'../css/modules/footer.css',
 
 					//layout-common

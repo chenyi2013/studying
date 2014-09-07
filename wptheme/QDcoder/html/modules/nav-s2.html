@@ -25,28 +25,63 @@
 		$(function () {
 			var mainMenu = $('nav .menu');
 			mainMenu.li = mainMenu.find('li');
-			mainMenu.Width = 0;
-			mainMenu.liMargin = 20;
-			mainMenu.slider = mainMenu.find('.slider');
+			mainMenu.Width = 0; //li父容器ul.menu 的宽度， 由子容器宽度之和决定
+			mainMenu.liMargin = 20; //li的左右margin之和
+			mainMenu.slider = mainMenu.find('.slider'); //滑动块
 
 
+
+			/*
+				ul.menu宽度初始化
+			*/
 			mainMenu.li.each(function (i) {
 				mainMenu.Width += mainMenu.li.eq(i).width() + mainMenu.liMargin;
 			});
-
 			mainMenu.width( mainMenu.Width );
-			//home
-			mainMenu.slider.width( mainMenu.li.eq(0).width() );
 
-			mainMenu.li.each();
+
+			/*
+				页面载入时滑块位置初始化，页面不同，位置不同
+			*/
+			var _index = 0,
+				_sliderLeft = 0,
+				_sliderWidth = 0;
+		
+			mainMenu.li.each(function (i) {
+				if ( $(this).hasClass('active') ) {
+					_index = i;
+					_sliderWidth = $(this).width();
+				}
+				console.log(_index);
+			});
+
+			for (var j = 0; j < _index; j++) {
+				_sliderLeft += mainMenu.li.eq(j).width() + mainMenu.liMargin;
+			}
+			_sliderLeft += mainMenu.liMargin/2;
+			mainMenu.slider.css({
+				'left': _sliderLeft,
+				'width': _sliderWidth
+			});
 	
 
+
+			/*
+				鼠标移动时，滑块平滑移动
+			*/
 			mainMenu.li.each(function (i) {
 				var _left_ini = mainMenu.slider.css('left'),
 					_width_ini = mainMenu.slider.css('width');
 				console.log(_left_ini);
 				$(this).hover(function () {
 					// console.log($(this).css('marginLeft'));
+
+					$(this).find('a').css({
+						'color': '#36f'
+					}).parent().siblings().find('a').css({
+						'color': '#333'
+					});
+
 					var _left_cur = 0,
 						_width_cur = mainMenu.li.eq(i).width();
 					if ( i === 0 ) {
@@ -72,6 +107,12 @@
 						'left': _left_cur,
 						'width': _width_cur}, 200);
 				}, function () {
+					mainMenu.li.find('a').css({
+						'color': '#333'
+					});
+					mainMenu.find('.active a').css({
+						'color': '#36f'
+					});
 					mainMenu.slider.stop().animate({
 						'left': _left_ini,
 						'width': _width_ini}, 200);
@@ -87,10 +128,10 @@
 <body>
 	<nav class="nav nav-s2">
 		<ul class="menu f-cb">
-			<li class="active"><a href="#">首页</a></li>
+			<li><a href="#">首页</a></li>
 			<li><a href="#">HTML5/CSS3</a></li>
 			<li><a href="#">Javascript</a></li>
-			<li><a href="#">Nodejs</a></li>
+			<li class="active"><a href="#">Nodejs</a></li>
 			<li><a href="#">前端资源</a></li>
 			<span class="slider"></span>
 		</ul>
