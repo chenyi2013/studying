@@ -72,22 +72,22 @@
 .f-fr {
   float: right;
 }
-.footer {
-  width: 100%;
-  height: 100px;
-  line-height: 100px;
-  border-top: 1px solid #ddd;
-  background-color: #fff;
+.nav-s1 {
   font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
 }
-.footer .cr {
-  text-align: center;
-  font-size: 14px;
-  color: #999;
+.nav-s1 .menu {
+  background-color: #363b3f;
 }
-.footer a {
-  color: #999;
+.nav-s1 .menu li {
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
 }
-.footer a:hover {
-  color: #36f;
+.nav-s1 .menu li a {
+  display: block;
+  color: #fff;
+}
+.nav-s1 .menu li:hover,
+.nav-s1 .menu .active {
+  background-color: #35aadc;
 }

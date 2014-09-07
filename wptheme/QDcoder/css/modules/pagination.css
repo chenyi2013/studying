@@ -73,7 +73,7 @@
   float: right;
 }
 .pagination {
-  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
   text-align: center;
   font-size: 0;
 }

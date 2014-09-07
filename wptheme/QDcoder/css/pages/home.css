@@ -79,7 +79,7 @@
   border-bottom: 1px solid #ddd;
   background-color: #fff;
   text-align: center;
-  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
 }
 .header .logo {
   margin-top: 26px;
@@ -184,7 +184,7 @@
 }
 .entry-list {
   width: 100%;
-  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
   overflow: hidden;
 }
 .entry-list article {
@@ -359,7 +359,7 @@
   float: right;
 }
 .pagination {
-  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
   text-align: center;
   font-size: 0;
 }

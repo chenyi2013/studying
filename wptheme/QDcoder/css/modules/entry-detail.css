@@ -73,7 +73,7 @@
   float: right;
 }
 .entry-detail {
-  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
 }
 .entry-detail .ed-hd .title {
   font-weight: normal;
@@ -197,7 +197,7 @@
   padding-top: 20px;
   border-top: 2px solid #ddd;
   overflow: hidden;
-  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
   font-size: 16px;
   color: #333;
 }
