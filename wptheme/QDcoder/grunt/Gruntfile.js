@@ -15,6 +15,7 @@ module.exports = function ( grunt ) {
 					'../css/modules/reset.css': '../less/modules/reset.less',
 					'../css/modules/header.css': '../less/modules/header.less',
 					'../css/modules/nav-s1.css': '../less/modules/nav-s1.less',
+					'../css/modules/nav-s2.css': '../less/modules/nav-s2.less',
 					'../css/modules/header-fixed.css': '../less/modules/header-fixed.less',
 					'../css/modules/entry-list.css': '../less/modules/entry-list.less',
 					'../css/modules/pagination.css': '../less/modules/pagination.less',

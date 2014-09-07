@@ -107,41 +107,13 @@
   text-align: center;
 }
 .header .btn-menu {
+  display: none;
   position: absolute;
   top: 0;
   right: 10px;
   line-height: 50px;
   font-size: 26px;
   color: #fff;
-}
-.nav-s2 {
-  width: 100%;
-  height: 46px;
-  background-color: #fff;
-  box-shadow: 1px 1px 3px #ccc;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
-}
-.nav-s2 .menu {
-  margin: 0 auto;
-  height: 44px;
-  line-height: 44px;
-}
-.nav-s2 .menu li {
-  float: left;
-  border-bottom: 2px solid #fff;
-}
-.nav-s2 .menu li a {
-  display: block;
-  padding: 0 20px;
-  color: #333;
-}
-.nav-s2 .menu li:hover,
-.nav-s2 .menu .active {
-  border-bottom-color: #36f;
-}
-.nav-s2 .menu li:hover a,
-.nav-s2 .menu .active a {
-  color: #36f;
 }
 
 @font-face {

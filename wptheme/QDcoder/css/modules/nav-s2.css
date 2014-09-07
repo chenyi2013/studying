@@ -72,46 +72,38 @@
 .f-fr {
   float: right;
 }
-.header {
-  position: relative;
+.nav-s2 {
   width: 100%;
-  height: 260px;
-  border-bottom: 1px solid #ddd;
-  background: url(../../images/temp/7.jpg) no-repeat center bottom;
+  height: 46px;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px #ccc;
   font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
 }
-.header .logo {
-  padding-top: 26px;
-  height: 110px;
-  text-align: center;
+.nav-s2 .menu {
+  position: relative;
+  margin: 0 auto;
 }
-.header .logo img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-.header .title {
-  margin-top: 20px;
-  font-size: 30px;
-  font-weight: normal;
-  text-align: center;
-}
-.header .title a {
-  color: #fff;
-}
-.header .sub-title {
-  margin-top: 20px;
+.nav-s2 .menu li {
+  float: left;
+  margin: 0 10px;
+  height: 46px;
+  line-height: 46px;
   font-size: 16px;
-  color: #fff;
-  text-align: center;
 }
-.header .btn-menu {
-  display: none;
+.nav-s2 .menu li a {
+  display: block;
+  padding: 0 10px;
+  color: #333;
+}
+.nav-s2 .menu li:hover a,
+.nav-s2 .menu .active a {
+  color: #36f;
+}
+.nav-s2 .menu .slider {
   position: absolute;
-  top: 0;
-  right: 10px;
-  line-height: 50px;
-  font-size: 26px;
-  color: #fff;
+  bottom: 0;
+  left: 10px;
+  width: 50px;
+  height: 2px;
+  background-color: #36f;
 }
