@@ -20,7 +20,8 @@ $(function () {
 		}
 	};
 
+/*	//在列表页调用浮动导航条
 	if ( $('.content-home').length  > 0 ) {
 		qdcoder.hdFix();
-	}
+	}*/
 });
