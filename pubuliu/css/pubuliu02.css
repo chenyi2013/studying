@@ -1,0 +1,23 @@
+/* pubuliu02.css */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.lists {
+	margin: 0 auto;
+	width: 1100px;
+	list-style: none;
+}
+
+.lists .list {
+	float: left;
+	margin: 10px;
+	width: 200px;
+}
+
+.lists .list img {
+	display: block;
+	width: 200px;
+}
