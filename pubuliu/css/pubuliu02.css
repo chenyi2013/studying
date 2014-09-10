@@ -17,7 +17,7 @@
 .lists .list {
 	position: absolute;
 	float: left;
-	margin: 10px;
+	/*margin: 10px;*/
 	width: 200px;
 }
 

@@ -4,13 +4,14 @@ var pubuliu02 = (function ($) {
 			var _uList = $('.lists'),
 				_list = _uList.find('.list'),
 
-				marginL = 10;
+				_marginL = 10,
+				_listW = 200;
 
-			_list.eq(0).css({'left': marginL});
-			_list.eq(1).css({'left': marginL*3 + _list.eq(0).width() });
-			_list.eq(2).css({'left': marginL*5 + _list.eq(0).width()*2 });
-			_list.eq(3).css({'left': marginL*7 + _list.eq(0).width()*3 });
-			_list.eq(4).css({'left': marginL*9 + _list.eq(0).width()*4 });
+			_list.eq(0).css({'left': 10});
+			_list.eq(1).css({'left': 200+30 });
+			_list.eq(2).css({'left': 400+50 });
+			_list.eq(3).css({'left': 600+70 });
+			_list.eq(4).css({'left': 800+90 });
 		}
 	};
 })(jQuery);
