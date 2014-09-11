@@ -66,15 +66,15 @@ var pubuliu02 = (function ($) {
 					console.log(_left);
 
 					if ( _left == '10px' ) {
-						_cols1 += _this.height();
+						_cols1 += _this.height() + 20;
 					} else if ( _left == '230px' ) {
-						_cols2 += _this.height();
+						_cols2 += _this.height() + 20;
 					} else if ( _left == '450px' ) {
-						_cols3 += _this.height();
+						_cols3 += _this.height() + 20;
 					} else if ( _left == '670px' ) {
-						_cols4 += _this.height();	
+						_cols4 += _this.height() + 20;	
 					} else if ( _left == '890px' ) {
-						_cols5 += _this.height();
+						_cols5 += _this.height() + 20;
 					}
 				}
 
@@ -114,7 +114,7 @@ var pubuliu02 = (function ($) {
 			for (var i = 5; i < _list.length; i++) {
 				getPosition();
 				_list.eq(i).css({
-					'top': _minHeight + 20,
+					'top': _minHeight,
 					'left': _theLeft
 				});
 			}
