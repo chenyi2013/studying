@@ -28,6 +28,7 @@ var pubuliu02 = (function ($) {
 					0
 				],
 				_minHeight = 0,
+				_maxHeight = 0,
 				_theLeft = 0,
 
 				_marginL = 10,
@@ -63,7 +64,7 @@ var pubuliu02 = (function ($) {
 					_this = _list.eq(i);
 					_left = _this.css('left');
 
-					console.log(_left);
+					// console.log(_left);
 
 					if ( _left == '10px' ) {
 						_cols1 += _this.height() + 20;
@@ -88,6 +89,7 @@ var pubuliu02 = (function ($) {
 
 
 				_minHeight = Math.min.apply(Math, _CosListTop);
+				_maxHeight = Math.max.apply(Math, _CosListTop);
 
 				// var _theLeft = 0;
 				for (var i = 0; i < _CosListTop.length; i++) {
@@ -117,6 +119,24 @@ var pubuliu02 = (function ($) {
 					'top': _minHeight,
 					'left': _theLeft
 				});
+				if ( i == _list.length - 1 ) {
+					getPosition();
+					console.log('maxHeight' + _maxHeight);
+					console.log('minHeight' + _minHeight);
+					console.log(_CosListTop);
+
+					$('.lists').height( _maxHeight - 20 );
+
+					for (var j = 0; j < _CosListTop.length; j++) {
+						if ( _CosListTop[j] != _maxHeight ) {
+							$('.lists .padding').eq(j).css({
+								'left': _RowListLeft[j],
+								'top': _CosListTop[j],
+								'height': _maxHeight - _CosListTop[j] - 20
+							});
+						}
+					}
+				}
 			}
 
 
