@@ -14,7 +14,7 @@ body {
 	margin: 0 auto;
 	width: 1100px;
 	height: 3000px;
-	background-color: #ccc;
+	background-color: #f1f1f1;
 	list-style: none;
 }
 
@@ -25,11 +25,12 @@ body {
 	width: 200px;
 	left: 41%;
 	top: 0;
-	/*-webkit-transition: all 0.2s;*/
+	/*-webkit-transition: all 0.5s;*/
 }
 
 .lists .padding {
 	position: absolute;
+	margin: 20px 10px 0 10px;
 	width: 200px;
 	height: 0;
 	background-color: #333;
@@ -40,7 +41,7 @@ body {
 .lists .list img {
 	display: block;
 	width: 200px;
-	opacity: 0.1;
+	/*opacity: 0.1;*/
 }
 
 .lists .list img:hover {

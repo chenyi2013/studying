@@ -39,6 +39,7 @@ var pubuliu03 = (function ($) {
 					'left': (_listOuterWidth+_listMargin)*i,
 					'top': 0
 				});
+				// _list[i].style.cssText = 'left:' + (_listOuterWidth+_listMargin)*i + 'px; top: 0px;'; 
 			}
 
 
@@ -52,6 +53,7 @@ var pubuliu03 = (function ($) {
 				for (var i = 0; i < _list.length; i++) {
 					var _this = _list[i],
 						_left = $(_this).css('left');
+					// console.log(_left);
 					for (var j = 0; j < 5; j++) {
 						if ( _left == (_listOuterWidth + _listMargin) * j + 'px' ) {
 							_colsHeight[j] += (0 + $(_this).outerHeight() + _listMargin);
@@ -59,6 +61,8 @@ var pubuliu03 = (function ($) {
 						}
 					}
 				}
+
+				// console.log(_colsHeight);
 
 				_colsHeight_max = Math.max.apply(Math, _colsHeight);
 				_pos.top = _colsHeight_min = Math.min.apply(Math, _colsHeight);
@@ -70,26 +74,32 @@ var pubuliu03 = (function ($) {
 				}
 			}
 
-			for (var i = 5; i < _list.length; i++) {
-				getPosition();
-				_list.eq(i).css({
-					'left': _pos.left,
-					'top': _pos.top
-				});
-
-				if ( i == _list.length - 1 ) {
+			function run () {
+				for (var i = 5; i < _list.length; i++) {
 					getPosition();
-					for (var j = 0; j < _colsHeight.length; j++) {
-						if ( _colsHeight_max != _colsHeight[j] ) {
-							$('.padding').eq(j).css({
-								'top': _pos.top,
-								'left': _pos.left,
-								'height': _colsHeight_max - _pos.top
-							});
+					_list.eq(i).css({
+						'left': _pos.left,
+						'top': _pos.top
+					});
+					// _list[i].style.cssText = 'left:' + _pos.left + 'px; top:' + _pos.top + 'px;';
+
+					if ( i == _list.length - 1 ) {
+						getPosition();
+						for (var j = 0; j < _colsHeight.length; j++) {
+							if ( _colsHeight_max != _colsHeight[j] ) {
+								$('.padding').eq(j).css({
+									'top': _colsHeight[j],
+									'left': (_listOuterWidth + _listMargin)*j,
+									'height': _colsHeight_max - _colsHeight[j] - 20
+								});
+							}
 						}
 					}
 				}
 			}
+
+			run();
+
 
 
 
