@@ -96,6 +96,7 @@
   color: #333;
 }
 .nav-s2 .menu li:hover a,
+.nav-s2 .menu .current-cat a,
 .nav-s2 .menu .active a {
   color: #36f;
 }

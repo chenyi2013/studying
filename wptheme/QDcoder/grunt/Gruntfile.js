@@ -47,7 +47,7 @@ module.exports = function ( grunt ) {
 					'../css/pages/layout-common.css',
 
 					//responsive
-					'../css/modules/responsive.css'					
+					'../css/modules/responsive.css'				
 				],
 				dest: '../css/common/global.css'
 			},
@@ -66,6 +66,26 @@ module.exports = function ( grunt ) {
 					'../css/modules/entry-detail.css'
 				],
 				dest: '../css/pages/article-detail.css'
+			},
+
+			wordpress_style: {
+				src: [
+					'../css/modules/reset.css',
+					'../css/modules/header.css',
+					'../css/modules/header-fixed.css',
+					'../css/modules/nav-s2.css',
+					'../css/modules/entry-list.css',
+					'../css/modules/pagination.css',
+					'../css/modules/entry-detail.css',
+					'../css/modules/footer.css',
+
+					//layout-common
+					'../css/pages/layout-common.css',
+
+					//responsive
+					'../css/modules/responsive.css'	
+				],
+				dest: '../css/wordpress/style.css'				
 			}
 		},
 		csslint: {
@@ -96,6 +116,10 @@ module.exports = function ( grunt ) {
 			article_detail: {
 				src: '../css/pages/article-detail.css',
 				dest: '../css/pages/article-detail.min.css'
+			},
+			wordpress: {
+				src: '../css/wordpress/style.css',
+				dest: '../css/wordpress/style.min.css'
 			}
 		},
 		jshint: {

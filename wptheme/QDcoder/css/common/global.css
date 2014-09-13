@@ -318,6 +318,7 @@ a {
   color: #333;
 }
 .nav-s2 .menu li:hover a,
+.nav-s2 .menu .current-cat a,
 .nav-s2 .menu .active a {
   color: #36f;
 }
@@ -455,6 +456,14 @@ a {
 }
 @media screen and (max-width: 800px) {
   .content-home {
-    max-width: 400px !important;
+    margin: 0 3%;
+    width: 94%;
+  }
+  .entry-list article {
+    margin: 20px 0 0 0;
+    width: 100%;
+  }
+  .entry-list article .pic {
+    width: 100%;
   }
 }

@@ -48,7 +48,7 @@
 				_sliderWidth = 0;
 		
 			mainMenu.li.each(function (i) {
-				if ( $(this).hasClass('active') ) {
+				if ( $(this).hasClass('current-cat') ) {
 					_index = i;
 					_sliderWidth = $(this).width();
 				}
@@ -110,7 +110,7 @@
 					mainMenu.li.find('a').css({
 						'color': '#333'
 					});
-					mainMenu.find('.active a').css({
+					mainMenu.find('.current-cat a').css({
 						'color': '#36f'
 					});
 					mainMenu.slider.stop().animate({
@@ -131,7 +131,7 @@
 			<li><a href="#">首页</a></li>
 			<li><a href="#">HTML5/CSS3</a></li>
 			<li><a href="#">Javascript</a></li>
-			<li class="active"><a href="#">Nodejs</a></li>
+			<li class="current-cat"><a href="#">Nodejs</a></li>
 			<li><a href="#">前端资源</a></li>
 			<span class="slider"></span>
 		</ul>
