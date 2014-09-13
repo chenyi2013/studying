@@ -430,6 +430,7 @@ a {
 }
 .content-home {
   width: 1200px;
+  padding-bottom: 20px;
 }
 .content-ed {
   margin: 0 auto;
@@ -439,9 +440,6 @@ a {
 #disqus_thread {
   margin: 0 auto;
   width: 800px;
-}
-.footer {
-  margin-top: 20px;
 }
 
 @media screen and (min-width: 1200px) {

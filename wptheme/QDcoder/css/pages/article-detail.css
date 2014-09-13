@@ -131,7 +131,7 @@
 .entry-detail .cont {
   margin-top: 30px;
   color: #333;
-  line-height: 23px;
+  line-height: 26px;
 }
 .entry-detail .cont h2 {
   text-indent: 30px;
@@ -152,12 +152,9 @@
 .entry-detail .cont pre {
   margin-top: 20px;
   font-size: 14px;
-}
-.entry-detail .cont pre code {
-  display: block;
   background-color: #1b2426;
   color: #b9bdb6;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .entry-detail .ed-ft {
   margin-top: 30px;
