@@ -18,6 +18,7 @@ module.exports = function ( grunt ) {
 					'../css/modules/nav-s2.css': '../less/modules/nav-s2.less',
 					'../css/modules/header-fixed.css': '../less/modules/header-fixed.less',
 					'../css/modules/entry-list.css': '../less/modules/entry-list.less',
+					'../css/modules/entry-list-pubuliu.css': '../less/modules/entry-list-pubuliu.less',
 					'../css/modules/pagination.css': '../less/modules/pagination.less',
 					'../css/modules/footer.css': '../less/modules/footer.less',
 
@@ -75,6 +76,7 @@ module.exports = function ( grunt ) {
 					'../css/modules/header-fixed.css',
 					'../css/modules/nav-s2.css',
 					'../css/modules/entry-list.css',
+					'../css/modules/entry-list-pubuliu.css',
 					'../css/modules/pagination.css',
 					'../css/modules/entry-detail.css',
 					'../css/modules/footer.css',
