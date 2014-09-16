@@ -5,15 +5,21 @@
 //
 
 .entry-list {
+	position: relative;
 	width: 100%;
+	height: 2000px;
 	font-family: @font-default;
-	overflow: hidden;
+	// overflow: hidden;
+	background-color: #f1f1f1;
 
 	article {
-		float: left;
+		// float: left;
+		position: absolute;
+		top: 100px;
+		left: 30%;
 		margin: 20px;
 		width: 360px;
-		height: 428px;
+		// height: 428px;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 		background-color: #fff;
 
@@ -25,7 +31,7 @@
 		.pic {
 			position: relative;
 			width: 360px;
-			height: 216px;
+			// height: 216px;
 			overflow: hidden;
 
 			&:hover {
