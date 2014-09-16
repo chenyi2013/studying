@@ -13,6 +13,9 @@ module.exports = function ( grunt ) {
 				},
 				files: {
 					'../css/modules/reset.css': '../less/modules/reset.less',
+
+					'../css/modules/functions.css': '../less/modules/functions.less',
+
 					'../css/modules/header.css': '../less/modules/header.less',
 					'../css/modules/nav-s1.css': '../less/modules/nav-s1.less',
 					'../css/modules/nav-s2.css': '../less/modules/nav-s2.less',
@@ -72,10 +75,11 @@ module.exports = function ( grunt ) {
 			wordpress_style: {
 				src: [
 					'../css/modules/reset.css',
+					'../css/modules/functions.css',
 					'../css/modules/header.css',
 					'../css/modules/header-fixed.css',
 					'../css/modules/nav-s2.css',
-					'../css/modules/entry-list.css',
+					// '../css/modules/entry-list.css',
 					'../css/modules/entry-list-pubuliu.css',
 					'../css/modules/pagination.css',
 					'../css/modules/entry-detail.css',
@@ -85,7 +89,7 @@ module.exports = function ( grunt ) {
 					'../css/pages/layout-common.css',
 
 					//responsive
-					'../css/modules/responsive.css'	
+					// '../css/modules/responsive.css'	
 				],
 				dest: '../css/wordpress/style.css'				
 			}

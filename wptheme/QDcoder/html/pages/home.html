@@ -9,9 +9,11 @@
 	<meta name="description" content="">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
-	<link rel="stylesheet" type="text/css" href="../../css/common/global.min.css?v=20140913">
-	<link rel="stylesheet" type="text/css" href="../../css/pages/home.min.css?v=20140913">
-	<link rel="stylesheet" type="text/css" href="../../css/modules/responsive.css?v=20140913">
+	<!-- <link rel="stylesheet" type="text/css" href="../../css/common/global.min.css?v=20140913"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="../../css/pages/home.min.css?v=20140913"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="../../css/modules/responsive.css?v=20140913"> -->
+
+	<link rel="stylesheet" type="text/css" href="../../css/wordpress/style.min.css?v=20140916">
 
 
 	<style type="text/css">
@@ -31,6 +33,16 @@
 		window.jQuery || document.write('<script type="text/javascript" src="../../js/lib/jquery-2.1.1.js"><\/script>');
 	</script>
 	<script type="text/javascript" src="../../js/main.js"></script>
+
+	<script type="text/javascript" src="../../js/modules/waterfull.js"></script>
+	<script type="text/javascript">
+		// $(function () {
+		window.onload = function () {
+			waterfull.init();
+		}
+		// })
+	</script>
+
 	<script>
 	(function ($) {
 		$(function () {
@@ -164,28 +176,11 @@
 	<div class="content content-home">
 		<div class="entry-list">
 			<article>
-				<div class="pic">
-					<a href="#"><img src="../../images/temp/article-default-pic.png" alt=""></a>
-				</div>
-				<header>
-					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
-				</header>
-				<p class="excerpt">
-					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一
-				</p>
-				<footer>
-					<p class="meta-b">
-						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
-						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
-						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
-						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
-						<!-- 2014-08-17  3天前 08-17 -->
-					</p>
-				</footer>
-			</article>
-			<article>
-				<div class="pic">
-					<a href="#"><img src="../../images/temp/article-default-pic.png" alt=""></a>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/article-default-pic.png" alt="">
+						<span class="pic-mask"></span>
+					</a>
 				</div>
 				<header>
 					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
@@ -205,7 +200,33 @@
 			</article>
 			<article>
 				<div class="pic">
-					<a href="#"><img src="../../images/temp/article-default-pic.png" alt=""></a>
+					<a href="#">
+						<img src="../../images/temp/1.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/4.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
 				</div>
 				<header>
 					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
@@ -225,7 +246,10 @@
 			</article>
 			<article>
 				<div class="pic">
-					<a href="#"><img src="../../images/temp/article-default-pic.png" alt=""></a>
+					<a href="#">
+						<img src="../../images/temp/003.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
 				</div>
 				<header>
 					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
@@ -245,7 +269,10 @@
 			</article>
 			<article>
 				<div class="pic">
-					<a href="#"><img src="../../images/temp/article-default-pic.png" alt=""></a>
+					<a href="#">
+						<img src="../../images/temp/article-default-pic.png" alt="">
+						<span class="pic-mask"></span>
+					</a>
 				</div>
 				<header>
 					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
@@ -265,7 +292,424 @@
 			</article>
 			<article>
 				<div class="pic">
-					<a href="#"><img src="../../images/temp/article-default-pic.png" alt=""></a>
+					<a href="#">
+						<img src="../../images/temp/1.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/4.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/003.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/article-default-pic.png" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/1.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/4.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/003.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/article-default-pic.png" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/1.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/4.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/003.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/article-default-pic.png" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/1.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/4.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/003.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/article-default-pic.png" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/1.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic" style="display: none;">
+					<a href="#">
+						<img src="../../images/temp/4.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
+				</div>
+				<header>
+					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>
+				</header>
+				<p class="excerpt">
+					极米，为自由而生。本款极米无屏超级电视，180寸超大视觉体验，小巧轻便，可以随身携带，价格却不到60寸传统有屏电视的三分之一。拥有史上最强的3D显示效果，看世界杯的绝佳神器。
+				</p>
+				<footer>
+					<p class="meta-b">
+						<span class="read"><i class="ico icomoon icon-eye"></i>9999</span>
+						<span class="cmt"><a href="#"><i class="ico icomoon icon-comment"></i>9999</a></span>
+						<span class="tags"><i class="ico icomoon icon-tag"></i><a href="#">标签1</a> <a href="#">标签1</a> <a href="#">标签1</a></span>
+						<span class="date"><i class="ico icomoon icon-clock"></i>15小时前</span>
+						<!-- 2014-08-17  3天前 08-17 -->
+					</p>
+				</footer>
+			</article>
+			<article>
+				<div class="pic">
+					<a href="#">
+						<img src="../../images/temp/003.jpg" alt="">
+						<span class="pic-mask"></span>
+					</a>
 				</div>
 				<header>
 					<h2 class="tit"><a href="#">180寸极米无屏超级电视</a></h2>

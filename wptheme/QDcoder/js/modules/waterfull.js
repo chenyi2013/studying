@@ -34,7 +34,7 @@ var waterfull = (function ($) {
 					var _tempLeft = parseInt( _list.eq(i).css('left') );
 					for (var j = 0; j < _cols; j++) {
 						if ( _tempLeft == (_listOuterWidth + _listMargin*2)*j ) {
-							_colsHeight[j] += _list.eq(i).outerHeight() + _listMargin;
+							_colsHeight[j] += _list.eq(i).outerHeight() + _listMargin*2;
 						}
 					}
 				}
