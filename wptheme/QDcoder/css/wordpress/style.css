@@ -279,6 +279,7 @@ a {
 .nav-s2 .menu {
   position: relative;
   margin: 0 auto;
+  opacity: 0;
 }
 .nav-s2 .menu li {
   float: left;
@@ -289,7 +290,6 @@ a {
 }
 .nav-s2 .menu li a {
   display: block;
-  padding: 0 10px;
   color: #333;
 }
 .nav-s2 .menu li:hover a,
@@ -618,28 +618,4 @@ a {
 #disqus_thread {
   margin: 0 auto;
   width: 800px;
-}
-
-@media screen and (min-width: 1200px) {
-  .content-home {
-    width: 1200px;
-  }
-}
-@media screen and (min-width: 800px) and (max-width: 1200px) {
-  .content-home {
-    width: 800px !important;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content-home {
-    margin: 0 3%;
-    width: 94%;
-  }
-  .entry-list article {
-    margin: 20px 0 0 0;
-    width: 100%;
-  }
-  .entry-list article .pic {
-    width: 100%;
-  }
 }

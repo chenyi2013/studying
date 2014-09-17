@@ -156,6 +156,7 @@ a {
 .nav-s2 .menu {
   position: relative;
   margin: 0 auto;
+  opacity: 0;
 }
 .nav-s2 .menu li {
   float: left;
@@ -166,7 +167,6 @@ a {
 }
 .nav-s2 .menu li a {
   display: block;
-  padding: 0 10px;
   color: #333;
 }
 .nav-s2 .menu li:hover a,
