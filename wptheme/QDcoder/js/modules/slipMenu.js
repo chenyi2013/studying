@@ -7,7 +7,7 @@ var slipMenu = (function ($) {
 		_slipMenu_li = _slipMenu.find('li'),
 		_slider = _slipMenu.find('.slider'),
 		_slipMenu_outerWidth = 0,
-		_slipMenu_li_margin = 0;
+		_slipMenu_li_margin = 10;
 
 	var cat = {
 		index: function () {
@@ -26,8 +26,9 @@ var slipMenu = (function ($) {
 			for (var i = 0; i < _index; i++) {
 				_left += _slipMenu_li.eq(i).outerWidth() + _slipMenu_li_margin * 2;
 			}
+			_left += _slipMenu_li_margin;
 
-			_width = _slipMenu_li.eq(_index).outerWidth() + _slipMenu_li_margin * 2;
+			_width = _slipMenu_li.eq(_index).outerWidth();
 
 			return {
 				left: _left,
@@ -58,27 +59,55 @@ var slipMenu = (function ($) {
 
 			for (var i = 0; i < _slipMenu_li.length; i++) {
 				(function (i) {
-					_slipMenu_li.eq(i).mouseover(function () {
-						var _left = cat.styles(i).left,
-							_width = cat.styles(i).width;
+					var _this = _slipMenu_li.eq(i);
 
-						_slider.animate({
+					_this.hover(function () {
+
+						var _left = 0;
+
+						_slipMenu_li.find('a').css({
+							'color': '#333'
+						});
+
+						_this.find('a').css({
+							'color': '#36f'
+						});
+
+						for (var j = 0; j < i; j++) {
+							_left += _slipMenu_li.eq(j).outerWidth() + _slipMenu_li_margin*2;
+						}
+						_left += _slipMenu_li_margin;
+
+						_slider.stop().animate({
 							'left': _left,
-							'width': _width
-						}, 100);
+							'width': _this.outerWidth()
+						}, 'fast');
 
-						return false;
+					}, function () {
+
+						_slipMenu_li.find('a').css({
+							'color': '#333'
+						});
+
+						_slipMenu.find('.current-cat a').css({
+							'color': '#36f'
+						});
+
+						_slider.stop().animate({
+							'left': _init_left,
+							'width': _init_width
+						}, 'fast');
 					});
 				})(i);
 			}
 
-			_slipMenu.mouseout(function () {
+/*			_slipMenu.mouseout(function () {
 				_slider.animate({
 					'left': _init_left,
 					'width': _init_width
 				}, 100);
 				return false;
-			});
+			});*/
 		}
 	};
 })(jQuery);
