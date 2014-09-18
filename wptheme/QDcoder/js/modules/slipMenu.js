@@ -7,7 +7,7 @@ var slipMenu = (function ($) {
 		_slipMenu_li = _slipMenu.find('li'),
 		_slider = _slipMenu.find('.slider'),
 		_slipMenu_outerWidth = 0,
-		_slipMenu_li_margin = 10;
+		_slipMenu_li_margin = 0;
 
 	var cat = {
 		index: function () {
@@ -26,9 +26,9 @@ var slipMenu = (function ($) {
 			for (var i = 0; i < _index; i++) {
 				_left += _slipMenu_li.eq(i).outerWidth() + _slipMenu_li_margin * 2;
 			}
-			_left += _slipMenu_li_margin;
+			_left += _slipMenu_li_margin + 10;
 
-			_width = _slipMenu_li.eq(_index).outerWidth();
+			_width = _slipMenu_li.eq(_index).outerWidth() - 20;
 
 			return {
 				left: _left,
@@ -76,11 +76,11 @@ var slipMenu = (function ($) {
 						for (var j = 0; j < i; j++) {
 							_left += _slipMenu_li.eq(j).outerWidth() + _slipMenu_li_margin*2;
 						}
-						_left += _slipMenu_li_margin;
+						_left += _slipMenu_li_margin + 10;
 
 						_slider.stop().animate({
 							'left': _left,
-							'width': _this.outerWidth()
+							'width': _this.outerWidth() - 20
 						}, 'fast');
 
 					}, function () {
@@ -100,14 +100,6 @@ var slipMenu = (function ($) {
 					});
 				})(i);
 			}
-
-/*			_slipMenu.mouseout(function () {
-				_slider.animate({
-					'left': _init_left,
-					'width': _init_width
-				}, 100);
-				return false;
-			});*/
 		}
 	};
 })(jQuery);
