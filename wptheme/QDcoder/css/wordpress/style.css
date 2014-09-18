@@ -283,10 +283,10 @@ a {
 }
 .nav-s2 .menu li {
   float: left;
-  margin: 0 10px;
   height: 46px;
   line-height: 46px;
   font-size: 16px;
+  padding: 0 10px;
 }
 .nav-s2 .menu li a {
   display: block;
@@ -298,6 +298,7 @@ a {
   color: #36f;
 }
 .nav-s2 .menu .slider {
+  display: none;
   position: absolute;
   bottom: 0;
   left: 0;
