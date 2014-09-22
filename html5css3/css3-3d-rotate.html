@@ -9,19 +9,57 @@
 			padding: 0;
 		}
 
-		.rect {
-			width: 100px;
-			height: 100px;
-			line-height: 100px;
+		.wrap {
+
+			margin: 0 0 0 200px;
+
+			perspective: 500px;
+			-webkit-perspective: 500px;
+
+/*			perspective-origin: 50% 100px;
+			-webkit-perspective-origin: 50% 100px;*/
+		}
+
+		.cube {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			border: 1px solid #ddd;
+			transform-style: preserve-3d;			
+		}
+
+		.wrap .cube div {
+			position: absolute;
+			width: 200px;
+			height: 200px;
 			background: rgba(0, 0, 0, 0.6);
-			text-align: center;
-			color: #fff;
+		}
+
+		.right {
+			transform: rotateY(90deg) translateX(100px);
 		}
 	</style>
+
+	<script type="text/javascript">
+		/*
+			css3 3d相关:
+
+			http://demo.marcofolio.net/3d_animation_css3/
+
+			
+		*/
+	</script>
+
 </head>
 <body>
-	<div class="rect">
+	<div class="rect rect-3d">
 		加意新品
+	</div>
+
+	<div class="wrap">
+		<div class="cube">
+			<div class="right">Right</div>
+		</div>
 	</div>
 </body>
 </html>
