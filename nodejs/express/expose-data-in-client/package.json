@@ -1,0 +1,10 @@
+{
+  "name": "express-expose-data-to-client-example",
+  "version": "0.0.1",
+  "description": "A sample code project demonstrating how to expose data to client using express",
+  "dependencies": {
+  	"express": "*",
+  	"jade": "*"
+   }
+  // "engine": "node 0.6.x"
+}
