@@ -1,0 +1,9 @@
+extends layout
+block append content
+	div.container-fluid.content
+		//- div.alert.alert-info #{ msg }
+		form.form-signin(role='form', method='post')
+			h2.form-signin-heading please sigin
+			input.form-control(type='text', placeholder='username', name='username', required, autofocu录)
+			input.form-control(type='password', placeholder='password', name='password')
+			button.btn.btn-lg.btn-primary.btn-block(type='submit') 登录
