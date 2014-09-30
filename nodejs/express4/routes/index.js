@@ -18,7 +18,11 @@ router.get('/home', function ( req, res ) {
 module.exports = router;
 
 
-var mysql = require('../config');
 
-// mysql();
-console.log(mysql());
+var db = require('../model/mysql');
+
+// console.log(db);
+// db.query();
+// db.delete();
+// db.insert();
+// db.update();

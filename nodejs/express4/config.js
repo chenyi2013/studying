@@ -9,7 +9,7 @@ var conn = mysql.createConnection({
 	database: 'myNodeMysql'
 });
 
-conn.connect();
+conn.connect();	
 
 function dbQuery () {
 	conn.query('SELECT * FROM user', function ( err, rows, fields ) {
