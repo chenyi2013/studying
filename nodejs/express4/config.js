@@ -24,3 +24,12 @@ function dbQuery () {
 // conn.end();
 
 module.exports = dbQuery;
+
+/*module.exports = (function () {
+	var a = 10,
+		b = 100;
+	return {
+		a: a,
+		b: b
+	}
+})();*/
