@@ -4,3 +4,10 @@ block append content
 		p Welcome to #{ title }
 		p
 			a(href='/login') 登录
+		div.user-list
+			- for (var i = 0, len = users.length; i < len; i++)
+					li
+						span= users[i].id
+						span= users[i].uname
+						span= users[i].upass
+						span= users[i].email

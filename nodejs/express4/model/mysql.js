@@ -54,20 +54,27 @@ DB.prototype.sayHi = function () {
 	console.log('Hi!');
 }
 
+DB.prototype.map = function ( callback ) {
+
+};
+
 //SELECT
-DB.prototype.query = function () {
-	conn.query('SELECT * FROM user', function ( err, rows, fields ) {
+DB.prototype.query = function ( callback ) {
+	connection.query('SELECT * FROM user', function ( err, results ) {
 		if ( err ) {
 			throw err;
 		}
 
-		console.log(rows);
+		// console.log( results );
+		// return rows;
+		callback( results );
 	});
+	// return this;
 };
 
 //INSERT
 DB.prototype.insert = function () {
-	conn.query('INSERT INTO user(uname, upass, email) VALUES(?, ?, ?)', ['wang', '12345', 'test@test.com'], function ( err, rows, fields ) {
+	connection.query('INSERT INTO user(uname, upass, email) VALUES(?, ?, ?)', ['wang', '12345', 'test@test.com'], function ( err, rows, fields ) {
 		if ( err ) {
 			throw err;
 		}
@@ -77,7 +84,7 @@ DB.prototype.insert = function () {
 
 //UPDATE
 DB.prototype.update = function () {
-	conn.query('UPDATE user SET uname = ?, email = ? WHERE id = ?', ['xiaochichi', 'haha@haha.com', 12345], function ( err, rows, fields ) {
+	connection.query('UPDATE user SET uname = ?, email = ? WHERE id = ?', ['xiaochichi', 'haha@haha.com', 12345], function ( err, rows, fields ) {
 		if ( err ) {
 			throw err;
 		}
@@ -87,7 +94,7 @@ DB.prototype.update = function () {
 
 //DELETE
 DB.prototype.delete = function () {
-	conn.query('DELETE FROM user WHERE id = 3', function (err, rows, fields) {
+	connection.query('DELETE FROM user WHERE id = 3', function (err, rows, fields) {
 		if (err) {
 			throw err;
 		}

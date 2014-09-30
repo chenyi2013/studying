@@ -29,3 +29,18 @@
 	border-top: 1px solid #ccc;
 	text-align: center;
 }
+
+
+/*
+	index
+*/
+
+.user-list li {
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+.user-list li span {
+	padding: 10px;
+}
