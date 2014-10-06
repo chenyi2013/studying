@@ -159,7 +159,7 @@ body {
 
 		.entry-cont {
 			margin-top: 10px;
-			font-size: 14px;
+			font-size: 15px;
 			line-height: 30px;
 			color: #666;
 
@@ -170,16 +170,10 @@ body {
 		}
 
 		.entry-ft {
-			margin-top: 10px;
 			height: 28px;
+			padding-top: 5px;
 			padding-bottom: 25px;
 			border-bottom: 1px dashed #ddd;
-
-			.meta {
-				line-height: 28px;
-				font-size: 12px;
-				color: #757575;
-			}
 
 			.more {
 				float: right;
@@ -191,6 +185,54 @@ body {
 				&:hover {
 					opacity: 0.8;
 				}
+			}
+		}
+
+		.meta-ft {
+			float: left;
+			line-height: 28px;
+			font-size: 12px;
+			color: #757575;
+
+			a {
+				color: #757575;
+				&:hover {
+					color: #0095dd;
+				}
+			}
+
+			.m {
+				float: left;
+			}
+
+			.icon {
+				margin-right: 5px;
+			}
+
+			.icon-tag {
+				color: #888;
+			}
+
+			.icon-eye {
+				float: left;
+				line-height: 28px;
+				font-size: 14px;
+			}
+
+			.date,
+			.tags {
+				margin-right: 15px;
+			}
+
+			.tags a {
+				margin-right: 6px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			.views {
+				line-height: 28px;
 			}
 		}
 	}

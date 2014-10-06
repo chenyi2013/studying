@@ -13,6 +13,7 @@ module.exports = function ( grunt ) {
 				},
 				files: {
 					'../css/modules/reset.css': '../less/modules/reset.less',
+					'../css/modules/functions.css': '../less/modules/functions.less',
 					'../css/modules/style.css': '../less/modules/style.less'
 				}
 			}
@@ -22,6 +23,7 @@ module.exports = function ( grunt ) {
 			global: {
 				src: [
 					'../css/modules/reset.css',
+					'../css/modules/functions.css',
 					'../css/modules/style.css'
 				],
 				dest: '../css/common/global.css'

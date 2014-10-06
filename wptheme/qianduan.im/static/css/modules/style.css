@@ -113,7 +113,7 @@
 }
 .content-s1 .main .entry-cont {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 30px;
   color: #666;
 }
@@ -122,15 +122,10 @@
   margin-bottom: 12px;
 }
 .content-s1 .main .entry-ft {
-  margin-top: 10px;
   height: 28px;
+  padding-top: 5px;
   padding-bottom: 25px;
   border-bottom: 1px dashed #ddd;
-}
-.content-s1 .main .entry-ft .meta {
-  line-height: 28px;
-  font-size: 12px;
-  color: #757575;
 }
 .content-s1 .main .entry-ft .more {
   float: right;
@@ -142,6 +137,45 @@
 }
 .content-s1 .main .entry-ft .more:hover {
   opacity: 0.8;
+}
+.content-s1 .main .meta-ft {
+  float: left;
+  line-height: 28px;
+  font-size: 12px;
+  color: #757575;
+}
+.content-s1 .main .meta-ft a {
+  color: #757575;
+}
+.content-s1 .main .meta-ft a:hover {
+  color: #0095dd;
+}
+.content-s1 .main .meta-ft .m {
+  float: left;
+}
+.content-s1 .main .meta-ft .icon {
+  margin-right: 5px;
+}
+.content-s1 .main .meta-ft .icon-tag {
+  color: #888;
+}
+.content-s1 .main .meta-ft .icon-eye {
+  float: left;
+  line-height: 28px;
+  font-size: 14px;
+}
+.content-s1 .main .meta-ft .date,
+.content-s1 .main .meta-ft .tags {
+  margin-right: 15px;
+}
+.content-s1 .main .meta-ft .tags a {
+  margin-right: 6px;
+}
+.content-s1 .main .meta-ft .tags a:last-child {
+  margin-right: 0;
+}
+.content-s1 .main .meta-ft .views {
+  line-height: 28px;
 }
 .content-s1 .sidebar {
   float: right;

@@ -105,6 +105,53 @@ a {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../fonts/icomoon.eot?-566ke3');
+  src: url('../../fonts/icomoon.eot?#iefix-566ke3') format('embedded-opentype'), url('../../fonts/icomoon.woff?-566ke3') format('woff'), url('../../fonts/icomoon.ttf?-566ke3') format('truetype'), url('../../fonts/icomoon.svg?-566ke3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icomoon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-tag:before {
+  content: "\e600";
+}
+.icon-clock:before {
+  content: "\e601";
+}
+.icon-calendar:before {
+  content: "\e602";
+}
+.icon-forward:before {
+  content: "\e603";
+}
+.icon-user:before {
+  content: "\e604";
+}
+.icon-export:before {
+  content: "\e605";
+}
+.icon-share:before {
+  content: "\e606";
+}
+.icon-comment:before {
+  content: "\e607";
+}
+.icon-eye:before {
+  content: "\e608";
+}
+
 #header {
   width: 100%;
   border-bottom: 1px solid #ddd;
@@ -220,7 +267,7 @@ a {
 }
 .content-s1 .main .entry-cont {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 30px;
   color: #666;
 }
@@ -229,15 +276,10 @@ a {
   margin-bottom: 12px;
 }
 .content-s1 .main .entry-ft {
-  margin-top: 10px;
   height: 28px;
+  padding-top: 5px;
   padding-bottom: 25px;
   border-bottom: 1px dashed #ddd;
-}
-.content-s1 .main .entry-ft .meta {
-  line-height: 28px;
-  font-size: 12px;
-  color: #757575;
 }
 .content-s1 .main .entry-ft .more {
   float: right;
@@ -249,6 +291,45 @@ a {
 }
 .content-s1 .main .entry-ft .more:hover {
   opacity: 0.8;
+}
+.content-s1 .main .meta-ft {
+  float: left;
+  line-height: 28px;
+  font-size: 12px;
+  color: #757575;
+}
+.content-s1 .main .meta-ft a {
+  color: #757575;
+}
+.content-s1 .main .meta-ft a:hover {
+  color: #0095dd;
+}
+.content-s1 .main .meta-ft .m {
+  float: left;
+}
+.content-s1 .main .meta-ft .icon {
+  margin-right: 5px;
+}
+.content-s1 .main .meta-ft .icon-tag {
+  color: #888;
+}
+.content-s1 .main .meta-ft .icon-eye {
+  float: left;
+  line-height: 28px;
+  font-size: 14px;
+}
+.content-s1 .main .meta-ft .date,
+.content-s1 .main .meta-ft .tags {
+  margin-right: 15px;
+}
+.content-s1 .main .meta-ft .tags a {
+  margin-right: 6px;
+}
+.content-s1 .main .meta-ft .tags a:last-child {
+  margin-right: 0;
+}
+.content-s1 .main .meta-ft .views {
+  line-height: 28px;
 }
 .content-s1 .sidebar {
   float: right;
