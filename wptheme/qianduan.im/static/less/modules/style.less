@@ -2,7 +2,7 @@
 @import "variables.less";
 
 body {
-	background-color: #f1f1f1;
+	// background-color: #f1f1f1;
 }
 
 //
@@ -17,8 +17,8 @@ body {
 
 #hd-container {
 	margin: 0 auto;
-	width: 1200px;
-	height: 68px;
+	max-width: 1200px;
+	height: 70px;
 	font-family: @font-family-default;
 
 
@@ -28,7 +28,7 @@ body {
 
 		.pic {
 			float: left;
-			margin-top: 20px;
+			margin-top: 21px;
 			width: 145px;
 			height: 28px;
 			border-radius: 5px;
@@ -43,7 +43,7 @@ body {
 
 		.desc {
 			float: left;
-			margin: 32px 0 0 15px;
+			margin: 33px 0 0 15px;
 			font-size: 14px;
 			color: #999;
 		}
@@ -52,7 +52,7 @@ body {
 
 	.nav-site {
 		float: right;
-		margin-top: 19px;
+		margin-top: 20px;
 		height: 30px;
 		line-height: 30px;
 		.menu {
@@ -89,7 +89,7 @@ body {
 //===============
 
 #content {
-	margin: 20px auto 0 auto;
+	margin: 0 auto;
 	max-width: 1200px;
 }
 
@@ -99,7 +99,7 @@ body {
 		background-color: #fff;
 
 		.entry {
-			padding: 20px 20px 0 20px;
+			padding-top: 25px;
 			font-family: @font-family-default;
 		}
 
@@ -111,7 +111,47 @@ body {
 					color: #0095dd;
 					&:hover {
 						color: #36f;
-						text-decoration: underline;
+						// text-decoration: underline;
+					}
+				}
+
+				.cat,
+				.top {
+					font-size: 16px;
+				}
+
+				.top {
+					margin-right: 10px;
+					background-color: #f7464f;
+					color: #fff;
+					padding: 4px 10px;
+				}
+
+				.cat {
+					margin-right: 15px;
+
+					a {
+						position: relative;
+						display: inline-block;
+						padding: 4px 10px;
+						background-color: #0095dd;
+						color: #fff;
+
+						&:after {
+							position: absolute;
+							top: 50%;
+							right: -12px;
+							margin-top: -5px;
+							content: '';
+							width: 0;
+							height: 0;
+							border: 6px solid transparent;
+							border-left-color: #0095dd;
+						}
+
+						&:hover {
+							opacity: 0.8;
+						}
 					}
 				}
 			}
@@ -122,16 +162,35 @@ body {
 			font-size: 14px;
 			line-height: 30px;
 			color: #666;
+
+			p {
+				text-indent: 20px;
+				margin-bottom: 12px;
+			}
 		}
 
 		.entry-ft {
 			margin-top: 10px;
-			padding-bottom: 20px;
+			height: 28px;
+			padding-bottom: 25px;
 			border-bottom: 1px dashed #ddd;
 
 			.meta {
+				line-height: 28px;
 				font-size: 12px;
 				color: #757575;
+			}
+
+			.more {
+				float: right;
+				width: 100px;
+				line-height: 28px;
+				background-color: #f7464f;
+				text-align: center;
+				color: #fff;
+				&:hover {
+					opacity: 0.8;
+				}
 			}
 		}
 	}
