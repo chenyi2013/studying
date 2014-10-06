@@ -1,0 +1,104 @@
+body {
+  background-color: #f1f1f1;
+}
+#header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+#hd-container {
+  margin: 0 auto;
+  width: 1200px;
+  height: 68px;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+}
+#hd-container .logo {
+  float: left;
+}
+#hd-container .logo .pic {
+  float: left;
+  margin-top: 20px;
+  width: 145px;
+  height: 28px;
+  border-radius: 5px;
+}
+#hd-container .logo .title {
+  display: none;
+  float: left;
+  font-size: 22px;
+  color: #666;
+}
+#hd-container .logo .desc {
+  float: left;
+  margin: 32px 0 0 15px;
+  font-size: 14px;
+  color: #999;
+}
+#hd-container .nav-site {
+  float: right;
+  margin-top: 19px;
+  height: 30px;
+  line-height: 30px;
+}
+#hd-container .nav-site .menu li {
+  float: left;
+  margin-left: 10px;
+  font-size: 16px;
+}
+#hd-container .nav-site .menu li a {
+  display: block;
+  padding: 0 10px;
+  color: #666;
+}
+#hd-container .nav-site .menu li a:hover {
+  border-radius: 3px;
+  background-color: #0095dd;
+  color: #fff;
+}
+#hd-container .nav-site .menu .active a {
+  color: #0095dd;
+}
+#content {
+  margin: 20px auto 0 auto;
+  max-width: 1200px;
+}
+.content-s1 .main {
+  margin-right: 320px;
+  background-color: #fff;
+}
+.content-s1 .main .entry {
+  padding: 20px 20px 0 20px;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+}
+.content-s1 .main .entry-hd .title {
+  font-weight: normal;
+  font-size: 24px;
+}
+.content-s1 .main .entry-hd .title a {
+  color: #0095dd;
+}
+.content-s1 .main .entry-hd .title a:hover {
+  color: #36f;
+  text-decoration: underline;
+}
+.content-s1 .main .entry-cont {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #666;
+}
+.content-s1 .main .entry-ft {
+  margin-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+}
+.content-s1 .main .entry-ft .meta {
+  font-size: 12px;
+  color: #757575;
+}
+.content-s1 .sidebar {
+  float: right;
+  width: 300px;
+  height: 500px;
+  background-color: #fff;
+}
