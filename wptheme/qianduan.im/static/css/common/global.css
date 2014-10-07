@@ -151,6 +151,14 @@ a {
 .icon-eye:before {
   content: "\e608";
 }
+.clearfix:after {
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  content: '';
+}
 
 #header {
   width: 100%;
@@ -202,7 +210,6 @@ a {
   color: #666;
 }
 #hd-container .nav-site .menu li a:hover {
-  border-radius: 3px;
   background-color: #0095dd;
   color: #fff;
 }
@@ -268,7 +275,7 @@ a {
   color: #0095dd;
 }
 .content-s1 .main .entry-hd .title a:hover {
-  color: #36f;
+  color: #06c;
 }
 .content-s1 .main .entry-cont {
   margin-top: 10px;
@@ -353,15 +360,109 @@ a {
   font-weight: normal;
   color: #666;
 }
-.content-s1 .sidebar .widget-entryList .uList li {
+.widget-entryList .uList li {
   padding: 8px 0;
   line-height: 26px;
-  font-size: 16px;
+  font-size: 14px;
   border-bottom: 1px dashed #ddd;
 }
-.content-s1 .sidebar .widget-entryList .uList li a {
+.widget-entryList .uList li a {
   color: #0095dd;
 }
-.content-s1 .sidebar .widget-entryList .uList li a:hover {
-  color: #36f;
+.widget-entryList .uList li a:hover {
+  color: #06c;
+}
+.widget-commentList .uList li {
+  padding: 10px 0;
+  border-bottom: 1px dashed #ddd;
+  overflow: hidden;
+}
+.widget-commentList .uList .photo {
+  display: none;
+  float: left;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.widget-commentList .uList .meta {
+  font-size: 12px;
+  color: #757575;
+}
+.widget-commentList .uList .meta a {
+  color: #0095dd;
+}
+.widget-commentList .uList .meta a:hover {
+  color: #06c;
+}
+.widget-commentList .uList .except {
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ececec;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #666;
+}
+.widget-commentList .uList .except:before {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-bottom-color: #ececec;
+}
+.widget-commentList .uList .parent {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #757575;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.widget-commentList .uList .parent a {
+  margin-left: 3px;
+  color: #0095dd;
+}
+.widget-commentList .uList .parent a:hover {
+  color: #06c;
+}
+.pagination {
+  margin-top: 40px;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  overflow: hidden;
+}
+.pagination .btn {
+  padding: 5px 20px;
+  background-color: #0095dd;
+  font-size: 16px;
+  color: #fff;
+}
+.pagination .btn:hover {
+  opacity: 0.8;
+}
+.pagination .btn-prev {
+  float: left;
+}
+.pagination .btn-next {
+  float: right;
+}
+#footer {
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  height: 100px;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+}
+#footer p {
+  text-align: center;
+  line-height: 100px;
+  color: #666;
+  font-size: 12px;
+}
+#footer p a {
+  color: #0095dd;
+}
+#footer p a:hover {
+  color: #06c;
 }

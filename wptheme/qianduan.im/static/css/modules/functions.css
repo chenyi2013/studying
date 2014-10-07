@@ -44,3 +44,11 @@
 .icon-eye:before {
   content: "\e608";
 }
+.clearfix:after {
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  content: '';
+}
