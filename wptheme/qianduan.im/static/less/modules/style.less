@@ -95,7 +95,7 @@ body {
 
 .content-s1 {
 	.main {
-		margin-right: 320px;
+		margin-right: 325px;
 		background-color: #fff;
 
 		.entry {
@@ -104,6 +104,50 @@ body {
 		}
 
 		.entry-hd {
+			min-height: 30px;
+			line-height: 30px;
+
+			.cat,
+			.stick {
+				float: left;
+				font-size: 16px;
+			}
+
+			.stick {
+				margin-right: 10px;
+				background-color: #f7464f;
+				color: #fff;
+				padding: 0 10px;
+			}
+
+			.cat {
+				margin-right: 15px;
+
+				a {
+					position: relative;
+					display: inline-block;
+					padding: 0 10px;
+					background-color: #0095dd;
+					color: #fff;
+
+					&:after {
+						position: absolute;
+						top: 50%;
+						right: -12px;
+						margin-top: -5px;
+						content: '';
+						width: 0;
+						height: 0;
+						border: 6px solid transparent;
+						border-left-color: #0095dd;
+					}
+
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+
 			.title {
 				font-weight: normal;
 				font-size: 24px;
@@ -114,52 +158,12 @@ body {
 						// text-decoration: underline;
 					}
 				}
-
-				.cat,
-				.top {
-					font-size: 16px;
-				}
-
-				.top {
-					margin-right: 10px;
-					background-color: #f7464f;
-					color: #fff;
-					padding: 4px 10px;
-				}
-
-				.cat {
-					margin-right: 15px;
-
-					a {
-						position: relative;
-						display: inline-block;
-						padding: 4px 10px;
-						background-color: #0095dd;
-						color: #fff;
-
-						&:after {
-							position: absolute;
-							top: 50%;
-							right: -12px;
-							margin-top: -5px;
-							content: '';
-							width: 0;
-							height: 0;
-							border: 6px solid transparent;
-							border-left-color: #0095dd;
-						}
-
-						&:hover {
-							opacity: 0.8;
-						}
-					}
-				}
 			}
 		}
 
 		.entry-cont {
 			margin-top: 10px;
-			font-size: 15px;
+			font-size: 14px;
 			line-height: 30px;
 			color: #666;
 
@@ -242,5 +246,34 @@ body {
 		width: 300px;
 		height: 500px;
 		background-color: #fff;
+
+		.widget {
+			margin-top: 25px;
+			font-family: @font-family-default;
+			.title  {
+				padding-bottom: 10px;
+				border-bottom: 1px solid #ddd;
+				font-size: 18px;
+				font-weight: normal;
+				color: #666;
+			}
+		}
+
+		.widget-entryList {
+			.uList {
+				li {
+					padding: 8px 0;
+					line-height: 26px;
+					font-size: 16px;
+					a {
+						color: #0095dd;
+						&:hover {
+							color: #36f;
+						}
+					}
+					border-bottom: 1px dashed #ddd;
+				}
+			}
+		}
 	}
 }
