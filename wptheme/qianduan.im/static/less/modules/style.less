@@ -151,6 +151,7 @@ body {
 			.title {
 				font-weight: normal;
 				font-size: 24px;
+				color: #333;
 				a {
 					color: #0095dd;
 					&:hover {
@@ -163,7 +164,7 @@ body {
 
 		.entry-cont {
 			margin-top: 10px;
-			font-size: 14px;
+			font-size: 15px;
 			line-height: 30px;
 			color: #666;
 
@@ -196,14 +197,16 @@ body {
 			}
 		}
 
+		.meta-hd,
 		.meta-ft {
-			float: left;
 			line-height: 28px;
-			font-size: 12px;
-			color: #757575;
+			font-size: 14px;
+			// color: #757575;
+			color: #999;
 
 			a {
-				color: #757575;
+				// color: #757575;
+				color: #999;
 				&:hover {
 					color: #0095dd;
 				}
@@ -218,15 +221,17 @@ body {
 			}
 
 			.icon-tag {
-				color: #888;
+				// color: #888;
+				color: #999;
 			}
 
 			.icon-eye {
 				float: left;
 				line-height: 28px;
-				font-size: 14px;
+				font-size: 16px;
 			}
 
+			.category,
 			.date,
 			.tags {
 				margin-right: 15px;
@@ -243,12 +248,21 @@ body {
 				line-height: 28px;
 			}
 		}
+
+		.meta-hd {
+			overflow: hidden;
+		}
+
+		.meta-ft {
+			float: left;
+		}
+
 	}
 
 	.sidebar {
 		float: right;
 		width: 300px;
-		height: 500px;
+		// height: 500px;
 		background-color: #fff;
 
 		.widget {
@@ -265,12 +279,25 @@ body {
 	}
 }
 
+
+.content-s1 {
+	.entry-detail {
+		.entry-hd {
+			padding-bottom: 10px;
+		}
+		.meta-hd {
+			margin-top: 10px;
+		}
+	}
+}
+
+
 .widget-entryList {
 	.uList {
 		li {
 			padding: 8px 0;
 			line-height: 26px;
-			font-size: 14px;
+			font-size: 15px;
 			a {
 				color: #0095dd;
 				&:hover {
@@ -392,7 +419,7 @@ body {
 		text-align: center;
 		line-height: 100px;
 		color: #666;
-		font-size: 12px;
+		font-size: 14px;
 
 		a {
 			color: #0095dd;

@@ -17,6 +17,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-folder-open:before {
+  content: "\e609";
+}
 .icon-tag:before {
   content: "\e600";
 }
@@ -25,6 +28,9 @@
 }
 .icon-calendar:before {
   content: "\e602";
+}
+.icon-eye:before {
+  content: "\e608";
 }
 .icon-forward:before {
   content: "\e603";
@@ -40,9 +46,6 @@
 }
 .icon-comment:before {
   content: "\e607";
-}
-.icon-eye:before {
-  content: "\e608";
 }
 .clearfix:after {
   display: block;
