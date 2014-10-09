@@ -222,7 +222,7 @@ body {
 
 			.icon-tag {
 				// color: #888;
-				color: #999;
+				// color: #999;
 			}
 
 			.icon-eye {
@@ -231,7 +231,15 @@ body {
 				font-size: 16px;
 			}
 
+			.icon-comment {
+				float: left;
+				font-size: 16px;
+				line-height: 30px;
+			}
+	
+			.views,
 			.category,
+			.author,
 			.date,
 			.tags {
 				margin-right: 15px;
@@ -284,9 +292,16 @@ body {
 	.entry-detail {
 		.entry-hd {
 			padding-bottom: 10px;
+			.title {
+				font-size: 28px;
+			}
 		}
 		.meta-hd {
-			margin-top: 10px;
+			margin-top: 15px;
+			.views,
+			.comment-counts {
+				float: right;
+			}
 		}
 	}
 }
@@ -344,6 +359,7 @@ body {
 		.except {
 			position: relative;
 			margin-top: 10px;
+			line-height: 22px; 
 			padding: 10px;
 			background-color: #ececec;
 			border-radius: 3px;

@@ -165,18 +165,24 @@
 .content-s1 .main .meta-ft .icon {
   margin-right: 5px;
 }
-.content-s1 .main .meta-hd .icon-tag,
-.content-s1 .main .meta-ft .icon-tag {
-  color: #999;
-}
 .content-s1 .main .meta-hd .icon-eye,
 .content-s1 .main .meta-ft .icon-eye {
   float: left;
   line-height: 28px;
   font-size: 16px;
 }
+.content-s1 .main .meta-hd .icon-comment,
+.content-s1 .main .meta-ft .icon-comment {
+  float: left;
+  font-size: 16px;
+  line-height: 30px;
+}
+.content-s1 .main .meta-hd .views,
+.content-s1 .main .meta-ft .views,
 .content-s1 .main .meta-hd .category,
 .content-s1 .main .meta-ft .category,
+.content-s1 .main .meta-hd .author,
+.content-s1 .main .meta-ft .author,
 .content-s1 .main .meta-hd .date,
 .content-s1 .main .meta-ft .date,
 .content-s1 .main .meta-hd .tags,
@@ -220,8 +226,15 @@
 .content-s1 .entry-detail .entry-hd {
   padding-bottom: 10px;
 }
+.content-s1 .entry-detail .entry-hd .title {
+  font-size: 28px;
+}
 .content-s1 .entry-detail .meta-hd {
-  margin-top: 10px;
+  margin-top: 15px;
+}
+.content-s1 .entry-detail .meta-hd .views,
+.content-s1 .entry-detail .meta-hd .comment-counts {
+  float: right;
 }
 .widget-entryList .uList li {
   padding: 8px 0;
@@ -260,6 +273,7 @@
 .widget-commentList .uList .except {
   position: relative;
   margin-top: 10px;
+  line-height: 22px;
   padding: 10px;
   background-color: #ececec;
   border-radius: 3px;
