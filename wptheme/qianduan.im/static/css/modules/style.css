@@ -233,6 +233,65 @@
 .content-s1 .entry-detail .meta-hd .comment-counts {
   float: right;
 }
+.content-s1 .entry-detail .entry-ft {
+  padding-top: 15px;
+}
+.content-s1 .entry-detail .meta-ft .icon-tag {
+  float: left;
+  margin-right: 8px;
+  line-height: 26px;
+  font-size: 18px;
+}
+.content-s1 .entry-detail .meta-ft .tags a {
+  float: left;
+  margin-right: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #0095dd;
+  color: #fff;
+}
+.content-s1 .entry-detail .meta-ft .tags a:hover {
+  opacity: 0.8;
+}
+.content-s1 .entry-detail .meta-ft .tags a:last-child {
+  margin-right: 0;
+}
+.recommend-entryList {
+  margin-top: 25px;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+}
+.recommend-entryList .title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  font-weight: normal;
+  font-size: 18px;
+  color: #666;
+}
+.recommend-entryList .uList {
+  margin-top: 6px;
+}
+.recommend-entryList .uList li {
+  padding: 3px 0;
+  line-height: 26px;
+  font-size: 15px;
+}
+.recommend-entryList .uList li a {
+  color: #0095dd;
+}
+.recommend-entryList .uList li a:hover {
+  color: #06c;
+}
+.comment {
+  margin-top: 25px;
+}
+.comment .title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #666;
+}
 .widget-entryList .uList li {
   padding: 8px 0;
   line-height: 26px;
