@@ -13,19 +13,16 @@
   float: left;
 }
 #hd-container .logo .pic {
-  float: left;
   margin-top: 21px;
   width: 145px;
   height: 28px;
-  border-radius: 5px;
 }
 #hd-container .logo .title {
   display: none;
-  float: left;
   font-size: 22px;
   color: #666;
 }
-#hd-container .logo .desc {
+#hd-container .site-desc {
   float: left;
   margin: 33px 0 0 15px;
   font-size: 14px;
