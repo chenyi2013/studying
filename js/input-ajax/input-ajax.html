@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		input {
+			display: block;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+
+		function $$ ( str ) {
+			return document.querySelectorAll(str);
+		}
+
+		function getPhoneNumber () {
+			var phone = $$('#form-phones .phone');
+			var jsonPhone = {};
+			
+			for (var i = 0, len = phone.length; i < len; i++) {
+				jsonPhone[phone[i].getAttribute('name')] = phone[i].value;
+			}
+
+			return jsonPhone;
+		}
+
+		window.onload = function () {
+
+			$$('.btn-submit')[0].onclick = function () {
+				// console.log( getPhoneNumber() );
+				$.post('response.php', getPhoneNumber(), function ( msg ) {
+					console.log( msg );
+				});	
+			}
+
+		};
+
+		
+	</script>
+</head>
+<body>
+
+<form id="form-phones">
+	<input class="phone" type="text" name="phone1" placeholder="请输入手机号">
+	<input class="phone" type="text" name="phone2" placeholder="请输入手机号">
+	<input class="phone" type="text" name="phone3" placeholder="请输入手机号">
+	<input class="phone" type="text" name="phone4" placeholder="请输入手机号">
+	<button class="btn-submit" type="button">录入</button>
+</form>
+
+</body>
+</html>
