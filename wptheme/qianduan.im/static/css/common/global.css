@@ -213,7 +213,7 @@ a {
   background-color: #0095dd;
   color: #fff;
 }
-#hd-container .nav-site .menu .active a {
+#hd-container .nav-site .menu .current-cat a {
   color: #0095dd;
 }
 #content {
@@ -525,6 +525,9 @@ a {
 }
 .widget-commentList .uList .parent a:hover {
   color: #06c;
+}
+.widget-ad .ad-cont img {
+  width: 300px;
 }
 .pagination {
   margin-top: 40px;
