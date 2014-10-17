@@ -41,6 +41,40 @@
 		.triangle-left {
 			border-right-color: #333;
 		}
+
+
+		.triangle-box {
+			position: relative;
+			margin-top: 20px;
+			width: 200px;
+			height: 100px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.triangle-box:after {
+			position: absolute;
+			top: -16px;
+			left: 20px;
+			width: 0;
+			height: 0;
+			content: '';
+			border: 8px solid transparent;
+			border-bottom-color: #ccc;
+		}
+
+		.triangle-box:before {
+			position: absolute;
+			z-index: 1;
+			top: -15px;
+			left: 20px;
+			width: 0;
+			height: 0;
+			content: '';
+			border: 8px solid transparent;
+			border-bottom-color: #fff;
+		}
 	</style>
 </head>
 <body>
@@ -51,5 +85,9 @@ test:
 	<div class="triangle02 triangle-right"></div>
 	<div class="triangle02 triangle-bottom"></div>
 	<div class="triangle02 triangle-left"></div>
+	带箭头的小框
+	<div class="triangle-box triangle-box-s1">
+		带箭头的小框
+	</div>
 </body>
 </html>
