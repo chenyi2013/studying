@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			padding: 50px;
+		}
+
+		.triangle01 {
+			width: 0;
+			height: 0;
+			border: 10px solid transparent;
+			border-bottom-color: #333;
+		}
+
+		.triangle02 {
+			width: 0;
+			height: 0;
+			border: 50px solid transparent;
+		}
+
+		.triangle-top {
+			border-bottom-color: #333;
+		}
+
+		.triangle-right {
+			border-left-color: #333;
+		}
+
+		.triangle-bottom {
+			border-top-color: #333;
+		}
+
+		.triangle-left {
+			border-right-color: #333;
+		}
+	</style>
+</head>
+<body>
+test:
+	<div class="triangle01"></div>
+	各个方向：
+	<div class="triangle02 triangle-top"></div>
+	<div class="triangle02 triangle-right"></div>
+	<div class="triangle02 triangle-bottom"></div>
+	<div class="triangle02 triangle-left"></div>
+</body>
+</html>
