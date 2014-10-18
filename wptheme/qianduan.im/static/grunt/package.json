@@ -1,5 +1,7 @@
 {
 	"name": "qianduan.im",
+	"description": "wordpress theme",
+	"repository": "",
 	"version": "0.1.0",
 	"devDependencies": {
 		"grunt": "*",

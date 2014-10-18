@@ -1,74 +1,129 @@
+body {
+  background-color: #f0f0f0;
+}
+#top {
+  width: 100%;
+  background-color: #333;
+}
+#top-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 50px;
+  background-color: #333;
+}
+#top-container .logo {
+  float: left;
+}
+#top-container .logo .title {
+  line-height: 50px;
+  font-size: 24px;
+}
+#top-container .logo a {
+  color: #fff;
+}
+#top-container .nav-top {
+  float: right;
+}
+#top-container .nav-top .uList li {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 50px;
+  font-size: 14px;
+}
+#top-container .nav-top .uList li a {
+  color: #fff;
+}
+#top-container .nav-top .uList li a:hover {
+  color: #fd6639;
+}
 #header {
   width: 100%;
-  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
 }
 #hd-container {
   margin: 0 auto;
   max-width: 1200px;
-  height: 70px;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  height: 86px;
+  font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 #hd-container .logo {
+  display: none;
   float: left;
 }
 #hd-container .logo .pic {
+  display: none;
   margin-top: 21px;
   width: 145px;
   height: 28px;
 }
 #hd-container .logo .title {
-  display: none;
-  font-size: 22px;
-  color: #666;
+  line-height: 60px;
+  font-size: 26px;
+  font-weight: normal;
+}
+#hd-container .logo .title a {
+  color: #fd6639;
 }
 #hd-container .site-desc {
+  display: none;
   float: left;
   margin: 33px 0 0 15px;
   font-size: 14px;
   color: #999;
 }
-#hd-container .nav-site {
-  float: right;
-  margin-top: 20px;
-  height: 30px;
-  line-height: 30px;
-}
-#hd-container .nav-site .menu li {
+#hd-container .nav-cat {
   float: left;
-  margin-left: 10px;
-  font-size: 16px;
+  line-height: 86px;
 }
-#hd-container .nav-site .menu li a {
-  display: block;
-  padding: 0 10px;
-  color: #666;
+#hd-container .nav-cat .menu li {
+  float: left;
+  font-size: 14px;
 }
-#hd-container .nav-site .menu li a:hover {
-  background-color: #0095dd;
-  color: #fff;
+#hd-container .nav-cat .menu li a {
+  display: inline-block;
+  padding: 0 20px;
+  color: #606060;
 }
-#hd-container .nav-site .menu .current-cat a {
-  color: #0095dd;
+#hd-container .nav-cat .menu li a:hover {
+  color: #fd6639;
+}
+#hd-container .nav-cat .menu .current-cat a {
+  position: relative;
+  color: #fd6639;
+}
+#hd-container .nav-cat .menu .current-cat a:after {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  margin-left: -12px;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-bottom-color: #f0f0f0;
 }
 #content {
   margin: 0 auto;
+  margin-top: 25px;
   max-width: 1200px;
 }
 .content-s1 .main {
   margin-right: 325px;
-  background-color: #fff;
 }
 .content-s1 .main .entry {
-  padding-top: 25px;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  margin-top: 25px;
+  padding: 20px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background-color: #fff;
 }
 .content-s1 .main .entry-hd {
-  min-height: 30px;
   line-height: 30px;
 }
 .content-s1 .main .entry-hd .cat,
 .content-s1 .main .entry-hd .stick {
+  display: none;
   float: left;
   font-size: 16px;
 }
@@ -105,17 +160,17 @@
 .content-s1 .main .entry-hd .title {
   font-weight: normal;
   font-size: 24px;
-  color: #333;
+  color: #606060;
 }
 .content-s1 .main .entry-hd .title a {
-  color: #0095dd;
+  color: #333;
 }
 .content-s1 .main .entry-hd .title a:hover {
-  color: #06c;
+  color: #fd6639;
 }
 .content-s1 .main .entry-cont {
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 30px;
   color: #666;
 }
@@ -124,18 +179,17 @@
   margin-bottom: 12px;
 }
 .content-s1 .main .entry-ft {
-  height: 28px;
   padding-top: 5px;
-  padding-bottom: 25px;
-  border-bottom: 1px dashed #ddd;
+  overflow: hidden;
 }
 .content-s1 .main .entry-ft .more {
   float: right;
   width: 100px;
   line-height: 28px;
-  background-color: #f7464f;
+  background-color: #fd6639;
   text-align: center;
   color: #fff;
+  font-size: 14px;
 }
 .content-s1 .main .entry-ft .more:hover {
   opacity: 0.8;
@@ -143,16 +197,16 @@
 .content-s1 .main .meta-hd,
 .content-s1 .main .meta-ft {
   line-height: 28px;
-  font-size: 14px;
+  font-size: 12px;
   color: #999;
 }
 .content-s1 .main .meta-hd a,
 .content-s1 .main .meta-ft a {
-  color: #999;
+  color: #fd6639;
 }
 .content-s1 .main .meta-hd a:hover,
 .content-s1 .main .meta-ft a:hover {
-  color: #0095dd;
+  text-decoration: underline;
 }
 .content-s1 .main .meta-hd .m,
 .content-s1 .main .meta-ft .m {
@@ -207,11 +261,12 @@
 .content-s1 .sidebar {
   float: right;
   width: 300px;
-  background-color: #fff;
 }
 .content-s1 .sidebar .widget {
   margin-top: 25px;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  padding: 20px;
+  background-color: #fff;
+  font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 .content-s1 .sidebar .widget .title {
   padding-bottom: 10px;
@@ -258,7 +313,7 @@
 }
 .recommend-entryList {
   margin-top: 25px;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 .recommend-entryList .title {
   padding-bottom: 10px;
@@ -287,22 +342,27 @@
 .comment .title {
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   font-weight: normal;
   font-size: 18px;
   color: #666;
 }
+.widget-entryList {
+  margin-top: 0 !important;
+}
+.widget-entryList .title {
+  margin-bottom: 10px;
+}
 .widget-entryList .uList li {
-  padding: 8px 0;
-  line-height: 26px;
-  font-size: 15px;
-  border-bottom: 1px dashed #ddd;
+  font-size: 14px;
 }
 .widget-entryList .uList li a {
-  color: #0095dd;
+  display: block;
+  padding: 6px 0;
+  color: #666;
 }
 .widget-entryList .uList li a:hover {
-  color: #06c;
+  color: #fd6639;
 }
 .widget-commentList .uList li {
   padding: 10px 0;
@@ -318,20 +378,20 @@
 }
 .widget-commentList .uList .meta {
   font-size: 12px;
-  color: #757575;
+  color: #999;
 }
 .widget-commentList .uList .meta a {
-  color: #0095dd;
+  color: #fd6639;
 }
 .widget-commentList .uList .meta a:hover {
-  color: #06c;
+  text-decoration: underline;
 }
 .widget-commentList .uList .except {
   position: relative;
   margin-top: 10px;
   line-height: 22px;
   padding: 10px;
-  background-color: #ececec;
+  background-color: #f1f1f1;
   border-radius: 3px;
   font-size: 14px;
   color: #666;
@@ -344,35 +404,36 @@
   width: 0;
   height: 0;
   border: 6px solid transparent;
-  border-bottom-color: #ececec;
+  border-bottom-color: #f1f1f1;
 }
 .widget-commentList .uList .parent {
   margin-top: 10px;
   font-size: 12px;
-  color: #757575;
+  color: #999;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .widget-commentList .uList .parent a {
   margin-left: 3px;
-  color: #0095dd;
+  color: #fd6639;
 }
 .widget-commentList .uList .parent a:hover {
-  color: #06c;
+  text-decoration: underline;
 }
 .widget-ad .ad-cont img {
-  width: 300px;
+  width: 260px;
 }
 .pagination {
   margin-top: 40px;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   overflow: hidden;
 }
 .pagination .btn {
-  padding: 5px 20px;
-  background-color: #0095dd;
-  font-size: 16px;
+  line-height: 30px;
+  padding: 0 20px;
+  background-color: #fd6639;
+  font-size: 14px;
   color: #fff;
 }
 .pagination .btn:hover {
@@ -386,9 +447,9 @@
 }
 #footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  height: 100px;
-  font-family: Ubuntu, Consolas, "Microsoft Yahei", Verdana, Tahoma, Arial, sans-serif;
+  height: 150px;
+  background-color: #fff;
+  font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 #footer p {
   text-align: center;
