@@ -190,6 +190,7 @@ body {
 #top-container .logo .title {
   line-height: 50px;
   font-size: 24px;
+  text-indent: 10px;
 }
 #top-container .logo a {
   color: #fff;
@@ -620,19 +621,37 @@ body {
 }
 #footer {
   margin-top: 50px;
-  height: 150px;
+  height: 130px;
+  padding: 10px 0;
   background-color: #fff;
   font-family: tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
-#footer p {
-  text-align: center;
-  line-height: 100px;
+#footer .nav-footer {
+  margin-top: 10px;
+}
+#footer .nav-footer .uList {
+  overflow: hidden;
+}
+#footer .nav-footer .uList li {
+  float: left;
+  padding: 0 10px;
+  line-height: 22px;
+  font-size: 12px;
+}
+#footer .nav-footer .uList li a {
   color: #666;
-  font-size: 14px;
 }
-#footer p a {
-  color: #0095dd;
+#footer .nav-footer .uList li a:hover {
+  color: #fd6639;
 }
-#footer p a:hover {
-  color: #06c;
+#footer .copyright {
+  margin-top: 10px;
+  font-size: 12px;
+  text-indent: 10px;
+}
+#footer .copyright a {
+  color: #666;
+}
+#footer .copyright a:hover {
+  color: #fd6649;
 }

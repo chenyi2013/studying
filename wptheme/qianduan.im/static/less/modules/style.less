@@ -25,6 +25,7 @@ body {
 		.title {
 			line-height: 50px;
 			font-size: 24px;
+			text-indent: 10px;
 			// font-weight: normal;
 		}
 		a {
@@ -623,20 +624,38 @@ body {
 #footer {
 	margin-top: 50px;
 	// border-top: 1px solid #ddd;
-	height: 150px;
+	height: 130px;
+	padding: 10px 0;
 	background-color: #fff;
 	font-family: @font-family-default;
 
-	p {
-		text-align: center;
-		line-height: 100px;
-		color: #666;
-		font-size: 14px;
+	.nav-footer {
+		margin-top: 10px;
+		.uList {
+			overflow: hidden;
+			li {
+				float: left;
+				padding: 0 10px;
+				line-height: 22px;
+				font-size: 12px;
+				a {
+					color: #666;
+					&:hover {
+						color: #fd6639;
+					}
+				}
+			}
+		}
+	}
 
+	.copyright {
+		margin-top: 10px;
+		font-size: 12px;
+		text-indent: 10px;
 		a {
-			color: #0095dd;
+			color: #666;
 			&:hover {
-				color: #06c;
+				color: #fd6649;
 			}
 		}
 	}
