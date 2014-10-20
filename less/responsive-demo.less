@@ -1,5 +1,3 @@
-// responsive-demo.less
-
 // responsive.less
 
 
@@ -31,6 +29,7 @@
 
 
 // 可视宽度大于1200px
+// >= 1200px
 @media screen and (min-width: @screen-lg-min) {
 	/*	
 	#top-container
@@ -43,39 +42,67 @@
 	#hd-container,
 	#content,
 	#footer-container {
-		width: @container-lg;
+		width: @screen-lg-min;
 	}
 }
 
 
+// 左边自适应
+// >= 992px <= 1200px - 1px
 @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
 	#top-container,
 	#hd-container,
 	#content,
 	#footer-container {
-		max-width: @container-lg - 2;
-		min-width: @container-md;
+		max-width: (@screen-md-max - 1);
+		min-width: @screen-md-min;
 	}
 }
 
 
-@media screen and (min-width: @screen-sm-min) and (@screen-sm-max) {
+// 左右都自适应
+@media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
 	#top-container,
 	#hd-container,
 	#content,
 	#footer-container {
-		max-width: @container-md - 2;
-		min-width: @container-sm;
-	}	
+		max-width: (@screen-sm-max - 1);
+		min-width: @screen-sm-min;
+	}
+
+	body {
+		overflow-x: hidden;
+	}
+
+	#content {
+		.main {
+			margin-right: 275px;
+		}
+
+		.sidebar {
+			width: 250px;
+		}
+	}
 }
 
 
+// 单列百分比  最小宽度
 @media screen and (max-width: @screen-xs-max) {
 	#top-container,
 	#hd-container,
 	#content,
 	#footer-container {
-		max-width: @container-sm - 2;
-		min-width: @container-xm;
+		max-width: (@screen-xs-max - 1);
+		min-width: @screen-xs;
+	}
+
+	#content {
+		.main {
+			margin-right: 0;
+		}
+
+		.sidebar {
+			display: none;
+		}
 	}
 }
