@@ -1,0 +1,81 @@
+// responsive-demo.less
+
+// responsive.less
+
+
+// 屏幕适配尺寸
+@screen-lg:        1200px;
+@screen-lg-min:    @screen-lg;
+
+@screen-md:        992px;
+@screen-md-min:    @screen-md;
+
+@screen-sm:        768px;
+@screen-sm-min:    @screen-sm;
+
+@screen-xs:        480px;
+@screen-xs-min:    @screen-xs;
+
+
+@screen-md-max:    (@screen-lg-min - 1);
+@screen-sm-max:    (@screen-md-min - 1);
+@screen-xs-max:    (@screen-sm-min - 1);
+
+
+// 容器尺寸
+@container-lg:    @screen-lg;
+@container-md:    @screen-md;
+@container-sm:    @screen-sm;
+@container-xs:    @screen-xs;
+
+
+
+// 可视宽度大于1200px
+@media screen and (min-width: @screen-lg-min) {
+	/*	
+	#top-container
+	#hd-container
+	#content
+	#footer-container 
+	*/
+
+	#top-container,
+	#hd-container,
+	#content,
+	#footer-container {
+		width: @container-lg;
+	}
+}
+
+
+@media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+	#top-container,
+	#hd-container,
+	#content,
+	#footer-container {
+		max-width: @container-lg - 2;
+		min-width: @container-md;
+	}
+}
+
+
+@media screen and (min-width: @screen-sm-min) and (@screen-sm-max) {
+	#top-container,
+	#hd-container,
+	#content,
+	#footer-container {
+		max-width: @container-md - 2;
+		min-width: @container-sm;
+	}	
+}
+
+
+@media screen and (max-width: @screen-xs-max) {
+	#top-container,
+	#hd-container,
+	#content,
+	#footer-container {
+		max-width: @container-sm - 2;
+		min-width: @container-xm;
+	}
+}
