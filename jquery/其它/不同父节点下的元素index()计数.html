@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>不同父节点下的元素index()计数</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function () {
+			$('.menu1 li, .menu2 li').click(function () {
+				alert($(this).index('.menu li'));
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul class="menu menu1">
+		<li><button>0</button></li>
+		<li><button>1</button></li>
+		<li><button>2</button></li>
+		<li><button>3</button></li>
+	</ul>
+
+	<ul class="menu menu2">
+		<li><button>4</button></li>
+		<li><button>5</button></li>
+		<li><button>6</button></li>
+		<li><button>7</button></li>
+	</ul>
+
+</body>
+</html>
