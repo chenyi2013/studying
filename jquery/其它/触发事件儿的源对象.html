@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script>
+		// $(function () {
+		// 	$('button').click(function (e) {
+		// 		alert('你点的是： '+$(e.target).text());//弹出对应数字
+		// 	});
+		// });
+
+
+
+		// 原生js：
+		window.onload = function () {
+			var btns = document.querySelectorAll('button');
+			// alert(btns.length);
+			for (var i = 0, len = btns.length; i < len; i++) {
+				btns[i].onclick = function ( e ) {
+					var src = e.target || window.event.srcElement;
+					alert(src.className); 
+				}
+			}
+		}
+		</script>
+</head>
+<body>
+	<button class="btn1">1</button>
+	<button class="btn2">2</button>
+	<button class="btn3">3</button>
+	<button class="btn4">4</button>
+	<button class="btn5">5</button>
+	<button class="btn6">6</button>
+	<button class="btn7">7</button>
+	<button class="btn8">8</button>
+	<button class="btn9">9</button>
+</body>
+</html>
