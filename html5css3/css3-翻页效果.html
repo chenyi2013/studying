@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3-翻页效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        .book {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 720px;
+            height: 500px;
+            background-color: #fff;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
+            -webkit-perspective: 800px;
+        }
+
+        .book .page {
+            position: absolute;
+            top: 0;
+            left: 360px;
+            width: 360px;
+            height: 500px;
+            font-size:  16px;
+            line-height: 26px;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 0 50%;  
+            -webkit-transition: -webkit-transform .5s ease-in .1s;            
+        }
+
+        .book .page .front,
+        .book .page .back {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .book .page .front {
+            z-index: 1;
+            background-color: #ccc;
+            -webkit-transform: rotateY(0);            
+        }
+
+        .book .page .back {
+            z-index: 0;
+            -webkit-transform: rotateY(180deg);
+        }
+
+        .book .turn-on {
+            -webkit-transform: rotateY(-180deg);
+        }        
+
+        .book .page .title {
+            text-align: center;
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        .book .front .title {
+            line-height: 400px;
+        }
+
+        .book .page p {
+            margin-top: 15px;
+            text-indent: 26px;
+        }
+
+        .page2 {
+            /*display: none;*/
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+    $(function () {
+        $('.front').click(function () {
+            $('.page').eq($(this).parent().index() + 1).fadeOut();         
+            $(this).parent().addClass('turn-on');
+            $(this).addClass('turn-on');
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="book">
+        <div class="page page5">
+            <div class="front">
+                <h2 class="title">第五章 六脉神剑</h2>
+            </div>
+            <div class="back">
+                <p>
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                </p>
+            </div>
+        </div>   
+
+        <div class="page page4">
+            <div class="front">
+                <h2 class="title">第四章 寒冰掌</h2>
+            </div>
+            <div class="back">
+                <p>
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                </p>
+            </div>
+        </div>   
+
+        <div class="page page3">
+            <div class="front">
+                <h2 class="title">第三章 七伤拳</h2>
+            </div>
+            <div class="back">
+                <p>
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                </p>
+            </div>
+        </div>   
+
+        <div class="page page2">
+            <div class="front">
+                <h2 class="title">第二章 降龙十八掌</h2>
+            </div>
+            <div class="back">
+                <p>
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                </p>
+            </div>
+        </div>        
+
+        <div class="page page1">
+            <div class="front">
+                <h2 class="title">第一章 九阴真经</h2>
+            </div>
+            <div class="back">
+                <p>
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                </p>
+
+                <p>
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                </p>
+
+                <p>
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                话说，从前有个山话说，从前有个山话说，从前有个山
+                </p>
+            </div>
+        </div>
+
+        <div class="page page0">
+            <div class="front">
+                <h2 class="title">武功秘籍</h2>
+            </div>
+            <div class="back">
+                <p>
+                    "欲练此功，必先自宫"
+                </p>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
