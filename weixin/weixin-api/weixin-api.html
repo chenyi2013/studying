@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2014 by maxzhang (http://jsbin.com/woluy/16/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="WeixinAPI test" />
+  <title>WeixinAPI test</title>
+  <script src="weixin-api.js"></script>
+
+<style id="jsbin-css">
+pre {
+  border: 1px #aaa solid;
+  padding: 5px;
+}
+
+button {
+  height: 30px;
+}
+
+</style>
+</head>
+<body>
+  <br>
+  
+  <p>
+    <button id="getNetworkType">获取网络状态</button><span id="networkType"></span>
+  </p>
+  <p>
+    <button id="showOptionMenu">显示网页右上角的按钮</button>
+    <button id="hideOptionMenu">隐藏网页右上角的按钮钮</button>
+  </p>
+  <p>
+    <button id="showToolbar">显示底部工具栏</button>
+    <button id="hideToolbar">隐藏底部工具栏</button>
+  </p>
+  <p>
+    <button id="closeWindow">关闭当前微信WebView页面</button>
+  </p>
+  
+<script>
+var wxData = {
+  'appId': '', // 服务号可以填写appId，没有则留空
+  'imgUrl': '', // 分享显示的图标
+  'link': 'http://maxzhang.github.io', // 分享链接
+  'title': '大家好，我是炎燎（maxzhang）', // 分享标题
+  'desc': '大家好，我是炎燎（maxzhang）' // 分享内容
+};
+WeixinAPI.ready(wxData);
+
+WeixinAPI.on('ready', function() { 
+  alert('share ready!'); 
+});
+WeixinAPI.on('cancel', function() { 
+  alert('share cancel!'); 
+});
+WeixinAPI.on('ok', function() { 
+  alert('share success!'); 
+});
+WeixinAPI.on('fail', function() { 
+  alert('share failure!'); 
+});
+WeixinAPI.on('complete', function() { 
+  alert('share complete!'); 
+});
+
+document.getElementById('getNetworkType').addEventListener('click', function() {
+  document.getElementById('networkType').innerHTML = WeixinAPI.getNetworkType();
+});
+document.getElementById('showOptionMenu').addEventListener('click', function() {
+  WeixinAPI.showOptionMenu();
+});
+document.getElementById('hideOptionMenu').addEventListener('click', function() {
+  WeixinAPI.hideOptionMenu();
+});
+document.getElementById('showToolbar').addEventListener('click', function() {
+  WeixinAPI.showToolbar();
+});
+document.getElementById('hideToolbar').addEventListener('click', function() {
+  WeixinAPI.hideToolbar();
+});
+document.getElementById('closeWindow').addEventListener('click', function() {
+  WeixinAPI.closeWindow();
+});
+</script>
+
+
+</body>
+</html>

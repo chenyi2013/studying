@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏右上角按钮</title>
+    <script src="-jquery-2.1.1.js"></script>
+    <script src="-weixin-api.js"></script>
+    <script>
+
+        // 需要事件触发
+        // WeixinAPI.ready();
+        // $(function () {
+
+
+        //     $('html').on('click', function () {
+        //         WeixinAPI.hideOptionMenu();
+        //         alert('hehe');
+        //     });
+
+        //     $('html').trigger('click');            
+        // });
+
+        
+        // 自动隐藏
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        });
+
+    
+    </script>
+</head>
+<body>
+    <button id="btn1">隐藏右上角图标</button>
+</body>
+</html>

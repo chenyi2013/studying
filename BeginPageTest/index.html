@@ -1,0 +1,83 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="mobileoptimized" content="0" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="browsermode" content="application">
+    <title>Vincent的初页</title>
+
+    <script>
+        (function () {
+            var parentIframe = parent.document.getElementsByName(window.name)[0];
+
+            // 尺寸相关
+            window.idealWidth = 320;
+            window.idealHeight = 504;
+            window.clientWidth = document.documentElement.clientWidth;
+            window.clientHeight = document.documentElement.clientHeight;
+
+            if (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger" && (/iphone|ipad/gi).test(navigator.appVersion)) {
+                if (window.clientHeight > screen.height - 64) {
+                    window.clientHeight = screen.height - 64;
+                }
+            }
+
+            window.xRatio = clientWidth / idealWidth;
+            window.yRatio = clientHeight / idealHeight;
+        })();
+    </script>
+    <link href="css/first-page.css" rel="stylesheet" />
+</head>
+<body>
+    <script>
+        window.workDetailUrl = "/BeginPageTest/Work/Detail/34508";
+        window.virtualPath = "/BeginPageTest";
+    </script>
+    <script src="js/first-page.js"></script>
+    <script type="text/javascript" src="http://analytics.cloud7.com.cn/piwik/piwik.js"></script>
+    <script>
+        window.cloud7Analytics = Piwik;
+        window.cloud7Analytics.doTrace = function (urlref) {
+            var tracker = Piwik.getTracker();
+            tracker.setTrackerUrl("http://analytics.cloud7.com.cn/piwik/piwik.php");
+            tracker.enableLinkTracking();
+            tracker.setDocumentTitle(document.domain + "/" + document.title);
+            tracker.setCustomUrl(window.location.href);
+            tracker.setReferrerUrl(urlref || document.referrer || window.parent.document.referrer || window.top.document.referrer);
+            tracker.trackPageView();
+        };
+        window.AnalyticsDownload = function (options) {
+            var title = options.title || "下载页";
+            var url = options.url || "http://chuye.cloud7.com.cn/Cloud7BeginPage/download";
+            var tracker = Piwik.getTracker();
+            tracker.setTrackerUrl("http://analytics.cloud7.com.cn/piwik/piwik.php");
+            tracker.enableLinkTracking();
+            tracker.setDocumentTitle(title);
+            tracker.setCustomUrl(url);
+            tracker.trackPageView();
+        };
+        function addListener(target, type, handler) {
+            if (target.addEventListener) {
+                target.addEventListener(type, handler, false);
+            }
+            else if (target.attachEvent) {
+                target.attachEvent("on" + type, handler);
+            } else {
+                target["on" + type] = handler;
+            }
+        };
+
+        addListener(window, "load", function () {
+            setTimeout(function () { cloud7Analytics.doTrace(); }, 500);
+        });
+    </script>
+</body>
+</html>
