@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mobilePPT test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobileoptimized" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="browsermode" content="application">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: 0;
+            margin: auto;
+            text-align: center;
+            font-size: 1em;
+            color: #fff;
+        }
+
+        #mobile-ppt {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ppt {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .ppt-01 {
+            background-color: #333;
+        }
+
+        .ppt-01 .pic-bg {
+            width: 100%;
+            /*height: 100%;*/
+            /*text-align: center;*/
+            vertical-align: middle;
+        }
+
+        .ppt-01 .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .9);
+            */
+        }
+
+        .ppt-02 {
+            background-color: #36f;
+        }
+
+        .ppt-03 {
+            background-color: #f0f;
+        }
+
+        .ppt-04 {
+            background-color: #f80;
+        }
+
+        .ppt-05 {
+            background-color: #666;
+        }
+    </style>
+
+    <script src="../../js/lib/zepto.js"></script>
+    <script src="../../js/lib/touch.js"></script>
+    <script src="../../js/lib/fx.js"></script>
+
+    <script>
+        (function ($) {
+            $(function () {
+                console.log( $('body').css('height'));
+
+
+                // 各个页面初始化
+                (function setIndex () {
+                    var _ppt = $('#mobile-ppt .ppt'),
+                        _indexInit = 1000;
+
+                    for (var i = 0, len = _ppt.length; i < len; i++) {
+                        $(_ppt[i]).css('zIndex', _indexInit-- );
+                    }
+                })();
+
+
+                var _scratchCard = $('.scratchCard');
+                var context2D = _scratchCard[0].getContext('2d');
+
+
+                // 刮刮卡初始化
+                (function scratchCartInit () {
+
+                    var _width = _scratchCard.width();
+                    var _height = _scratchCard.height();
+
+                    context2D.fillStyle='#cccccc';    //设置覆盖层的颜色
+                    context2D.fillRect(0,0,_width,_height);    //设置覆盖的区域
+
+                })();
+
+                function lottery(x,y,c){
+                    c.clearRect(x,y-100,20,20);
+                }
+
+                _scratchCard.on('touchmove', function(event) {
+                    console.log('s');
+                    // 如果这个元素的位置内只有一个手指的话
+                    if (event.targetTouches.length == 1) {
+                        event.preventDefault();// 阻止浏览器默认事件，重要
+                        var touch = event.targetTouches[0];
+                        // 把元素放在手指所在的位置
+                       // var canvasOffset = _scratchCard.offset();
+//                        var canvasX = Math.floor(touch.pageX - canvasOffset.left);
+//                        var canvasY = Math.floor(touch.pageY - canvasOffset.top);
+                        lottery(touch.pageX,touch.pageY,context2D);
+                    }
+                });
+
+
+//                $('.ppt-01 .mask').on('touchmove', function (e) {
+//                    console.log(e.touches[0].clientX);
+//                });
+
+
+
+            });
+
+
+            var _img = $('.lit-img img');
+
+            for (var i = 0, len = _img.length; i < len; i++) {
+                $(_img[i]).mouseover(function () {
+                    _img.addClass('正常样式');
+                    $(this).addClass('滑过样式');
+                });
+            }
+
+
+            //取消浏览器的所有事件，使得active的样式在手机上正常生效
+            document.addEventListener("touchstart",function(e){
+                e.preventDefault();
+                return false;
+            },true);
+            // 禁止选择
+            document.oncontextmenu=function(){
+                return false;
+            };
+
+
+            window.onload = function () {
+                $('.loading').hide();
+                $('#mobile-ppt').animate({
+                    opacity: 1
+                }, 800);
+//
+//                document.swipe(function (e) {
+//                    e.preventDefault();
+//                });
+            }
+
+        })(Zepto);
+    </script>
+
+</head>
+<body>
+
+    <div class="loading">加载中...</div>
+    <div id="mobile-ppt" style="opacity:0;">
+        <section class="ppt ppt-01">
+            <canvas class="mask scratchCard"></canvas>
+            <img class="pic-bg" src="../../images/temp/ppt-01-bg.jpg" alt="">
+        </section>
+        <section class="ppt ppt-02">
+
+        </section>
+        <section class="ppt ppt-03">
+
+        </section>
+        <section class="ppt ppt-04">
+
+        </section>
+        <section class="ppt ppt-05">
+
+        </section>
+    </div>
+
+</body>
+</html>
