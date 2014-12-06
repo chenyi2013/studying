@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<body>
+<canvas/>
+<script>
+
+        var canvas = document.querySelector('canvas');
+
+            var ctx;
+
+            var w = 200;
+            var h = 500;
+            var offsetX = canvas.offsetLeft,
+                    offsetY = canvas.offsetTop;
+            var mousedown = false;
+
+            function layer(ctx) {
+                ctx.fillStyle = 'gray';
+                ctx.fillRect(0, 0, w, h);
+            }
+
+            function eventDown(e){
+                e.preventDefault();
+                mousedown=true;
+            }
+
+            function eventUp(e){
+                e.preventDefault();
+                mousedown=false;
+                var data=ctx.getImageData(0,0,w,h).data;
+                for(var i=0,j=0;i< data.length;i+=4){
+                    if(data[i] && data[i+1] && data[i+2] && data[i+3]){
+                        j++;
+                    }
+                }
+                if(j<=w*h*0.98){
+//                    ctx.fillStyle = '#f00';
+                    ctx.fillRect(0, 0, w, h);
+                    alert('挂完了');
+                }
+            }
+
+            function eventMove(e){
+                e.preventDefault();
+                if(mousedown) {
+                    if(e.changedTouches){
+                        e=e.changedTouches[e.changedTouches.length-1];
+                    }
+                    var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
+                            y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+                    with(ctx) {
+                        beginPath()
+                        arc(x, y, 10, 0, Math.PI * 2);
+                        fill();
+                    }
+                }
+            }
+
+            canvas.width=w;
+            canvas.height=h;
+            canvas.style.backgroundImage='url(../../images/temp/ppt-01-bg.jpg)';
+            canvas.style.backgroundPosition ='right bottom';
+            ctx=canvas.getContext('2d');
+
+            layer(ctx);
+
+            ctx.globalCompositeOperation = 'destination-out';
+
+            canvas.addEventListener('touchstart', eventDown);
+            canvas.addEventListener('touchend', eventUp);
+            canvas.addEventListener('touchmove', eventMove);
+            canvas.addEventListener('mousedown', eventDown);
+            canvas.addEventListener('mouseup', eventUp);
+            canvas.addEventListener('mousemove', eventMove);
+</script>
+</body>
+</html>

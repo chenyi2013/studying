@@ -63,10 +63,12 @@
 
         .ppt-01 .mask {
             position: absolute;
-            top: 0;
-            left: 0;
+            opacity: .6;
+            /*top: 0;*/
+            /*left: 0;*/
             width: 100%;
             height: 100%;
+
             /*
             position: absolute;
             top: 0;
@@ -115,38 +117,56 @@
                 })();
 
 
-                var _scratchCard = $('.scratchCard');
-                var context2D = _scratchCard[0].getContext('2d');
+                var _canvas_scratchCard = $('.scratchCard');
+                var _context_scratchCard = _canvas_scratchCard[0].getContext('2d');
 
+                var _width = _canvas_scratchCard.width();
+                var _height = _canvas_scratchCard.height();
 
                 // 刮刮卡初始化
                 (function scratchCartInit () {
 
-                    var _width = _scratchCard.width();
-                    var _height = _scratchCard.height();
 
-                    context2D.fillStyle='#cccccc';    //设置覆盖层的颜色
-                    context2D.fillRect(0,0,_width,_height);    //设置覆盖的区域
+
+                    _context_scratchCard.fillStyle='#f5422a';    //设置覆盖层的颜色
+                    _context_scratchCard.fillRect(0, 0, _width, _height);    //设置覆盖的区域
 
                 })();
 
-                function lottery(x,y,c){
-                    c.clearRect(x,y-100,20,20);
+
+                function lottery(x, y, w, h){
+                    _context_scratchCard.clearRect(x, y, w, h);
                 }
 
-                _scratchCard.on('touchmove', function(event) {
-                    console.log('s');
-                    // 如果这个元素的位置内只有一个手指的话
-                    if (event.targetTouches.length == 1) {
-                        event.preventDefault();// 阻止浏览器默认事件，重要
-                        var touch = event.targetTouches[0];
-                        // 把元素放在手指所在的位置
-                       // var canvasOffset = _scratchCard.offset();
-//                        var canvasX = Math.floor(touch.pageX - canvasOffset.left);
-//                        var canvasY = Math.floor(touch.pageY - canvasOffset.top);
-                        lottery(touch.pageX,touch.pageY,context2D);
+                _canvas_scratchCard.on('touchmove', function (e) {
+
+                    e.preventDefault();
+
+                    if(e.changedTouches){
+                        e = e.changedTouches[e.changedTouches.length-1];
                     }
+                    var offsetX = _canvas_scratchCard.offsetLeft,
+                            offsetY = _canvas_scratchCard.offsetTop;
+
+                    var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
+                            y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+//                    var _touch = e.touches[0];
+                    lottery(x, y, 20, 20, Math.PI * 2);
                 });
+//
+//                _scratchCard.on('touchmove', function(event) {
+//                    console.log('s');
+//                    // 如果这个元素的位置内只有一个手指的话
+//                    if (event.targetTouches.length == 1) {
+//                        event.preventDefault();// 阻止浏览器默认事件，重要
+//                        var touch = event.targetTouches[0];
+//                        // 把元素放在手指所在的位置
+//                       // var canvasOffset = _scratchCard.offset();
+////                        var canvasX = Math.floor(touch.pageX - canvasOffset.left);
+////                        var canvasY = Math.floor(touch.pageY - canvasOffset.top);
+//                        lottery(touch.pageX,touch.pageY,context2D);
+//                    }
+//                });
 
 
 //                $('.ppt-01 .mask').on('touchmove', function (e) {
