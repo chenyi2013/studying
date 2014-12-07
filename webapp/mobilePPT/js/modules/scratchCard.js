@@ -38,6 +38,7 @@
         ctx.fillStyle='gray';
         ctx.fillRect(0, 0, w, h);
 
+
         ctx.globalCompositeOperation = 'destination-out';
 
         var _isMove = false;
@@ -59,6 +60,8 @@
                 ctx.beginPath();
                 ctx.arc(x, y, 20, 0, Math.PI * 2);
                 ctx.fill();
+                hideMask();
+
             }
         });
 
@@ -66,5 +69,18 @@
             e.preventDefault();
             _isMove = false;
         });
+
+        function hideMask () {
+            var data = ctx.getImageData(0,0,w,h).data;
+            for(var i=0,j=0;i< data.length;i+=4){
+                if(data[i] && data[i+1] && data[i+2] && data[i+3]){
+                    j++;
+                }
+            }
+            if(j<=w*h*0.6){
+                //alert('已经刮得可以了');
+                ctx.fillRect(0, 0, w, h);
+            }
+        }
     });
 })();

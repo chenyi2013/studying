@@ -27,6 +27,7 @@
         }
 
         .loading {
+            display: none;;
             position: absolute;
             top: 50%;
             right: 0;
@@ -51,7 +52,7 @@
         }
 
         .ppt-01 {
-            background-color: #333;
+            background-color: #26f;
         }
 
         .ppt-01 .pic-bg {
@@ -61,13 +62,13 @@
             vertical-align: middle;
         }
 
-        .ppt-01 .mask {
-            position: absolute;
-            opacity: .6;
+        .ppt-01 .scratchCard {
+            /*position: absolute;*/
+            /*opacity: .6;*/
             /*top: 0;*/
             /*left: 0;*/
-            width: 100%;
-            height: 100%;
+            /*width: 100%;*/
+            /*height: 100%;*/
 
             /*
             position: absolute;
@@ -99,6 +100,7 @@
     <script src="../../js/lib/zepto.js"></script>
     <script src="../../js/lib/touch.js"></script>
     <script src="../../js/lib/fx.js"></script>
+    <script src="../../js/modules/test.js"></script>
 
     <script>
         (function ($) {
@@ -115,79 +117,9 @@
                         $(_ppt[i]).css('zIndex', _indexInit-- );
                     }
                 })();
-
-
-                var _canvas_scratchCard = $('.scratchCard');
-                var _context_scratchCard = _canvas_scratchCard[0].getContext('2d');
-
-                var _width = _canvas_scratchCard.width();
-                var _height = _canvas_scratchCard.height();
-
-                // 刮刮卡初始化
-                (function scratchCartInit () {
-
-
-
-                    _context_scratchCard.fillStyle='#f5422a';    //设置覆盖层的颜色
-                    _context_scratchCard.fillRect(0, 0, _width, _height);    //设置覆盖的区域
-
-                })();
-
-
-                function lottery(x, y, w, h){
-                    _context_scratchCard.clearRect(x, y, w, h);
-                }
-
-                _canvas_scratchCard.on('touchmove', function (e) {
-
-                    e.preventDefault();
-
-                    if(e.changedTouches){
-                        e = e.changedTouches[e.changedTouches.length-1];
-                    }
-                    var offsetX = _canvas_scratchCard.offsetLeft,
-                            offsetY = _canvas_scratchCard.offsetTop;
-
-                    var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
-                            y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
-//                    var _touch = e.touches[0];
-                    lottery(x, y, 20, 20, Math.PI * 2);
-                });
-//
-//                _scratchCard.on('touchmove', function(event) {
-//                    console.log('s');
-//                    // 如果这个元素的位置内只有一个手指的话
-//                    if (event.targetTouches.length == 1) {
-//                        event.preventDefault();// 阻止浏览器默认事件，重要
-//                        var touch = event.targetTouches[0];
-//                        // 把元素放在手指所在的位置
-//                       // var canvasOffset = _scratchCard.offset();
-////                        var canvasX = Math.floor(touch.pageX - canvasOffset.left);
-////                        var canvasY = Math.floor(touch.pageY - canvasOffset.top);
-//                        lottery(touch.pageX,touch.pageY,context2D);
-//                    }
-//                });
-
-
-//                $('.ppt-01 .mask').on('touchmove', function (e) {
-//                    console.log(e.touches[0].clientX);
-//                });
-
-
-
             });
 
-
-            var _img = $('.lit-img img');
-
-            for (var i = 0, len = _img.length; i < len; i++) {
-                $(_img[i]).mouseover(function () {
-                    _img.addClass('正常样式');
-                    $(this).addClass('滑过样式');
-                });
-            }
-
-
+            /*
             //取消浏览器的所有事件，使得active的样式在手机上正常生效
             document.addEventListener("touchstart",function(e){
                 e.preventDefault();
@@ -204,11 +136,10 @@
                 $('#mobile-ppt').animate({
                     opacity: 1
                 }, 800);
-//
-//                document.swipe(function (e) {
-//                    e.preventDefault();
-//                });
             }
+            */
+
+
 
         })(Zepto);
     </script>
@@ -217,10 +148,10 @@
 <body>
 
     <div class="loading">加载中...</div>
-    <div id="mobile-ppt" style="opacity:0;">
+    <div id="mobile-ppt" style="opacity:1;">
         <section class="ppt ppt-01">
-            <canvas class="mask scratchCard"></canvas>
-            <img class="pic-bg" src="../../images/temp/ppt-01-bg.jpg" alt="">
+            <canvas class="scratchCard"></canvas>
+            <!--<img class="pic-bg" src="../../images/temp/ppt-01-bg.jpg" alt="">-->
         </section>
         <section class="ppt ppt-02">
 
