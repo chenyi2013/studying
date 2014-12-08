@@ -15,14 +15,59 @@
             padding: 0;
         }
 
+        body {
+            /*position: absolute;*/
+            overflow: hidden;
+        }
+
         .dragtest {
             position: absolute;
+            z-index: 1;
             top: 50px;
             left: 50px;
             width: 30px;
             height: 30px;
             background-color: #f80;
             /*-webkit-transition: all .1s;*/
+        }
+
+        .ppt {
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ppt h2 {
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .ppt-01 {
+            z-index: 1000;
+            background-color: #333;
+        }
+
+        .ppt-02 {
+            z-index:  999;
+            top: 100%;
+            background-color: #f00;
+        }
+
+        .ppt-03 {
+            z-index: 998;
+            top: 100%;
+            background-color: #ff0;
+        }
+
+        .ppt-animate {
+            -webkit-transition: -webkit-transform .5s;
+        }
+
+        .ppt-reset {
+            /*background-color: #ccc;*/
+            /*-webkit-transform: translateY(200px);*/
         }
     </style>
     <script src="../../js/modules/dragtest.js"></script>
@@ -36,6 +81,18 @@
 <body>
     <div class="dragtest">
         Drag
+    </div>
+
+    <div class="ppt ppt-01">
+        <h2>PPT01</h2>
+    </div>
+
+    <div class="ppt ppt-02">
+        <h2>PPT02</h2>
+    </div>
+
+    <div class="ppt ppt-03">
+        <h2>PPT03</h2>
     </div>
 </body>
 </html>
