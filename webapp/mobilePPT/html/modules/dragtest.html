@@ -36,6 +36,12 @@
             z-index: 0;
             width: 100%;
             height: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .ppt .pic-bg {
+            width: 100%;
         }
 
         .ppt h2 {
@@ -44,19 +50,23 @@
             line-height: 100px;
         }
 
+        .ppt-00 {
+            bottom: 100%;
+        }
+
         .ppt-01 {
             z-index: 1000;
             background-color: #333;
         }
 
         .ppt-02 {
-            z-index:  999;
+            z-index:  1001;
             top: 100%;
             background-color: #f00;
         }
 
         .ppt-03 {
-            z-index: 998;
+            z-index: 1002;
             top: 100%;
             background-color: #ff0;
         }
@@ -83,12 +93,16 @@
         Drag
     </div>
 
+    <div class="ppt ppt-00">
+        <img class="pic-bg" src="../../images/temp/ppt-02-bg1.jpg" alt="">
+    </div>
+
     <div class="ppt ppt-01">
-        <h2>PPT01</h2>
+        <img class="pic-bg" src="../../images/temp/ppt-01-bg1.jpg" alt="">
     </div>
 
     <div class="ppt ppt-02">
-        <h2>PPT02</h2>
+        <img class="pic-bg" src="../../images/temp/ppt-02-bg.jpg" alt="">
     </div>
 
     <div class="ppt ppt-03">

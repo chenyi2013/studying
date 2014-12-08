@@ -30,7 +30,12 @@
 
 
 
-        var _ppt_01 = document.querySelector('.ppt-01'),
+        var _ppt_00 = document.querySelector('.ppt-00'),
+            _ppt_01 = document.querySelector('.ppt-01'),
+            _ppt_02 = document.querySelector('.ppt-02'),
+            _ppt_03 = document.querySelector('.ppt-03'),
+
+            _ppt_01_bg = _ppt_01.querySelector('.pic-bg'),
             _x1,
             _y1,
             _x2,
@@ -57,54 +62,78 @@
 
                 _disY = _y1 - _y2;
 
+                _ppt_00.className = 'ppt ppt-00';
                 _ppt_01.className = 'ppt ppt-01';
+                _ppt_02.className = 'ppt ppt-02';
 
                 if (_disY > 0) {
-                    //console.log(_disY);
-                    //_ppt.style.bottom = _disY + 'px';
-                    //_ppt_01.className = 'ppt ppt-01';
-                    _ppt_01.style.webkitTransform = 'translateY(' + -_disY + 'px)';
+                    //console.log(_disY/2);
+
+
+                    _ppt_01.style.zIndex = '999';
+                    _ppt_02.style.zIndex = '1000';
+
+
+                    _ppt_01.style.webkitTransform = 'translateY(' + -_disY/2 + 'px)';
+                    _ppt_02.style.webkitTransform = 'translateY(' + -_disY + 'px)';
+
+                    //console.log( (_ppt_01.offsetWidth - _disY/3)/_ppt_01_img.offsetWidth  );
+
+                    _ppt_01_bg.className = 'pic-bg';
+                    var _scale = (_ppt_01.offsetWidth - _disY/3)/_ppt_01_bg.offsetWidth;
+                    _ppt_01_bg.style.webkitTransform = 'scale(' + _scale + ')';
+
+                    //_ppt_01_img.style.width = _ppt_01.offsetWidth - _disY/3 + 'px';
                 } else if (_disY < 0) {
                     //console.log('向下');
-                    //_ppt.style.top = Math.abs(_disY) + 'px';
-                    //_ppt_01.className = 'ppt ppt-01';
-                    _ppt_01.style.webkitTransform = 'translateY(' + Math.abs(_disY) + 'px)';
+
+                    _ppt_01.style.zIndex = '999';
+                    _ppt_00.style.zIndex = '1000';
+
+                    _ppt_01.style.webkitTransform = 'translateY(' + Math.abs(_disY/2) + 'px)';
+                    _ppt_00.style.webkitTransform = 'translateY(' + Math.abs(_disY) + 'px)';
+
+
+                    _ppt_01_bg.className = 'pic-bg';
+                    var _scale = (_ppt_01.offsetWidth - Math.abs(_disY)/3)/_ppt_01_bg.offsetWidth;
+                    _ppt_01_bg.style.webkitTransform = 'scale(' + _scale + ')';
+
                 }
-
-                //_ppt.style.left = _x1 + 'px';
             }
-
-
         }, 'false');
 
         _ppt_01.addEventListener('touchend', function (e) {
             if (!_isMove) {
-                return;
+                //return;
             }
-
-
+            _ppt_00.className = 'ppt ppt-00 ppt-animate';
             _ppt_01.className = 'ppt ppt-01 ppt-animate';
+            _ppt_02.className = 'ppt ppt-02 ppt-animate';
             if (_disY > 0 && _disY < 150) {
-                //_ppt
-                //_ppt_01.className = 'ppt ppt-01 ppt-animate';
                 _ppt_01.style.webkitTransform = 'translateY(' + 0 + 'px)';
-                //_ppt.className = 'ppt';
-                //_ppt.style.bottom = 0;
-                //_ppt.style.webkitTransform = 'translateY(' + 0 + 'px)';
-            } else if (_disY > 0 && _disY >= 150) {
-                //_ppt_01.className = 'ppt ppt-01 ppt-animate';
-                _ppt_01.style.webkitTransform = 'translateY(' + -_h + 'px)';
-            } else if (_disY < 0 && _disY > -150) {
-                //_ppt_01.className = 'ppt ppt-01 ppt-animate';
-                _ppt_01.style.webkitTransform = 'translateY(' + 0 + 'px)';
-            } else if (_disY <= -150) {
-                //_ppt_01.className = 'ppt ppt-01 ppt-animate';
-                _ppt_01.style.webkitTransform = 'translateY(' + _h + 'px)';
-            }
+                _ppt_02.style.webkitTransform = 'translateY(' + 0 + 'px)';
 
-            //_x1 = _x2 = 0;
-            //_y1 = _y2 = 0;
-            //_disX = _disY = 0;
+                _ppt_01_bg.className = 'pic-bg ppt-animate';
+                _ppt_01_bg.style.webkitTransform = 'scale(' + 1 + ')';
+            } else if (_disY >= 150) {
+                _ppt_01.style.webkitTransform = 'translateY(' + -_h/2 + 'px)';
+                _ppt_02.style.webkitTransform = 'translateY(' + -_h + 'px)';
+
+                _ppt_01_bg.className = 'pic-bg ppt-animate';
+                _ppt_01_bg.style.webkitTransform = 'scale(' + 0.5 + ')';
+            } else if (_disY < 0 && _disY > -150) {
+                _ppt_01.style.webkitTransform = 'translateY(' + 0 + 'px)';
+                _ppt_00.style.webkitTransform = 'translateY(' + 0 + 'px)';
+
+                _ppt_01_bg.className = 'pic-bg ppt-animate';
+                _ppt_01_bg.style.webkitTransform = 'scale(' + 1 + ')';
+            } else if (_disY <= -150) {
+                _ppt_01.style.webkitTransform = 'translateY(' + _h/2 + 'px)';
+                _ppt_00.style.webkitTransform = 'translateY(' + _h + 'px)';
+
+                _ppt_01_bg.className = 'pic-bg ppt-animate';
+                _ppt_01_bg.style.webkitTransform = 'scale(' + 0.5 + ')';
+            }
         }, 'false')
     };
 })();
