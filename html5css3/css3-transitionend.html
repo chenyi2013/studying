@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3-transitionend - BeyondWeb</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        .rect {
+            width: 100px;
+            height: 100px;
+            background-color: #f80;
+            -webkit-transition: all .5s;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var _rect = document.querySelector('.rect');
+            _rect.onclick = function () {
+                _rect.style.webkitTransform = 'translateX(300px)';
+            }
+
+            _rect.addEventListener('webkitTransitionEnd', function () {
+                alert('动画执行完毕！');
+                // callback here
+            }, false);
+        }
+    </script>
+</head>
+<body>
+    <div class="rect"></div>
+</body>
+</html>
