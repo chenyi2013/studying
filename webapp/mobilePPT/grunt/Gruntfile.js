@@ -23,8 +23,17 @@ module.exports = function ( grunt ) {
                     // mobilePPT-common -- common styles
                     '../css/modules/ppt-common.css': '../less/modules/ppt-common.less',
 
-                    // mobilePPT-single -- single styles 单页面模板样式
-                    '../css/modules/ppt-single.css': '../less/modules/ppt-single.less'
+                    // ppt-single -- single styles 单页面模板样式
+                    '../css/modules/ppt-single.css': '../less/modules/ppt-single.less',
+
+                    // ppt-normal -- normal styles 整屏上下切换
+                    '../css/modules/ppt-normal.css': '../less/modules/ppt-normal.less',
+
+
+                    // 测试样式
+                    '../css/modules/ppt-single-test.css': '../less/modules/ppt-single-test.less',
+                    '../css/modules/ppt-normal-test.css': '../less/modules/ppt-normal-test.less'
+
                 }
             }
         },

@@ -153,40 +153,4 @@ body {
 .mobile-ppt .ppt {
   overflow: hidden;
 }
-.ppt-example {
-  background-color: #fd6639;
-  text-align: center;
-  color: #fff;
-}
-.ppt-example .header {
-  position: fixed;
-  height: 40px;
-  overflow-x: scroll;
-  background: #333;
-}
-.ppt-example .header ul {
-  width: 2000px;
-  overflow: hidden;
-}
-.ppt-example .header li {
-  float: left;
-  line-height: 40px;
-  font-size: 0;
-}
-.ppt-example .header li a {
-  display: block;
-  padding: 0 15px;
-  font-size: 14px;
-}
-.ppt-example .header li a:hover {
-  background: #666;
-}
-.ppt-example .ppt-cont {
-  margin-top: 40px;
-  padding-bottom: 50px;
-}
-.ppt-example a {
-  color: #fff;
-  text-decoration: underline;
-}
 
