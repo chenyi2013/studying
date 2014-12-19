@@ -76,22 +76,27 @@
                 <h1>第四张</h1>
             </div>
         </div>
-        <div class="ppt ppt-05">
+        <div class="ppt ppt-05 ppt-img-bg">
             <div class="ppt-cont">
                 <h1>第五张</h1>
             </div>
+            <img class="ppt-bg" src="../../images/temp/bg002.jpg">
         </div>
-        <div class="ppt ppt-06">
+        <div class="ppt ppt-06 ppt-img-bg">
             <div class="ppt-cont">
                 <h1>第六张</h1>
             </div>
+            <img class="ppt-bg" src="../../images/temp/bg003.jpg">
         </div>
     </div>
 
     <script src="../../js/lib/zeptomix.js"></script>
     <script src="../../js/modules/ppt-normal.js"></script>
     <script>
-        pptNormal.init();
+        $(function () {
+            pptNormal.init();
+            pptNormal.switch();
+        });
     </script>
 </body>
 </html>
