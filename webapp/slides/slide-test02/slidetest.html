@@ -127,9 +127,6 @@
                     _pageW = $('body').width()
                     ;
 
-                var _timer;
-
-                var _swipeCount = 0;
 
                 // init     
                 _slide.width( _pageW );
@@ -200,6 +197,9 @@
                             // _disX > 0 --- left
                             // _disX < 0 --- right
 
+
+                            clearInterval(_timer);
+
                             // left
                             if ( _disX > 0 ) {
                                 
@@ -265,6 +265,8 @@
 
                             _slidesList[0].addEventListener('webkitTransitionEnd', animationContinue, false);
 
+                            autoPlay(i);
+                            console.log(i);
 
                         }, false); 
 
@@ -272,6 +274,31 @@
                     })(i);
                   
                 }
+
+
+
+
+                var _timer;
+                function autoPlay ( index ) {
+                    var _index = index || 0;
+                    _timer = setInterval(function () {
+                        _slidesList.addClass('slides-animate');
+                        _index++;
+                        if ( _index == _slide.length - 1 ) {
+                            $(_slide[0]).css('left', _slidesList.width() );
+                        }
+
+                        _slidesList[0].style.webkitTransform = 'translateX(' + -_pageW*_index + 'px)';
+                        $(_icon[_index]).addClass('active').siblings().removeClass('active');
+
+                        if ( _index == _slide.length ) {
+                            _index = 0;
+                            _slidesList[0].addEventListener('webkitTransitionEnd', swipeLeftReset, false);
+                        }
+
+                    }, 1000);
+                }
+                autoPlay();
 
             });
 
@@ -281,7 +308,7 @@
 </head>
 <body>
     <div class="slides slides-normal" id="J-slides-normal">
-        <ul class="slides-list">
+        <ul class="slides-list slides-animate">
             <li><a href="#"><img src="../001.jpg" alt=""></a></li>
             <li><a href="#"><img src="../002.jpg" alt=""></a></li>
             <li><a href="#"><img src="../003.jpg" alt=""></a></li>
