@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ppt-normal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobileoptimized" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="browsermode" content="application">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: #f1f1f1;
+        }
+
+        .slides {
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .slides-list {
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .slides-list li {
+            float: left;
+            text-align: center;
+        }
+
+        .slides-list img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .icon-list {
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 300px;
+            height: 8px;
+            font-size: 0;
+            text-align: center;
+        }
+
+        .icon-list li {
+            display: inline-block;
+            margin: 0 3px;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+        }
+
+        .icon-list .active {
+            background: #e73736;
+        }
+
+
+    </style>
+
+    <script src="../zeptomix.js"></script>
+    <script>
+
+
+        $(function () {
+
+
+            document.body.style.mozUserSelect = 'none';
+            document.body.style.webkitUserSelect = 'none';
+
+            document.addEventListener('touchstart', function ( e ) {
+                e.preventDefault();
+                return false;
+            }, false);
+
+
+            $(window).on('load', function () {
+                // alert($);
+                var _slidesNormal = $('#J-slides-normal'),
+                    _slidesList = _slidesNormal.find('.slides-list'),
+                    _slide = _slidesList.find('li'),
+
+                    _icon = _slidesNormal.find('.icon-list li'),
+
+                    _imgW = _slidesList.find('img').width(),
+                    _pageW = $('body').width()
+                    ;
+
+                var _timer;
+
+                // init     
+                _slidesNormal.height( _slide.height() );
+                _slide.width( _pageW );
+                _slidesList.width( _slide.width() * _slide.length );   
+
+
+                // swipe
+                for ( var i = 0, len = _slide.length; i < len; i++) {
+                    (function (i) {
+                        $(_slide[i]).on('swipeLeft', function ( e ) {
+                            console.log();
+                            clearInterval(_timer);
+                            if ( i < len - 1 ) {
+                                _slidesList[0].style.webkitTransform = 'translateX(' + -_pageW*(i+1) + 'px)';
+
+                                 $(_icon[i+1]).addClass('active').siblings().removeClass('active');
+                            } else if ( i == len - 1 ) {
+                                _slidesList[0].style.webkitTransform = 'translateX(0px)';
+                                $(_icon[0]).addClass('active').siblings().removeClass('active');                                
+                            }
+                            autoPlay(i+1);
+                        });
+
+                        $(_slide[i]).on('swipeRight', function () {
+                            if ( i == 0 ) {
+                                _slidesList[0].style.webkitTransform = 'translateX(' + -_pageW*(len-1) + 'px)';
+                                $(_icon[len-1]).addClass('active').siblings().removeClass('active');
+                            } else if ( i > 0 ) {
+                                _slidesList[0].style.webkitTransform = 'translateX(' + -_pageW*(i-1) + 'px)';
+                                $(_icon[i-1]).addClass('active').siblings().removeClass('active'); 
+                            }   
+                        });
+                    })(i);                    
+                }
+
+                function autoPlay ( index ) {
+                    var _index = index || 0;
+                    _timer  = setInterval(function () {
+                        _index++;
+                        if ( _index >= _slide.length ) {
+                            _index = 0;
+                        }
+                        _slidesList[0].style.webkitTransform = 'translateX(' + (-_pageW * _index) + 'px)';
+                        $(_icon[_index]).addClass('active').siblings().removeClass('active');
+                    }, 3000);
+                }
+
+                autoPlay();
+
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div class="slides slides-normal" id="J-slides-normal">
+        <ul class="slides-list">
+            <li><a href="#"><img src="../001.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../002.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../003.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../004.jpg" alt=""></a></li>
+        </ul>
+        <ul class="icon-list">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    移动端幻灯片切换
+</body>
+</html>
