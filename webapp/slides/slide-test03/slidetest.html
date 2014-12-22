@@ -43,7 +43,7 @@
             -webkit-transition: all 0.3s ease;
         }
 
-        .slides-list li {
+        .slides-list .slide {
             float: left;
             position: absolute;
             left: 0;
@@ -92,6 +92,20 @@
         }
 
 
+
+        /*------------*/
+        .items-list {
+            width: 100%;
+        }
+
+        .items-list .item {
+            width: 33%;
+        }
+
+        .items-list img {
+            width: 33%;
+        }
+
     </style>
 
     <script src="../zeptomix.js"></script>
@@ -100,7 +114,7 @@
 
         $(function () {
 
-
+            // mobile reset
             document.body.style.mozUserSelect = 'none';
             document.body.style.webkitUserSelect = 'none';
 
@@ -114,19 +128,23 @@
                 // alert($);
                 var _slidesNormal = $('#J-slides-normal'),
                     _slidesList = _slidesNormal.find('.slides-list'),
-                    _slide = _slidesList.find('li'),
+                    _slide = _slidesList.find('.slide'),
 
                     _icon = _slidesNormal.find('.icon-list li'),
 
                     _slidesMask = _slidesNormal.find('.slides-mask'),
 
 
-                    _offsetX = _slidesNormal.offset().left;
+                    _offsetX = _slidesNormal.offset().left,
 
-                    _imgW = _slidesList.find('img').width(),
-                    _pageW = $('body').width()
+                    // _imgW = _slidesList.find('img').width(),
+                    // _pageW = $('body').width()
+                    _pageW = _slidesNormal.width()
                     ;
 
+
+                // console.log($('body').width());
+                // console.log( _offsetX );
 
                 // init     
                 _slide.width( _pageW );
@@ -142,7 +160,6 @@
                     }
                 }
 
-                console.log(_slidesList.width());
 
 
 
@@ -186,8 +203,19 @@
                     (function ( i ) {
 
                         _slide[i].addEventListener('touchstart', function ( e ) {
-                            _x1 = e.touches[0].clientX;
+                            _x1 = e.touches[0].clientX - _offsetX;
                             _slidesList.removeClass('slides-animate');
+
+                            // if ( i == 0 ) {
+                            //     $(_slide[0]).css('left', 0 );
+                            //     _slidesList[0].style.webkitTransform = 'translateX(' + 0 + 'px)';
+                            // }
+
+                            // if ( i == len - 1 ) {
+                            //     $(_slide[len-1]).css('left', _pageW*(len-1) );
+                            //     _slidesList[0].style.webkitTransform = 'translateX(' + _pageW*(len-1) + 'px)';
+                            // }
+
                         }, false);
 
                         _slide[i].addEventListener('touchmove', function ( e ) {
@@ -202,7 +230,7 @@
 
                             // left
                             if ( _disX > 0 ) {
-                                
+                                // 向左滑动到最后一张时
                                 if ( i == len - 1 ) {
                                     $(_slide[0]).css('left', _slidesList.width() );
                                 }                                
@@ -211,7 +239,6 @@
                             }
                             // right
                             else if ( _disX < 0 ) {
-
                                 if ( i == 0 ) {
                                     $(_slide[len-1]).css('left', -_pageW );
                                 }
@@ -264,9 +291,9 @@
 
 
                             _slidesList[0].addEventListener('webkitTransitionEnd', animationContinue, false);
-
+        
                             autoPlay(i);
-                            console.log(i);
+                            // console.log(i);
 
                         }, false); 
 
@@ -308,12 +335,12 @@
 </head>
 <body>
     <div class="slides slides-normal" id="J-slides-normal">
-        <ul class="slides-list slides-animate">
-            <li><a href="#"><img src="../001.jpg" alt=""></a></li>
-            <li><a href="#"><img src="../002.jpg" alt=""></a></li>
-            <li><a href="#"><img src="../003.jpg" alt=""></a></li>
-            <li><a href="#"><img src="../004.jpg" alt=""></a></li>
-        </ul>
+        <div class="slides-list slides-animate">
+            <div class="slide"><a href="#"><img src="../001.jpg" alt=""></a></div>
+            <div class="slide"><a href="#"><img src="../002.jpg" alt=""></a></div>
+            <div class="slide"><a href="#"><img src="../003.jpg" alt=""></a></div>
+            <div class="slide"><a href="#"><img src="../004.jpg" alt=""></a></div>
+        </div>
         <ul class="icon-list">
             <li class="active"></li>
             <li></li>
