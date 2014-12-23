@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js缓存更新方案</title>
+</head>
+<body>
+
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+
+    <script>
+        var jsHash = {
+            index: [
+                { url: 'main.js', version: '0.0.1' }
+            ],
+            edit: [
+                { url: 'main.js', version: '0.0.3' },
+                { url: 'home.js', version: '0.0.1' },
+            ]
+        };
+    </script>
+
+    <script>
+        function jsLoad ( key ) {
+            var node = jsHash[key];
+
+            for ( var i = 0, len = node.length; i < len; i++) {
+                document.write('<script src="' + node[i].url + '?v=' + node[i].version + '"><\/script>');
+            }
+        }
+
+        jsLoad('edit');
+    </script>
+</body>
+</html>

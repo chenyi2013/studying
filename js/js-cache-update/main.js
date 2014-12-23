@@ -1,0 +1,1 @@
+console.log('main.js 0.0.3');
