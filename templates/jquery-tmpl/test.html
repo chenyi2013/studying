@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="jquery-1.11.1.js"></script>
+    <script src="jquery.tmpl.js"></script>
+
+</head>
+<body>
+
+    示例1：
+    <ul id="target01"></ul>
+
+    示例2：
+    <ul id="target02"></ul>
+
+    示例3：request远程数据
+    <ul id="target03"></ul>
+
+    <script>
+        $(function () {
+
+
+            // demo1
+            (function () {
+                $.tmpl('<li>${ Name }</li>', { "Name": "Walker"}).appendTo('#target01');
+            })();
+
+            // ===============================================================================
+
+            // demo2
+            (function () {
+                var peoples = [
+                    { name: "Walker", job: '员工' },
+                    { name: "张三", job: '码农' },
+                    { name: "李四", job: 'PM' },
+                    { name: "王五", job: 'CEO' }
+                ];
+
+                var markup = '<li>Name: ${ name }, Job: ${ job }</li>';
+
+                $.template('peopleTemplate', markup);
+
+                $.tmpl('peopleTemplate', peoples).appendTo('#target02');
+            })();
+
+            // ===============================================================================
+
+
+            // demo3
+            (function () {
+                var markup2 = '<li>Name: ${ name }, Age: ${ age }</li>';
+
+                $.template('peopleTpl', markup2);
+
+                $.ajax({
+                    url: 'response.php',
+                    dataType: 'json'
+                }).done(function ( data ) {
+                    console.log( data );
+                    $.tmpl( 'peopleTpl', data ).appendTo('#target03');
+                });
+            })();
+
+
+
+
+
+        });
+    </script>
+
+</body>
+</html>
