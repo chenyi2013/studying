@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown Refresh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobileoptimized" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="browsermode" content="application">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body {
+            font-size: 10px;
+            /*62.5%*/
+        }
+
+        .content {
+            margin-top: -60px;
+        }
+
+        .dropdown-refresh {
+            height: 60px;
+            line-height: 60px;
+            background: #f1f1f1;
+            text-align: center;
+            font-size: 0;
+        }
+
+        .dropdown-refresh .pic {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url(up_arrow.png) no-repeat center top;
+            background-size: 40px 80px;
+            vertical-align: middle;
+            -webkit-transform-style: preserve-3d;
+
+        }
+
+        .animate {
+            -webkit-transition: all .3s ease;
+        }
+
+        .dropdown-refresh .active {
+            -webkit-transition: all .3s ease;
+            -webkit-transform: rotateZ(-180deg);
+        }
+
+        .dropdown-refresh .loading {
+            background: url(up_arrow.png) no-repeat center bottom;
+            background-size: 40px 80px;
+            -webkit-animation: loading 2s linear infinite;
+        }
+
+        @-webkit-keyframes loading {
+            from {
+                -webkit-transform: rotateZ(0);
+            }
+            to {
+                -webkit-transform: rotateZ(360deg);
+            }
+        }
+
+
+
+        .dropdown-refresh .text {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            /*background: #f00;*/
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+
+        .item-list {
+            list-style: none;
+        }
+
+        .item-list li {
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+            font-size: 1.4rem;
+        }
+
+    </style>
+
+
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            var _content = $('.content'),
+                _dropdownRefresh = $('.dropdown-refresh'),
+                _dropdownRefreshPic = _dropdownRefresh.find('.pic'),
+                _dropdownRefreshText = _dropdownRefresh.find('.text')
+
+                    ;
+
+            var _startX, _endX, _startY, _endY, _disX, _disY;
+            _content[0].addEventListener( 'touchstart', function ( e ) {
+                _startX = e.touches[0].clientX;
+                _startY = e.touches[0].clientY;
+            }, false );
+
+            _content[0].addEventListener( 'touchmove', function ( e ) {
+                _endX = e.changedTouches[0].clientX;
+                _endY = e.changedTouches[0].clientY;
+
+                // x > 0 左
+                // y > 0 上
+                _disX = _startX - _endX;
+                _disY = _startY - _endY;
+
+                console.log('_disX'+ _disX );
+                console.log('_disY'+ _disY );
+
+                if ( _disY < 0 ) {
+                    if ( Math.abs(_disY) >= 60 ) {
+                        _dropdownRefreshPic.addClass('active');
+                        _dropdownRefreshText.text('释放更新');
+                    }
+                    _content[0].style.webkitTransform = 'translate3D( 0, ' + -_disY + 'px, 0 )';
+                }
+
+
+            }, false );
+
+            _content[0].addEventListener( 'touchend', function ( e ) {
+                if ( _disY < 0 ) {
+
+                    if ( Math.abs(_disY) >= 60 ) {
+                        _dropdownRefreshPic.removeClass('active');
+
+                        _dropdownRefreshPic.addClass('loading');
+                        _dropdownRefreshText.text('加载中...');
+
+                        setTimeout(function () {
+                            _content.addClass('animate');
+                            _content[0].style.webkitTransform = 'translate3D( 0, 0, 0 )';
+
+
+                            _dropdownRefreshPic.removeClass('loading');
+                            _dropdownRefreshText.text('下拉刷新');
+                        }, 2000);
+                    } else {
+                        _content.addClass('animate');
+                        _content[0].style.webkitTransform = 'translate3D( 0, 0, 0 )';
+                    }
+
+                }
+            }, false );
+        });
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="dropdown-refresh">
+            <span class="pic"></span>
+            <span class="text">下拉刷新</span>
+        </div>
+        <!--
+    下拉刷新
+    释放更新
+    加载中...
+    刷新成功
+-->
+        <ul class="uList item-list">
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+            <li>这是列表这是列表这是列表</li>
+        </ul>
+    </div>
+</body>
+</html>
