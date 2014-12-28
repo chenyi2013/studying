@@ -1,0 +1,14 @@
+.header {
+  margin: 0 auto;
+  width: 1000px; }
+  .header .logo {
+    width: 200px;
+    height: 32px; }
+
+.content {
+  margin: 30px auto 0 auto;
+  width: 1000px; }
+  .content .sidebar {
+    float: right; }
+
+/*# sourceMappingURL=style.css.map */
