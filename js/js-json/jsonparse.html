@@ -1,0 +1,13 @@
+<script>
+
+    // str to json
+    // three methods
+
+    var str = '{ "name": "hello" }';
+
+    console.log( eval( '(' + str + ')' ) );
+
+    console.log( JSON.parse( str ) );
+
+    console.log( new Function( 'return ' + str )() );
+</script>
