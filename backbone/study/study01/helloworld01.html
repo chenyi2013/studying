@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>helloworld</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+        $(function () {
+            var ListView = Backbone.View.extend({
+                el: $('.container'),
+
+                initialize: function () {
+                    _.bindAll(this, 'render');
+                    this.render();
+                },
+
+                render: function () {
+                    $(this.el).append('Hello World!');
+                }
+            });
+
+            var listView = new ListView();
+        });
+
+
+
+        // _.bindAll() test
+        (function () {
+            $(function () {
+                var buttonView = {
+                    label  : 'underscore',
+                    onClick: function(){ alert('clicked: ' + this.label); },
+                    onHover: function(){ console.log('hovering: ' + this.label); }
+                };
+                _.bindAll(buttonView, 'onClick', 'onHover');
+                // When the button is clicked, this.label will have the correct value.
+                jQuery('#underscore_button').bind('click', buttonView.onClick);
+            });
+        })();
+
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+
+    <button id="underscore_button">bindAll() test</button>
+
+</body>
+</html>
