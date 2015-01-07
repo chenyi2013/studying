@@ -13,7 +13,13 @@ var app = app || {};
             'keypress #new-todo': 'createOnEnter',
             'click #clear-completed': 'clearCompleted',
             'click #toggle-all': 'toggleAllComplete'
+
+            // 'click .toggle': 'test'
         },
+
+        // test: function () {
+        //     console.log('hhh');
+        // },
 
         initialize: function () {
             this.allCheckbox = this.$('#toggle-all')[0];
@@ -68,7 +74,7 @@ var app = app || {};
         },
 
         filterOne: function ( todo ) {
-            todo.triger('visible');
+            todo.trigger('visible');
         },
 
         filterAll: function () {
@@ -77,9 +83,34 @@ var app = app || {};
 
         newAttributes: function () {
             return {
-                
+                title: this.$input.val().trim(),
+                order: app.todos.nextOrder(),
+                completed: false
             };
         },
+
+        createOnEnter: function ( e ) {
+            if ( e.which === ENTER_KEY && this.$input.val().trim() ) {
+                app.todos.create( this.newAttributes() );
+                this.$input.val('');
+            }
+        },
+
+        clearCompleted: function () {
+            _.invoke( app.todos.completed(), 'destroy' );
+            return false;
+        },
+
+        toggleAllComplete: function () {
+
+            var completed = this.allCheckbox.checked;
+
+            app.todos.each(function ( todo ) {
+                todo.save({
+                    completed: completed
+                });
+            });
+        }
 
 
 
