@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>helloworld</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+        $(function () {
+
+            var Item = Backbone.Model.extend({
+                defaults: {
+                    part1: 'Hello',
+                    part2: 'World'
+                }
+            });
+
+            var List =  Backbone.Collection.extend({
+                model: Item
+            });
+
+            var ListView = Backbone.View.extend({
+                el: $('.container'),
+
+                events: {
+                    'click #btn-add-item': 'addItem'
+                },
+
+                initialize: function () {
+                    _.bindAll(this, 'render', 'addItem');
+
+                    this.collection = new List();
+
+//                    this.collection =
+
+                    this.counter = 0;
+                    this.render();
+                },
+
+                render: function () {
+                    $(this.el).append('<button id="btn-add-item">添加</button>');
+                    $(this.el).append('<ul></ul>');
+                },
+
+                addItem: function () {
+                    this.counter++;
+
+                    var item = new Item();
+
+                    item.set({
+                        part1: item.get('part1') + this.counter
+                    });
+
+                    $('ul', this.el).append('<li>Hello World ' + this.counter + '</li>');
+                }
+
+
+            });
+
+            var listView = new ListView();
+
+        });
+
+
+    </script>
+</head>
+<body>
+
+<div class="container"></div>
+</body>
+</html>
