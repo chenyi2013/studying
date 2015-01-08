@@ -31,8 +31,10 @@
                 },
 
                 initialize: function () {
-                    _.bindAll(this, 'render', 'swap', 'unrender');
+                    _.bindAll(this, 'render', 'swap', 'unrender', 'remove');
 
+                    this.model.bind('change', this.render);
+                    this.model.bind('remove', this.unrender);
                 },
 
                 render: function () {
@@ -50,7 +52,11 @@
                 },
 
                 unrender: function () {
+                    $(this.el).remove();
+                },
 
+                remove: function () {
+                    this.model.destroy();
                 }
 
 
