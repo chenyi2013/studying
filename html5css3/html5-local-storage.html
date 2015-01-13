@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Local Storage - BeyondWeb.cn</title>
+    <script>
+        if ( typeof Storage != 'undefined' ) {
+            // 存储数据
+            localStorage.setItem('site', 'beyondweb.cn');
+
+            // 可以查看存储的有哪些数据
+            console.log( localStorage );
+
+            // 获取数据
+            console.log( '获取的数据为:' + localStorage.getItem('site') );
+
+            // 删除数据
+            localStorage.removeItem('site');
+
+            // site数据已经被清空了
+            console.log( '再次获取:' + localStorage.getItem('site') );
+
+        } else {
+            console.log('Not Support Storage!');
+        }
+    </script>
+</head>
+<body>
+    HTML5 Local Storage Demo <br/>
+    打开F12，结合页面源码在console里面查看数据
+</body>
+</html>
