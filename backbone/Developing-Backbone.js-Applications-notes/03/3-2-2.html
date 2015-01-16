@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+        var Todo = Backbone.Model.extend({
+            defaults: {
+                title: '',
+                completed: false
+            }
+        });
+
+        var todo1 = new Todo();
+
+        console.log( JSON.stringify(todo1) );
+
+        var todo2 = new Todo({
+            title: 'todo2'
+        });
+        console.log( JSON.stringify(todo2) );
+
+        console.log( todo2.toJSON() );
+
+
+        var todo3 = new Todo({
+            title: 'todo3',
+            completed: true
+        });
+
+        console.log( JSON.stringify(todo3) );
+
+        console.log('-----------');
+
+        console.log( todo3.get('title') );
+
+        console.log('------');
+
+        todo3.set({
+            'title': '张三'
+        });
+
+        console.log( todo3.toJSON() );
+
+    </script>
+
+</head>
+<body>
+hello
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+        var Todo = Backbone.Model.extend({
+            defaults: {
+                title: '',
+                completed: false
+            },
+
+            initialize:  function () {
+                console.log('Model initialize');
+                this.on('change', function () {
+                    console.log(' - values for the model have changed');
+                });
+            }
+
+        });
+
+        var myTodo = new Todo({
+            'title': 'The listener is triggered when an attribute value change'
+        });
+
+
+        console.log('Title has changed' + myTodo.get('title'));
+
+        myTodo.set({
+            'completed': true
+        });
+
+        console.log('Completed has changed' + myTodo.get('completed'));
+
+
+        myTodo.set({
+            'title': '改变多个属性',
+            'completed': true
+        });
+
+    </script>
+
+</head>
+<body>
+hello
+</body>
+</html>

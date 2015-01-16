@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+
+
+</head>
+<body>
+hello 3-3-2
+
+    <div id="div11"></div>
+
+
+<script>
+    var todoView =  Backbone.View.extend({
+        tagName: 'ul',
+        className: 'container',
+        id: 'todos'
+    });
+
+    var todoview = new todoView();
+
+    console.log( todoview.el );
+</script>
+</body>
+</html>

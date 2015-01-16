@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+        var Todo = Backbone.Model.extend({
+
+        });
+
+        var todo1 = new Todo();
+
+        console.log( JSON.stringify(todo1) );
+
+        var todo2 = new Todo({
+            title: '比较控制台输出内容',
+            completed: true
+        });
+
+        console.log( JSON.stringify(todo2) );
+    </script>
+
+</head>
+<body>
+    hello
+</body>
+</html>
