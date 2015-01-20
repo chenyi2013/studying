@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+
+        $(function () {
+            var View = Backbone.View.extend({
+                el: '#todo',
+
+                events: {
+                    'click [type="checkbox"]': 'clicked'
+                },
+
+                initialize: function () {
+                    this.$el.click(this.jqueryClicked);
+                    this.on('apiEvent', this.callback);
+                },
+
+                clicked: function ( event ) {
+                    console.log("events handle for " + this.el.outerHTML);
+                    this.trigger('apiEvent', event.type);
+                },
+
+                jqueryClicked: function ( event ) {
+                    console.log("jQuery handle for " + this.outerHTML);
+                },
+
+                callback: function ( eventType ) {
+                    console.log("event type was:" + eventType );
+                }
+            });
+
+            var view = new View();
+        });
+
+    </script>
+
+</head>
+<body>
+    <div id="todo">
+        <input type="checkbox"/>
+    </div>
+</body>
+</html>

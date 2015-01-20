@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+
+        // forEach
+        (function () {
+            var Todos = new Backbone.Collection();
+            Todos.add([
+                { title: 'go to beijing', completed: false },
+                { title: 'go to china', completed: false },
+                { title: 'go to austria', completed: true }
+            ]);
+
+            Todos.forEach(function ( model ) {
+                console.log( model.get('title') );
+            });
+        })();
+
+
+        // sortBy
+        (function () {
+            var Todos = new Backbone.Collection();
+            Todos.add([
+                { title: 'go to Beijing', completed: false },
+                { title: 'go to china', completed: false },
+                { title: 'go to austria', completed: true }
+            ]);
+
+            var sortedByAlphabet = Todos.sortBy(function ( todo ) {
+                return todo.get('title').toLowerCase();
+            });
+
+            console.log('now sorted');
+
+            sortedByAlphabet.forEach(function ( model ) {
+                console.log( model.get('title') );
+            });
+
+        })();
+
+        console.log('trigger--------');
+
+        // trigger
+        (function () {
+            var ourObject = {};
+
+            _.extend( ourObject, Backbone.Events );
+
+            function dancing ( msg, action ) {
+                var action = action || '';
+                console.log('we started:' + msg + action);
+            }
+
+            ourObject.on('dance:tap', dancing);
+            ourObject.on('dance:break', dancing);
+
+
+//            ourObject.on('all', function ( eventName ) {
+//                console.log( eventName );
+//            });
+
+
+            ourObject.trigger('dance:tap', 'our event');
+            ourObject.trigger('dance:break', 'our event break', 'dance:break');
+
+            console.log('----------');
+            ourObject.trigger('dance:tap dance:break', 'on fire');
+            console.log('----------');
+
+            ourObject.off('dance:tap');
+            ourObject.trigger('dance:tap', 'our event');
+            ourObject.trigger('dance:break', 'our event break');
+
+
+
+        })();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

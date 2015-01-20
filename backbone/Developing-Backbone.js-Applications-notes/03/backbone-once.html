@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="../../js/lib/jquery-1.11.1.js"></script>
+    <script src="../../js/lib/underscore.js"></script>
+    <script src="../../js/lib/backbone.js"></script>
+
+    <script>
+        var TodoCounter = { counterA: 0, counterB: 0};
+        _.extend(TodoCounter, Backbone.Events);
+
+        console.log( Backbone.Events );
+        console.log( TodoCounter );
+
+        var incrA = function () {
+            TodoCounter.counterA += 1;
+            TodoCounter.trigger('event');
+        };
+
+        var incrB = function () {
+            TodoCounter.counterB += 1;
+        };
+
+        TodoCounter.once('event', incrA);
+        TodoCounter.once('event', incrB);
+
+        TodoCounter.trigger('event');
+
+        console.log(TodoCounter.counterA === 1);
+        console.log(TodoCounter.counterB === 1);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
