@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //        // 普通写法
+        //        var num1 = 1;
+        //        var num2 = 2;
+        //
+        //        function add ( a, b ) {
+        //            return a + b;
+        //        }
+        //
+        //        function minus ( a, b ) {
+        //            return a - b;
+        //        }
+        //
+        //        console.log( add( num1, num2 ) ); //3
+        //        console.log( minus( num1, num2 ) ); //-1
+        //
+        //        // 对象字面量写法
+        //        var count = {
+        //            num: 1,
+        //            add: function ( a, b ) {
+        //                return a + b;
+        //            },
+        //            minus: function ( a, b ) {
+        //                return a - b;
+        //            }
+        //        };
+        //
+        //        console.log( count.add( 1, 2) ); //3
+        //        console.log( count.minus( 6, 8 ) ); //-2
+
+
+        // 匿名函数立即执行
+//        (function () {
+//            var num1 = 1;
+//            var num2 = 2;
+//
+//            function add ( a, b ) {
+//                return a + b;
+//            }
+//
+//            function minus ( a, b ) {
+//                return a - b;
+//            }
+//
+//            console.log( add( num1, num2 ) ); //3
+//            console.log( minus( 6, 8 ) ); //-2
+//        })();
+
+
+        // 模块导出
+        var calculate = (function () {
+            var num = 1;
+
+            function add ( a, b ) {
+                return a + b;
+            }
+
+            function minus ( a, b ) {
+                return a - b;
+            }
+
+            return {
+                add: add,
+                minus: minus
+            };
+        })();
+
+        console.log( calculate.add( 2, 8 ) ); // 10
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
