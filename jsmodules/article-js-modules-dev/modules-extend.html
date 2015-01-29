@@ -75,21 +75,21 @@
     </script>
 
 
-    <script src="calculate.js"></script>
+    <script src="calculator.js"></script>
     <script>
-        console.log( calculate ); //Object {add: function, minus: function}
-        console.log( calculate.add( 2, 8 ) ); // 10
+        console.log( calculator ); //Object {add: function, minus: function}
+        console.log( calculator.add( 2, 8 ) ); // 10
 
         // 模块扩展
-        var calculate = (function ( baseModule ) {
+        var calculator = (function ( baseModule ) {
             baseModule.multiply = function ( a, b ) {
                 return a * b;
             };
             return baseModule;
-        })( calculate || {} );
+        })( calculator || {} );
 
-        console.log( calculate ); //Object {add: function, minus: function, multiply: function}
-        console.log( calculate.multiply( 5, 8 ) ); //40
+        console.log( calculator ); //Object {add: function, minus: function, multiply: function}
+        console.log( calculator.multiply( 5, 8 ) ); //40
     </script>
 </head>
 <body>

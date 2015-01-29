@@ -1,4 +1,4 @@
-var calculate = (function () {
+var calculator = (function () {
     var num = 1;
 
     function add ( a, b ) {
