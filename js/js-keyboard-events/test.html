@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            var inputTest = document.getElementById('inputTest');
+
+            inputTest.onkeydown = function (e) {
+                e = e || window.event;
+                console.log('keydown' + ' keycode=' + e.keyCode);
+            };
+
+            inputTest.onkeyup = function (e) {
+                e = e || window.event;
+                console.log('keyup' + ' keycode=' + e.keyCode);
+                console.log('-------------------------------------');
+            };
+
+            inputTest.onkeypress = function (e) {
+                e = e || window.event;
+                console.log('keypress' + ' keycode=' + e.keyCode);
+            };
+
+
+            var inputCS = document.getElementById('inputCS');
+            inputCS.onkeydown = function (e) {
+                e = e || window.event;
+                if (e.ctrlKey && e.keyCode == 13) {
+                    alert('按下了Ctrl+Enter键');
+                }
+            };
+        };
+
+    </script>
+
+</head>
+<body>
+    按键测试：
+    <input type="text" id="inputTest">
+    在控制台里查看输出信息
+
+    <br/>
+    <br/>
+
+    组合键测试(Ctrl+Enter提交信息)：
+    <input class="type" type="text" id="inputCS">
+</body>
+</html>
