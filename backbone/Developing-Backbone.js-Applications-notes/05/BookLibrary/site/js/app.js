@@ -8,6 +8,8 @@ var app = app || {};
 
 
 $(function () {
+    /*
+    与服务器端交互前数据填充
     var books = [
         {
             title: 'HTML5',
@@ -24,4 +26,9 @@ $(function () {
     ];
 
     new app.LibraryView(books);
+    */
+
+    $('#releaseDate').datepicker();
+
+    new app.LibraryView();
 });
