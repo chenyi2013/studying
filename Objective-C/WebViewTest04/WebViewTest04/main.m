@@ -1,6 +1,6 @@
 //
 //  main.m
-//  WebViewTest
+//  WebViewTest04
 //
 //  Created by 王驰 on 15/2/4.
 //  Copyright (c) 2015年 Walker. All rights reserved.
@@ -14,5 +14,3 @@ int main(int argc, char * argv[]) {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
-
-@end
