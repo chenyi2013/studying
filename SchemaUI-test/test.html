@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SchemaUI test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=1">
+
+    <link rel="stylesheet" href="css/schema.min.css">
+
+
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+
+
+
+    <script src="js/less.js"></script>
+
+
+    <style>
+        .row-fluid {
+            margin-top: 10px;
+        }
+
+        [class^="col"] {
+            line-height: 36px;
+            background: #eee;
+            border-radius: 3px;
+            text-align: center;
+        }        
+    </style>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/global.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <ul>
+                <li><a href="#grid-system">Grid System</a></li>
+            </ul>
+        </div>
+        <h1 id="grid-system">Grid System</h1>
+        <div class="row-fluid">
+            <div class="col12">.col12</div>
+        </div>
+        <div class="row-fluid">
+            <div class="col1">.col1</div>
+            <div class="col11">.col11</div>
+        </div>
+        <div class="row-fluid">
+            <div class="col2">.col2</div>
+            <div class="col10">.col10</div>
+        </div>
+        <div class="row-fluid">
+            <div class="col3">.col3</div>
+            <div class="col9">.col9</div>
+        </div> 
+        <div class="row-fluid">
+            <div class="col1">.col1</div>
+            <div class="col2">.col2</div>
+            <div class="col9">.col9</div>
+        </div>   
+        <div class="row-fluid">
+            <div class="col3">.col3</div>
+            <div class="col3">.col3</div>
+            <div class="col3">.col3</div>
+            <div class="col3">.col3</div>
+        </div>
+        <div class="row-fluid">
+            <div class="col8">.col8</div>
+            <div class="col4">.col4</div>
+        </div>        
+    </div>
+</body>
+</html>
