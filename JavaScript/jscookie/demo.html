@@ -1,0 +1,38 @@
+<script type="text/javascript">
+	
+
+	var oDate = new Date();
+	oDate.setDate(oDate.getDate()+1);
+	// document.cookie = 'showcouponlayer=true;expires='+oDate;
+	// document.cookie = 'user=wangchi; expires='+oDate;
+	// document.cookie = 'id=555;expires='+oDate;
+
+
+	function setCookie (name, value, day) {
+		var oDate = new Date();
+		oDate.setDate(oDate.getDate() + day);
+		document.cookie = name + '=' + value + ';expires=' + oDate; 
+	}
+
+	function removeCookie (name) {
+		setCookie(name, '1', -1);
+	}
+
+	function getCookie (name) {
+		var everyCookie = document.cookie.split('; ');
+		for (var i = 0, len = everyCookie.length; i < len; i++) {
+			var thisCookie = everyCookie[i].split('=');
+			if ( thisCookie[0] == name ) {
+				return thisCookie[1];
+			}
+		}
+	}
+
+	// removeCookie('showcouponlayer');
+
+	alert(document.cookie);
+	alert(getCookie('showcouponlayer'));
+	alert(getCookie('user'));
+	alert(getCookie('csrftoken'));
+
+</script>

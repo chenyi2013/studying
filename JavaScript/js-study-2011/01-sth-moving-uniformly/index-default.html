@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>方块匀速运动02</title>
+	<style type="text/css">
+		.myDiv {
+			width:100px;
+			height:100px;
+			background-color:#f00;
+		}
+	</style>
+	<script type="text/javascript">
+		var $$ = function (id) {
+			return document.getElementById(id);
+		}
+		var timer = null;
+		var move = function (target) {
+			var myDiv = $$("myDiv");
+			var speed = 0;
+			clearInterval(timer);
+			timer = setInterval(function () {
+				if (myDiv.offsetLeft > target) {
+					speed = -10;
+				} else {
+					speed = 10;
+				}
+				if (myDiv.offsetLeft == target) {
+					clearInterval(timer);
+				} else {
+					myDiv.style.marginLeft = myDiv.offsetLeft + speed + "px";
+				}
+			}, 30);
+		}
+
+		window.onload = function () {
+			$$("btn1").onclick = function () {
+				move(600);
+			}
+			$$("btn2").onclick = function () {
+				move(0);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" class="btn" id="btn1" value="开始运动">
+	<input type="button" class="btn" id="btn2" value="返回">
+	<div class="myDiv" id="myDiv"></div>
+</body>
+</html>

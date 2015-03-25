@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动端访问时移动切换到m域名</title>
+    <script>
+
+
+        /*
+        // simple
+        (function () {
+            var url = location.href;
+            if ( (url.indexOf('www.test.com') != -1) && navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i) ) {
+                location.href = 'http://m.test.com';
+            }
+        })();
+        */
+
+        // pro
+        (function () {
+            var url = location.href;
+            // replace www.test.com with your domain
+            if ( (url.indexOf('www.test.com') != -1) && navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i) ) {
+                var newUrl = url.replace('http://www', 'http://m');
+                location.href = newUrl;
+            }
+        })();
+
+        // test
+        console.log(location.hostname);
+    </script>
+</head>
+<body>
+ 控制台查看结果
+</body>
+</html>

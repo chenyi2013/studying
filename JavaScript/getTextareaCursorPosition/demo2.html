@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>js获取文本域中光标当前的位置</title>
+</head>
+<body>
+	<textarea id="myTextarea"></textarea>
+	<textarea id="hiddenTextarea"></textarea>
+	<script type="text/javascript">
+		window.onload = function () {
+			var myTextarea = document.getElementById("myTextarea");
+			var hiddenTextarea = document.getElementById("hiddenTextarea");
+			function getTextareaCursorPosition (obj) {
+				var cursorPosition = -1;
+				if ( obj.selectionStart ) {
+					// for FF, Chrome...
+					cursorPosition = obj.selectionStart;		
+				} else if ( document.selection ) {
+					// for IE
+					var range = document.selection.createRange();
+					range.moveStart("character", -obj.value.length);
+					cursorPosition = range.text.length;
+				}
+				return cursorPosition;
+			}
+			myTextarea.onkeyup = function (event) {
+				hiddenTextarea.value = myTextarea.value;
+				var event = window.event || event;
+				console.log(getTextareaCursorPosition(myTextarea));
+				insertStr(event);
+			}
+			myTextarea.onclick = function (event) {
+				var event = window.event || event;
+				console.log(getTextareaCursorPosition(myTextarea));
+				insertStr(event);
+			}
+
+
+			function insertStr (event) {
+				//alert( myTextarea.value.substring(0, getTextareaCursorPosition()) );
+				var str1 = myTextarea.value.substring(0, getTextareaCursorPosition(myTextarea));
+				var str2 = myTextarea.value.substring(getTextareaCursorPosition(myTextarea));
+				if ( event.keyCode == 13 ) {
+					hiddenTextarea.value = str1 + "[br/]" + str2;
+					//myTextarea.value = str1 + "[插入换行]" + str2;					
+				} else {
+
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>
