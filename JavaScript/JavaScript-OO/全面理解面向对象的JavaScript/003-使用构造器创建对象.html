@@ -1,0 +1,24 @@
+<script>
+
+    // 构造器Person本身是一个函数对象
+    function Person () {
+
+    }
+
+
+    // 它有一个叫prototype的属性
+    Person.prototype = {
+        name: '张三',
+        age: 26,
+        gender: '男',
+        eat: function ( stuff ) {
+            alert('我在吃' + stuff);
+        }
+    };
+
+
+    // 使用new关键字构造对象
+    var p = new Person();
+
+    console.log(p);
+</script>

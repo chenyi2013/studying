@@ -1,0 +1,26 @@
+<script>
+     var str = "我是一个 String 对象 , 我声明在这里 , 但我不是独立存在的！";
+
+     var obj = { des: "我是一个 Object 对象 , 我声明在这里，我也不是独立存在的。" }; 
+
+     var fun = function() { 
+        console.log( "我是一个 Function 对象！谁调用我，我属于谁：", this ); 
+     };   
+
+     obj.fun = fun; 
+
+     console.log( this );
+
+     console.log('---------------');
+     fun.apply( str );
+     console.log('---------------');
+
+
+     console.log( this === window );     // 打印 true 
+     console.log( window.str === str );  // 打印 true 
+     console.log( window.obj === obj );  // 打印 true 
+     console.log( window.fun === fun );  // 打印 true 
+     fun();                              // 打印 我是一个 Function 对象！谁调用我，我属于谁：window 
+     obj.fun();                          // 打印 我是一个 Function 对象！谁调用我，我属于谁：obj 
+     fun.apply(str);                   // 打印 我是一个 Function 对象！谁调用我，我属于谁：str 
+</script>

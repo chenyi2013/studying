@@ -1,0 +1,23 @@
+<script>
+    var person = {
+        name: '张三',
+        age: 26,
+        gender: '男',
+        eat: function ( stuff ) {
+            alert('我在吃'+stuff);
+        }
+    };
+
+    console.log( person );
+
+    person.height = 175;
+
+    console.log( person );
+
+
+    // 删除对象属性
+    delete person['age'];
+
+    console.log( person );
+
+</script>

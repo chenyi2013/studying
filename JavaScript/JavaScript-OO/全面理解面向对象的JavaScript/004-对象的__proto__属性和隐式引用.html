@@ -1,0 +1,34 @@
+<script>    
+
+
+/*
+
+每一个对象都有一个__proto__属性来实现对原型的隐式引用
+*/
+
+
+    function Person ( name ) {
+        this.name = name;
+    }
+
+    var p = new Person();
+
+    // true
+    // 对象的隐式引用指向了构造器的prototype属性
+    console.log(p.__proto__ === Person.prototype);
+
+    // 原型本身是一个Object对象，所以他的隐式引用指向了Object构造器的prototype属性
+    console.log(Person.prototype.__proto__ === Object.prototype);
+
+    // 构造器Person本身是一个Function对象，他的隐式引用指向了Function的prototype属性
+    console.log(Person.__proto__ == Function.prototype );
+
+
+    console.log(p.__proto__);
+    console.log(Person.prototype);
+    console.log(Person.prototype.__proto__);
+    console.log(Object.prototype);
+
+    console.log(Person.__proto__);
+    console.log(Function.prototype);
+</script>
