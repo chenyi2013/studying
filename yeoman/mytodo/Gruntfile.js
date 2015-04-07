@@ -1,4 +1,4 @@
-// Generated on 2015-04-06 using generator-angular 0.9.2
+// Generated on 2015-04-07 using generator-angular 0.9.2
 'use strict';
 
 // # Globbing
@@ -66,7 +66,8 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        //port: 9000,
+        port: 9002,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -384,7 +385,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    // 'karma'
   ]);
 
   grunt.registerTask('build', [

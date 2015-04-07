@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc function
- * @name mytodoApp.controller:AboutCtrl
+ * @name mytodo2App.controller:AboutCtrl
  * @description
  * # AboutCtrl
  * Controller of the mytodoApp

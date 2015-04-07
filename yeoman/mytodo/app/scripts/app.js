@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name mytodoApp
+ * @name mytodo2App
  * @description
- * # mytodoApp
+ * # mytodo2App
  *
  * Main module of the application.
  */
@@ -26,6 +26,10 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl'
       })
       .otherwise({
         redirectTo: '/'
