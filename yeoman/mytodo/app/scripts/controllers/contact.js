@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc function
- * @name mytodo2App.controller:ContactCtrl
+ * @name mytodoApp.controller:ContactCtrl
  * @description
  * # ContactCtrl
  * Controller of the mytodoApp

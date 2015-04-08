@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name mytodo2App
+ * @name mytodoApp
  * @description
- * # mytodo2App
+ * # mytodoApp
  *
  * Main module of the application.
  */
@@ -15,8 +15,13 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.sortable',
+    'LocalStorageModule'
   ])
+  .config(['localStorageServiceProvider', function ( localStorageServiceProvider ) {
+    localStorageServiceProvider.setPrefix('ls');
+  }])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
