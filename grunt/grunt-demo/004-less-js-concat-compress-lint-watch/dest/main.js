@@ -1,0 +1,1 @@
+/*!gruntTest 2015-04-08*/function $(a){return document.getElementById(a)}function plus(a,b){return a+b}console.log("test");
