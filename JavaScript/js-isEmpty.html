@@ -1,0 +1,36 @@
+<script>
+
+
+    // 判断json对象是否为空
+
+    var obj1 = {};
+
+    var obj2 = {
+        "name": "zhangsan"
+    };
+
+
+
+    function isEmptyObj ( obj ) {
+        return  Object.keys( obj ).length ? false : true;
+    }
+
+
+    function isEmptyObj2 ( obj ) {
+        for ( var name in obj ) {
+            if ( obj.hasOwnProperty( name ) ) return false;
+        }
+        return true;
+    }
+
+
+    console.log(isEmptyObj(obj1));
+    console.log(isEmptyObj(obj2));
+
+
+
+    console.log(isEmptyObj2(obj1));
+    console.log(isEmptyObj2(obj2));
+
+
+</script>
