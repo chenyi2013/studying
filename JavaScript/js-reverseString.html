@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js字符串反转</title>
+    <script>
+        var abc = "hello";
+
+        console.log(abc);
+
+
+        // 方法一：
+        function reverseString ( str ) {
+            var revStr = '',
+                len = str.length;
+            for ( var i = len - 1; i >= 0; i--) {
+                revStr += str.charAt( i );
+            }
+
+            return revStr;
+        }
+
+
+        // 方法二：(二分法)
+        function reverseString2 ( str ) {
+            var len = str.length,
+                half = len/2,
+                arr = [];
+
+            for ( var i = 0, j = len - 1; i <= half; i++, j--) {
+                arr[i] = str.charAt(j);
+                arr[j] = str.charAt(i);
+            }
+
+            return arr.join('');
+        }
+
+
+
+
+
+        // 数组有内置的reverse方法
+        function reverseArray ( arr ) {
+            var revArr = [],
+                len = arr.length;
+            for ( var i = len - 1; i >= 0; i--) {
+                revArr.push(arr[i]);
+            }
+
+            return revArr;
+        }
+
+
+        var str = 'abcd123';
+        console.log( reverseString( str ) );
+        console.log( reverseString2( str ) );
+
+        var arr = ['a', 'b', 2, 6, 'cd', 9];
+        console.log( reverseArray(arr) );
+        console.log(arr.reverse());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
