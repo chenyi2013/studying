@@ -1,0 +1,61 @@
+<script>
+    function SuperType () {
+        this.property = true;
+        this.colors = ['red', 'blue', 'green'];
+        this.name = "super";
+    }
+
+    SuperType.prototype.getSuperValue = function () {
+        return this.property;
+    }
+
+    function SubType () {
+        this.subproperty = false;
+    }
+
+
+    // 继承了SuperType
+    SubType.prototype = new SuperType();
+
+
+    // 添加新方法
+    SubType.prototype.getSubValue = function () {
+        return this.subproperty;
+    }
+
+    // 重写超类型中的方法
+    SubType.prototype.getSuperValue = function () {
+        return false;
+    }
+
+    var instance = new SubType();
+
+    console.log( instance.getSuperValue() );
+
+
+    var instance1 = new SubType();
+    console.log( instance1.colors ); //["red", "blue", "green"]
+    console.log( instance1.name );  // super
+    instance1.colors.push('black');
+    instance1.name = '11';
+    console.log( instance1.colors ); //["red", "blue", "green", "black"]
+    console.log( instance1.name );  // 11
+
+
+    var instance2 = new SubType();
+
+    // 数组为引用类型，这里出现了问题
+    console.log( instance2.colors ); // ！！！！！有问题 ["red", "blue", "green", "black"]
+
+    console.log( instance2.name ); // super  没有问题
+
+
+
+    // test
+    console.log(instance.__proto__);
+
+    console.log(SubType.prototype.__proto__);
+
+    console.log(SuperType.prototype.__proto__);
+
+</script>
