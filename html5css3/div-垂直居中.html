@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            margin: auto;
+            height: 100px;
+            background-color: #333;
+        }
+    </style>
+    <script>
+
+        // 严格模式下程序报错
+        var a = 1;
+        function foo () {
+            alert(a);
+            a = 5;
+            b = a;
+        }
+
+        foo();      // 1
+        alert(a);   // 5
+        alert(b);   // undefined
+
+    </script>
+</head>
+<body>
+    <div class="div1">垃圾发发离开家阿斯顿发了</div>
+</body>
+</html>
