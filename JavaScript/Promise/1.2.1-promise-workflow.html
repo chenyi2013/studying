@@ -1,0 +1,23 @@
+<script charset="utf-8">
+    function asynFunction () {
+        return new Promise(function ( resolve, reject ) {
+            setTimeout(function () {
+                resolve('Adync Hello');
+            }, 2000);
+        });
+    }
+
+    asynFunction().then(function ( value ) {
+        console.log( value );
+    }).catch(function ( error ) {
+        console.log( error );
+    });
+
+
+    // 或者
+    // asynFunction().then(function ( value ) {
+    //     console.log( value );
+    // }, function ( error ) {
+    //     console.log( error );
+    // });
+</script>
